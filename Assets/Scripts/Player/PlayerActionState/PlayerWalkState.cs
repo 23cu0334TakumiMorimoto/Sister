@@ -14,7 +14,7 @@ public class PlayerWalkState : PlayerActionState
 
     public override void EnterState()
     {
-        _context.PlayerAnimator.Play("Walk");
+        //_context.PlayerAnimator.Play("Walk");
     }
 
     public override void ExitState()
@@ -24,12 +24,15 @@ public class PlayerWalkState : PlayerActionState
 
     public override void UpdateState()
     {
+        if (_context.PlayerCtrl.MoveDirection == 0)
+        {
+            _context.StateMachine.SwitchNextState(PlayerActionStateMachine.EPlayerActionState.Idle);
+        }
 
-       
     }
 
     public override void FixedUpdateState()
     {
-        
+       // _context.PlayerCtrl.Move();
     }
 }
