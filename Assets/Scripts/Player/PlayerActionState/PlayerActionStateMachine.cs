@@ -23,6 +23,8 @@ public class PlayerActionStateMachine : StateMachine<PlayerActionStateMachine.EP
     // プレイヤーGameObject
     private GameObject _player;
 
+    private Rigidbody2D _rigidbody;
+
     private Animator _animator;
 
     private PlayerController _playerController;
@@ -39,7 +41,7 @@ public class PlayerActionStateMachine : StateMachine<PlayerActionStateMachine.EP
         // 例外チェック
         ValidateConstraints();
 
-        _context = new PlayerActionContext(_player, _animator, _playerController, this);
+        _context = new PlayerActionContext(_player, _rigidbody, _animator, _playerController, this);
 
         // 各ステートの初期化
         InitializeStates();

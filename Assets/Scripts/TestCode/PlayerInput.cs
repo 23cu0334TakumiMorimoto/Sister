@@ -79,24 +79,24 @@ public class PlayerInput : IInput
     
     private bool IsSelectLeftPressed()
     {
-        // select left          (keyboard)                          (Logicool F310)
+        // select left          (keyboard)                          
         return Input.GetKeyDown(KeyCode.A);
     }
     private bool IsSelectRightPressed()
     {
-        // select right         (keyboard)                          (Logicool F310)
+        // select right         (keyboard)                         
         return Input.GetKeyDown(KeyCode.D);
     }
 
     private bool IsSelectUpPressed()
     {
-        // select right         (keyboard)                          (Logicool F310)
+        // select up            (keyboard)                        
         return Input.GetKeyDown(KeyCode.W);
     }
 
     private bool IsSelectDownPressed()
     {
-        // select right         (keyboard)                          (Logicool F310)
+        // select down          (keyboard)                         
         return Input.GetKeyDown(KeyCode.S);
     }
 }

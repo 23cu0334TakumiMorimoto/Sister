@@ -28,6 +28,8 @@ public class CharacterBase : MonoBehaviour
     [Header("‘Ì—Í")]
     protected float _hp;
 
+    protected Rigidbody2D _rigidbody;
+
     // ‰æ‘œ‚ğ¶‰E”½“]‚·‚é
     protected virtual void FlipSpriteRenderer() { }
 
