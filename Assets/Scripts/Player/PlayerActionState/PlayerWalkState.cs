@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 // ----------------------------------
 // プレイヤー歩く状態クラス
 // ----------------------------------
@@ -24,15 +25,16 @@ public class PlayerWalkState : PlayerActionState
 
     public override void UpdateState()
     {
-        if (_context.PlayerCtrl.MoveDirection == 0)
-        {
-            _context.StateMachine.SwitchNextState(PlayerActionStateMachine.EPlayerActionState.Idle);
-        }
+       // if (_context.PlayerCtrl.MoveDirection == 0)
+        //{
+          //  _context.StateMachine.SwitchNextState(PlayerActionStateMachine.EPlayerActionState.Idle);
+        //}
 
     }
 
     public override void FixedUpdateState()
     {
-       // _context.PlayerCtrl.Move();
+        _context.PlayerCtrl.Move();
     }
+
 }

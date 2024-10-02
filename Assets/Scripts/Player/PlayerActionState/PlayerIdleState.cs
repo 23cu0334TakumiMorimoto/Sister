@@ -11,15 +11,15 @@ public class PlayerIdleState : PlayerActionState
 
     public override void EnterState()
     {
-        //_context.PlayerAnimator.Play("Idle");
+        _context.PlayerAnimator.Play("Idle");
     }
 
     public override void UpdateState()
     {
-        if (_context.PlayerCtrl.MoveDirection != 0)
-        {
-            _context.StateMachine.SwitchNextState(PlayerActionStateMachine.EPlayerActionState.Walk);
-        }
+       // if (_context.PlayerCtrl.MoveDirection != 0)
+        //{
+         //   _context.StateMachine.SwitchNextState(PlayerActionStateMachine.EPlayerActionState.Walk);
+        //}
 
     }
 

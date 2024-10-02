@@ -11,21 +11,29 @@ public class PlayerController : CharacterBase
     private PlayerActionStateMachine _actionStateMachine;
     private SpriteRenderer _playerSpriteRenderer;
     private Action onResetCallback = null;
-    private PlayerInputs _playerInputs;
+    //private PlayerInputs _playerInputs;
     private Vector2 _moveInputValue;
-    // 角度を代入する
-    private Vector3 _worldAngle;
 
-    public int MoveDirection { get; private set; }
+    public PlayerInputs _playerInputs;
+    //public int MoveDirection { get; private set; }
 
 
     private void Awake()
     {
         // 変数の初期化・値の取得
-        MoveDirection = 0;
+       // MoveDirection = 0;
 
         // Actionスクリプトのインスタンス生成
         _playerInputs = new PlayerInputs();
+
+        // Actionイベント登録
+        _playerInputs.Player.Move.started += OnMove;
+        _playerInputs.Player.Move.performed += OnMove;
+        _playerInputs.Player.Move.canceled += OnMove;
+
+        // Input Actionを機能させるためには、
+        // 有効化する必要がある
+        _playerInputs.Enable();
     }
 
     private void OnEnable()
@@ -35,12 +43,13 @@ public class PlayerController : CharacterBase
         _playerInputs.Enable();
     }
 
-    private void OnDisable()
+    private void OnDispose()
     {
         // 自身でインスタンス化したActionクラスはIDisposableを実装しているので、
         // 必ずDisposeする必要がある
-        _playerInputs?.Disable();
+        _playerInputs?.Dispose();
     }
+
     private void Start()
     {
         _actionStateMachine = gameObject.GetOrAddComponent<PlayerActionStateMachine>();
@@ -52,9 +61,38 @@ public class PlayerController : CharacterBase
         _moveInputValue = context.ReadValue<Vector2>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        transform.position += new Vector3(_moveInputValue.x * _moveSpeed, _moveInputValue.y * _moveSpeed * Time.deltaTime, 0);
+        // アクション入力更新
+        {
+            // 移動方向を取得
+            float moveInput = Input.GetAxis("Horizontal") + Input.GetAxisRaw("Keyboard Horizontal");
+            if (Mathf.Abs(moveInput) < 0.1f)
+            {
+                //MoveDirection = 0;
+            }
+            else
+            {
+             //   MoveDirection = (int)Mathf.Sign(moveInput);
+            }
+        }
+
+        // 反転できるようにする
+        FlipSpriteRenderer();
     }
 
+    private void FixedUpdate()
+    {
+        //// 位置を移動させる
+        //_rigidbody.velocity = (new Vector3(
+        //    _moveInputValue.x,
+        //    _moveInputValue.y,
+        //     0
+        //) * _moveSpeed);
+    }
+
+    public void Move()
+    {
+        _rigidbody.velocity = new Vector2(_moveInputValue.x * _moveSpeed, _moveInputValue.y * _moveSpeed);
+    }
 }

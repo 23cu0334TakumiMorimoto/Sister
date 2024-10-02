@@ -2,45 +2,94 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class TestMover: MonoBehaviour
+[RequireComponent(typeof(Rigidbody2D))]
+public class TestMover : MonoBehaviour
 {
-    int speed = 2;//移動スピード
-    Vector3 worldAngle;//角度を代入する
+    [SerializeField] private float _moveForce = 5;
 
-    void Start() { }
+    private SpriteRenderer _sr;
+    private Rigidbody2D _rigidbody;
+    private PlayerInputs _gameInputs;
+    private Vector2 _moveInputValue;
 
-    void Update()
+    private void Awake()
     {
-        if (Input.GetKey(KeyCode.UpArrow))
-        {//矢印上が押されている時に実行される
-            if (this.transform.position.y < 5)
+        _sr = GetComponent<SpriteRenderer>();
+        _rigidbody = GetComponent<Rigidbody2D>();
+        _rigidbody.gravityScale = 0;
+
+        // Actionスクリプトのインスタンス生成
+        _gameInputs = new PlayerInputs();
+
+        // Actionイベント登録
+        _gameInputs.Player.Move.started += OnMove;
+        _gameInputs.Player.Move.performed += OnMove;
+        _gameInputs.Player.Move.canceled += OnMove;
+
+        // Input Actionを機能させるためには、
+        // 有効化する必要がある
+        _gameInputs.Enable();
+    }
+
+    private void OnDestroy()
+    {
+        // 自身でインスタンス化したActionクラスはIDisposableを実装しているので、
+        // 必ずDisposeする必要がある
+        _gameInputs?.Dispose();
+    }
+
+    private void OnMove(InputAction.CallbackContext context)
+    {
+        // Moveアクションの入力取得
+        _moveInputValue = context.ReadValue<Vector2>();
+    }
+
+    private void Update()
+    {
+        FlipSprite();
+    }
+
+    private void FixedUpdate()
+    {
+        // 位置を移動させる
+        _rigidbody.velocity = (new Vector2(
+            _moveInputValue.x,
+            _moveInputValue.y
+        ) * _moveForce);
+    }
+
+    private void FlipSprite()
+    {
+        // 現在のキーボード情報
+        var current = Keyboard.current;
+
+        // キーボード接続チェック
+        if (current == null)
+        {
+            // キーボードが接続されていないと
+            // Keyboard.currentがnullになる
+            return;
+        }
+
+        // キーの入力状態取得
+        var aKey = current.aKey;
+        var dKey = current.dKey;
+
+        // Aキーが押されているかどうか
+        if (aKey.isPressed)
+        {
+            if (_sr.flipX == true)
             {
-                transform.position += new Vector3(0, speed * Time.deltaTime, 0);
+                _sr.flipX = false;
             }
         }
-        if (Input.GetKey(KeyCode.DownArrow))
-        {//矢印下が押されている時に実行される
-            if (this.transform.position.y > -5)
+
+        // Dキーが押されているかどうか
+        if (dKey.isPressed)
+        {
+            if (_sr.flipX == false)
             {
-                transform.position += new Vector3(0, -1 * speed * Time.deltaTime, 0);
-            }
-        }
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {//矢印左が押されている時に実行される
-            if (this.transform.position.x > -3)
-            {
-                worldAngle.y = 0f;//通常の向き
-                this.transform.localEulerAngles = worldAngle;//自分の角度に代入する
-                transform.position += new Vector3(-1 * speed * Time.deltaTime, 0, 0);
-            }
-        }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {//矢印右が押されている時に実行される
-            if (this.transform.position.x < 3)
-            {
-                worldAngle.y = -180f;//右向きの角度
-                this.transform.localEulerAngles = worldAngle;//自分の角度に代入
-                transform.position += new Vector3(speed * Time.deltaTime, 0, 0);
+                _sr.flipX = true;
             }
         }
     }
