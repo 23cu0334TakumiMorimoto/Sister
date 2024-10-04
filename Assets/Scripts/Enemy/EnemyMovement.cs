@@ -5,8 +5,8 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
 
-    GameObject Player;
-    Vector3 PlayerPos;
+    GameObject God;
+    Vector3 GodPos;
 
     private float speed = 0.5f;
 
@@ -15,23 +15,28 @@ public class EnemyMovement : MonoBehaviour
 
     void Start()
     {
-        Player = GameObject.FindGameObjectWithTag("Player");
-        PlayerPos = Player.transform.position;
-        this.transform.LookAt(PlayerPos);
+        God = GameObject.FindGameObjectWithTag("God");
+        GodPos = God.transform.position;
+        this.transform.LookAt(GodPos);
 
     }
     void Update()
     {
-        PlayerPos = Player.transform.position;//プレイヤーの現在位置を取得
-        transform.position = Vector2.MoveTowards(transform.position, PlayerPos, speed * Time.deltaTime);//現在位置からプレイヤーの位置に向けて移動
-        diff.x = PlayerPos.x - this.transform.position.x;//プレイヤーと敵キャラのX軸の位置関係を取得する
+        //神の現在位置を取得
+        GodPos = God.transform.position;
+        //現在位置から神の位置に向けて移動
+        transform.position = Vector2.MoveTowards(transform.position, GodPos, speed * Time.deltaTime);
+        //神と敵キャラのX軸の位置関係を取得する
+        diff.x = GodPos.x - this.transform.position.x;
         if (diff.x > 0)
-        {//Playerが敵キャラの右側にいる時右側を向く
+        {
+            // Godが敵キャラの右側にいる時右側を向く
             vector = new Vector3(0, -180, 0);
             this.transform.eulerAngles = vector;
         }
         if (diff.x < 0)
-        {//Playerが敵キャラの左側にいる時左側を向く
+        {
+            // Godが敵キャラの左側にいる時左側を向く
             vector = new Vector3(0, 0, 0);
             this.transform.eulerAngles = vector;
         }
