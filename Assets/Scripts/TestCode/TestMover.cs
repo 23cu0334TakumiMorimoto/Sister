@@ -5,7 +5,9 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody2D))]
 public class TestMover : MonoBehaviour
 {
-    [SerializeField] private float _moveForce = 5;
+    [SerializeField]
+    [Header("移動スピード")]
+    private float _moveSpeed;
 
     private SpriteRenderer _sr;
     private Rigidbody2D _rigidbody;
@@ -55,7 +57,7 @@ public class TestMover : MonoBehaviour
         _rigidbody.velocity = (new Vector2(
             _moveInputValue.x,
             _moveInputValue.y
-        ) * _moveForce);
+        ) * _moveSpeed);
     }
 
     private void FlipSprite()

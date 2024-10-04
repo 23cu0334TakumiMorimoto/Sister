@@ -10,7 +10,7 @@ public class PlayerController : CharacterBase
     private BoxCollider2D _boxCollider2D;
     private PlayerActionStateMachine _actionStateMachine;
     private SpriteRenderer _playerSpriteRenderer;
-    private Action onResetCallback = null;
+   // private Action onResetCallback = null;
     //private PlayerInputs _playerInputs;
     private Vector2 _moveInputValue;
 

@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyPrefab: {fileID: 8450583645931266645, guid: 0701650c5831df74ebbe25b27d1eca47, type: 3}
+  _spawnTime: 5
 --- !u!4 &236367433
 Transform:
   m_ObjectHideFlags: 0
@@ -592,6 +593,7 @@ GameObject:
   - component: {fileID: 1750458180}
   - component: {fileID: 1750458181}
   - component: {fileID: 1750458182}
+  - component: {fileID: 1750458183}
   m_Layer: 0
   m_Name: TestSister
   m_TagString: Player
@@ -692,7 +694,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1750458181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -705,7 +707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f89f8df1537e09b4f9ec990aff8ac975, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveForce: 3
+  _moveSpeed: 3
 --- !u!114 &1750458182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -722,6 +724,51 @@ MonoBehaviour:
   _maxMovementLimitX: 8
   _minMovementLimitY: -4
   _maxMovementLimitY: 4
+--- !u!61 &1750458183
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750458174}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.1333334, y: 2.1333334}
+    newSize: {x: 5.12, y: 5.12}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.3}
+  m_EdgeRadius: 0
 --- !u!1001 &1255321631196459878
 PrefabInstance:
   m_ObjectHideFlags: 0
