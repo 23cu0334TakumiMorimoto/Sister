@@ -8,7 +8,7 @@ public class Testplayer : MonoBehaviour
     public int maxHealth = 100;
 
     //現在の体力
-    public int currentHealth;
+    private int _currentHealth;
 
     //ヘルスバーを参照する
     public Health_Bar health_Bar;
@@ -16,7 +16,7 @@ public class Testplayer : MonoBehaviour
     void Start()
     {
         //最大HPを設定
-        currentHealth = maxHealth;
+        _currentHealth = maxHealth;
         health_Bar.setmaxHealth(maxHealth);
     }
 
@@ -32,9 +32,9 @@ public class Testplayer : MonoBehaviour
     }
     void damage(int damage)
     {
-        currentHealth-= damage;
+        _currentHealth-= damage;
 
         //現在の体力を反映させる
-        health_Bar.setHealth(currentHealth);
+        health_Bar.setHealth(_currentHealth);
     }
 }

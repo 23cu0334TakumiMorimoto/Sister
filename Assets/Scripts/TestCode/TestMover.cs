@@ -75,10 +75,12 @@ public class TestMover : MonoBehaviour
 
         // キーの入力状態取得
         var aKey = current.aKey;
+        var leftArrowKey = current.leftArrowKey;
         var dKey = current.dKey;
+        var rightArrowKey = current.rightArrowKey;
 
-        // Aキーが押されているかどうか
-        if (aKey.isPressed)
+        // Aキーもしくは左キーが押されているかどうか
+        if (aKey.isPressed || leftArrowKey.isPressed)
         {
             if (_sr.flipX == true)
             {
@@ -86,8 +88,8 @@ public class TestMover : MonoBehaviour
             }
         }
 
-        // Dキーが押されているかどうか
-        if (dKey.isPressed)
+        // Dキーもしくは右キーが押されているかどうか
+        if (dKey.isPressed || rightArrowKey.isPressed)
         {
             if (_sr.flipX == false)
             {
