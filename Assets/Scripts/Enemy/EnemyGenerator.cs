@@ -4,37 +4,46 @@ using UnityEngine;
 public class EnemyGeneratorScript : MonoBehaviour
 {
     [SerializeField]
-    public GameObject EnemyPrefab;//生成する用の敵キャラPrefabを読み込む
-    private GameObject Player;
-    private Vector2 PlayerPos;//キャラクターの位置を代入する変数
+    private GameObject EnemyPrefab;//生成する用の敵キャラPrefabを読み込む
+    private Vector2 _myPos;
     private Vector2 _enemySpawnPos;   //生成される位置
     private float _currentTime = 0f;
     [SerializeField]
     [Header("スポーンまでの時間")]
-    public float SpawnTime;
-    //[SerializeField]
-    //[Header("敵をスポーンする座標のランダムの範囲")]
-    //public float RandomSpawnRangeX = Random.Range(1.0f, 3.0f);
-    //public float RandomSpawnRangeY = Random.Range(1.0f, 3.0f);
+    private float SpawnTime;
+    [SerializeField]
+    [Header("敵をスポーンする座標のランダムの範囲")]
+    public float RandomSpawnMinX;
+    public float RandomSpawnMaxX;
+    public float RandomSpawnMinY;
+    public float RandomSpawnMaxY;
+    // ランダムの範囲を代入する変数
+    private float RandomSpawnRangeX;
+    private float RandomSpawnRangeY;
 
-    // 設定されている生成方向
-    private SpawnDirection _nowSpaenDirection;
     //ランダムで生成される方向を決める変数
     public enum SpawnDirection
     {
         DirectionX,//（X軸）
         DirectionY,//（Y軸）
     }
-   
+    [SerializeField]
+    [Header("設定されている生成方向")]
+    private SpawnDirection _nowSpaenDirection;
+
     void Start()
     {
-        Player = GameObject.FindGameObjectWithTag("Player");//Playerというタグを検索し、見つかったオブジェクトを代入する
+        // ジェネレーターの現在の座標を取得する
+        _myPos = this.transform.position;
     }
     void Update()
     {
         _currentTime += Time.deltaTime;//時間経過をcurrentTimeに代入し時間を測る
         if (_currentTime > SpawnTime)//spanで設定した3秒を越えたら処理を実行
         {
+            // 変数の初期化
+            _enemySpawnPos = Vector2.zero;
+            // ジェネレートする
             EnemyGenerate(EnemyPrefab);
             _currentTime = 0f;
         }
@@ -42,44 +51,25 @@ public class EnemyGeneratorScript : MonoBehaviour
 
     public void EnemyGenerate(GameObject Enemy)
     {
-        //EnemyPrefabのスポーン位置を決める
-        //PlayerPos = Player.transform.position;//Playerの現在位置を取得
+        // ランダムで数字を代入
+        RandomSpawnRangeX = Random.Range(RandomSpawnMinX, RandomSpawnMaxX);
+        RandomSpawnRangeY = Random.Range(RandomSpawnMinY, RandomSpawnMaxY);
 
-        //上下どちらにスポーンするか
-        //rndUD = Random.Range(0, 2);//0:上 1:下
-        //                           //左右どちらになるか
-        //rndLR = Random.Range(0, 2);//0:左 1:右
+        switch (_nowSpaenDirection)
+        {
+            case SpawnDirection.DirectionX: // X軸で生成する場合
+                _enemySpawnPos.x = RandomSpawnRangeX;
+                break;
 
-        //    switch(_nowSpaenDirection)
-        //    {
-        //        case SpawnDirection.DirectionX: // X軸で生成する場合
-        //            _enemySpawnPos.
-        //    }
+            case SpawnDirection.DirectionY: // Y軸で生成する場合
+                _enemySpawnPos.y = RandomSpawnRangeY;
+                break;
+        }
 
+        _enemySpawnPos = _enemySpawnPos + _myPos;//プレイヤーの位置に先ほどの乱数を足した位置に生成する
+        var enemy = Instantiate(Enemy, _enemySpawnPos, transform.rotation);//Prefabを生成する
 
-        //    switch (rndUD)
-        //    {
-        //        case 0://rndUDが上の場合
-        //            enemyspwnPos.y = rndPositiveY;//上方向の乱数を代入
-
-        //            break;
-        //        case 1://rndUDが下の場合
-        //            enemyspwnPos.y = rndNegativeY;//下方向の乱数を代入
-        //            break;
-        //    }
-
-        //    switch (rndLR)
-        //    {
-        //        case 0://rndLRが左の場合
-        //            enemyspwnPos.x = rndPositiveX;//左方向の乱数を代入
-        //            break;
-        //        case 1://rndLRが右の場合
-        //            enemyspwnPos.x = rndNegativeX;//右方向の乱数を代入
-        //            break;
-        //    }
-
-        //    enemyspwnPos = enemyspwnPos + PlayerPos;//プレイヤーの位置に先ほどの乱数を足した位置に生成する
-        //    var enemy = Instantiate(Enemy, enemyspwnPos, transform.rotation);//Prefabを生成する
+        Debug.Log(_enemySpawnPos);
     }
 
 }
