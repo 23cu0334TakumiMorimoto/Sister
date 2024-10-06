@@ -12,5 +12,6 @@ public class StatusData : ScriptableObject
     public float SPEED; //移動速度
     public float NockBack; //ノックバック値
     public float MUTEKI_SPAN; //無敵時間
+    public float Attack_SPAN; // 攻撃までの時間
     public int EXP; //経験値
 }

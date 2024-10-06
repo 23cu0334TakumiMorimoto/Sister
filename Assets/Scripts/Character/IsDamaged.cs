@@ -13,6 +13,12 @@ public class IsDamaged : MonoBehaviour
     // ステータスデータを読み込む
     [SerializeField] StatusData statusdata;
 
+    // 攻撃を受けたときに出す画像
+    [SerializeField]
+    private GameObject Hitmark;
+    private Vector3 Hitpos;
+
+
     //攻撃を受けるかどうかの切り替えを行う
     bool MUTEKI;
 
@@ -40,12 +46,18 @@ public class IsDamaged : MonoBehaviour
             {
                 currentTime = 0f;
                 MUTEKI = false;//無敵状態終わらせる
-                rb.velocity = new Vector2(0, 0);//ノックバックをとめる   
+                rb.velocity = new Vector2(0, 0);//ノックバックをとめる
+                Hitmark.GetComponent<SpriteRenderer>().enabled = false;
             }
 
         }
         if (_currentHP <= 0)//HPが0以下になったら消える
         {
+            Hitpos = this.transform.position;
+            Hitpos.z = -2f;
+            Hitmark.transform.position = Hitpos;
+            Hitmark.GetComponent<SpriteRenderer>().enabled = true;
+            // オブジェクトを破棄する
             Destroy(this.gameObject);
         }
     }
@@ -53,6 +65,12 @@ public class IsDamaged : MonoBehaviour
     {
         if (!MUTEKI)
         {//無敵状態じゃないときに攻撃を受ける
+
+            Hitpos = this.transform.position;
+            Hitpos.z = -2f;//Z軸を敵キャラよりも手前に設定
+            Hitmark.transform.position = Hitpos;//ヒットマークの画像位置を移動させる
+            Hitmark.GetComponent<SpriteRenderer>().enabled = true; //ヒットマーク画像を表示する
+
             _currentHP -= damage;//HP減少
             Debug.Log(_currentHP);//現在のHPを表示
             MUTEKI = true;//無敵状態にする
