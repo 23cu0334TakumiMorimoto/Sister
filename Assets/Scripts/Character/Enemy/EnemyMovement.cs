@@ -9,18 +9,22 @@ public class EnemyMovement : MonoBehaviour
     private Vector3 _godPos;
 
     // ステータスデータを読み込む
-    [SerializeField] StatusData statusdata;
+    [SerializeField]
+    public StatusData statusdata;
 
     private Vector3 _diff;
     private Vector3 _vector;
 
-    void Start()
+    Rigidbody2D rb;
+
+    private void Start()
     {
         _god = GameObject.FindGameObjectWithTag("God");
         _godPos = _god.transform.position;
         this.transform.LookAt(_godPos);
+        rb = GetComponent<Rigidbody2D>();
     }
-    void Update()
+    private void Update()
     {
         //神の現在位置を取得
         _godPos = _god.transform.position;
@@ -42,5 +46,4 @@ public class EnemyMovement : MonoBehaviour
             this.transform.eulerAngles = _vector;
         }
     }
-
 }

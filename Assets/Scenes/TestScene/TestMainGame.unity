@@ -619,9 +619,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1128545550}
   - component: {fileID: 1128545549}
-  - component: {fileID: 1128545548}
   - component: {fileID: 1128545551}
   - component: {fileID: 1128545552}
+  - component: {fileID: 1128545553}
   m_Layer: 0
   m_Name: TestGod
   m_TagString: God
@@ -629,51 +629,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!61 &1128545548
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1128545547}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.56, y: 2.56}
-    newSize: {x: 5.12, y: 5.12}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.6, y: 2}
-  m_EdgeRadius: 0
 --- !u!212 &1128545549
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -757,11 +712,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a971bfc39361a04bb1b0897b068a23c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  statusdata: {fileID: 11400000, guid: e6f600985e4c1894c99cd47d3fb954c7, type: 2}
   maxHealth: 100
   _currentHealth: 0
+  _knockBack: 4
   health_Bar: {fileID: 1281542979}
   newSprite: {fileID: 21300000, guid: 4f0d6340fe4b5374787459d1212bd4fd, type: 3}
-  IsDestroyed: 1
+  IsDestroyed: 0
 --- !u!222 &1128545552
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -770,6 +727,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1128545547}
   m_CullTransparentMesh: 1
+--- !u!70 &1128545553
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128545547}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.05, y: 0}
+  m_Size: {x: 1, y: 2.2}
+  m_Direction: 0
 --- !u!1 &1148904958
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class IsDamaged : MonoBehaviour
 {
+    // 他オブジェクトの位置を取得
     private GameObject _player;
     private Vector2 _playerPos;
+    private GameObject _god;
+    private Vector2 _godPos;
 
     // ステータスデータを読み込む
     [SerializeField] StatusData statusdata;
@@ -22,9 +25,11 @@ public class IsDamaged : MonoBehaviour
     {
         _player = GameObject.FindGameObjectWithTag("Player");
         _playerPos = _player.transform.position;
+        _god = GameObject.FindGameObjectWithTag("God");
+        _godPos = _god.transform.position;
         this.transform.LookAt(_playerPos);
         _currentHP = statusdata.MAXHP;
-        rb = GetComponent<Rigidbody2D>();//Rigidbody2Dの取得//☑
+        rb = GetComponent<Rigidbody2D>();//Rigidbody2Dの取得
     }
     void Update()
     {
@@ -53,7 +58,9 @@ public class IsDamaged : MonoBehaviour
             MUTEKI = true;//無敵状態にする
         }
     }
-    public void NockBack(float nockback)
+    // 引数１：ノックバックの強さ
+    // 引数２：神像に触れたかどうか
+    public void NockBack(float nockback, bool IsGod)
     {
         Vector2 thisPos = transform.position;
 
@@ -63,10 +70,22 @@ public class IsDamaged : MonoBehaviour
         //// 初期化
         //distination = Vector2.zero;
 
-        //攻撃を受けて時点での敵キャラとプレイヤーとの位置関係
-        float distinationX = thisPos.x - _playerPos.x;
-        float distinationY = thisPos.y - _playerPos.y;
-        rb.velocity = new Vector2(distinationX * nockback, distinationY * nockback);//殴った方向に飛んでいく
+        if(IsGod == true)
+        {
+            //攻撃を受けた時点での敵キャラと神像との位置関係
+            float distinationX = thisPos.x - _godPos.x;
+            float distinationY = thisPos.y - _godPos.y;
+            rb.velocity = new Vector2(distinationX * nockback, distinationY * nockback);//殴った方向に飛んでいく
+        }
+
+        else
+        {
+            //攻撃を受けた時点での敵キャラとプレイヤーとの位置関係
+            float distinationX = thisPos.x - _playerPos.x;
+            float distinationY = thisPos.y - _playerPos.y;
+            rb.velocity = new Vector2(distinationX * nockback, distinationY * nockback);//殴った方向に飛んでいく
+        }
+        MUTEKI = true;//無敵状態にする
         Debug.Log("ノックバック！");
     }
 }

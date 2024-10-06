@@ -10,8 +10,7 @@ public class TestATK : MonoBehaviour
         if (col.gameObject.tag == "Enemy")
         {
             col.gameObject.GetComponent<IsDamaged>().Damage(statusdata.ATK);
-            col.gameObject.GetComponent<IsDamaged>().NockBack(statusdata.NockBack);
-
+            col.gameObject.GetComponent<IsDamaged>().NockBack(statusdata.NockBack,false);
         }
     }
 }

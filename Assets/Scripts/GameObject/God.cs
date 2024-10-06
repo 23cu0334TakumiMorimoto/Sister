@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class God : MonoBehaviour
 {
+
+    [SerializeField] StatusData statusdata;
+
     [SerializeField]
     [Header("最大体力")]
     //最大体力
@@ -13,6 +16,11 @@ public class God : MonoBehaviour
     [Header("現在の体力")]
     //現在の体力
     private float _currentHealth;
+
+    [SerializeField]
+    [Header("ノックバック値")]
+    //現在の体力
+    private float _knockBack;
 
     // 受けるダメージ
     private float _damage;
@@ -42,8 +50,9 @@ public class God : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "Enemy") 
-        { 
-            _damage = col.gameObject.GetComponent<EnemyStatus>()._atk;
+        {
+            col.gameObject.GetComponent<IsDamaged>().NockBack(_knockBack, true);
+            _damage = col.gameObject.GetComponent<EnemyMovement>().statusdata.ATK;
             //ダメージを受ける
             UpdateHp();
             IsDead();
