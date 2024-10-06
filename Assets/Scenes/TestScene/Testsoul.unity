@@ -257,7 +257,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 484857791}
   m_CullTransparentMesh: 1
---- !u!1 &573315669
+--- !u!1 &757542161
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -265,36 +265,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 573315671}
-  - component: {fileID: 573315670}
+  - component: {fileID: 757542163}
+  - component: {fileID: 757542162}
   m_Layer: 0
-  m_Name: Testplayer
+  m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &573315670
+--- !u!114 &757542162
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 573315669}
+  m_GameObject: {fileID: 757542161}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d86d4bca4bb34794c815501138a5647c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpriteNumber: 123456789
+  SpriteNumber: 0
   TextDisplay: {fileID: 484857791}
---- !u!4 &573315671
+  SpriteText: 0123456789
+--- !u!4 &757542163
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 573315669}
+  m_GameObject: {fileID: 757542161}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 977.06384, y: 540, z: 0}
@@ -582,4 +583,4 @@ SceneRoots:
   - {fileID: 1669317355}
   - {fileID: 1865000301}
   - {fileID: 1042793283}
-  - {fileID: 573315671}
+  - {fileID: 757542163}
