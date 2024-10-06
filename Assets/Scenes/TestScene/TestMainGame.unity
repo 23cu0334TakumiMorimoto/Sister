@@ -1169,6 +1169,7 @@ GameObject:
   - component: {fileID: 1750458181}
   - component: {fileID: 1750458182}
   - component: {fileID: 1750458183}
+  - component: {fileID: 1750458184}
   m_Layer: 0
   m_Name: TestSister
   m_TagString: Player
@@ -1345,6 +1346,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6, y: 1.3}
   m_EdgeRadius: 0
+--- !u!114 &1750458184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750458174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce1f9326b4d778a4d83f9b3b4248f079, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2002878921
 GameObject:
   m_ObjectHideFlags: 0
@@ -1612,6 +1625,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6035565795066832535, guid: 5f2d4478bfa231c4a802eb19268092e0, type: 3}
       propertyPath: _nowSpaenDirection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7488580249280154552, guid: 5f2d4478bfa231c4a802eb19268092e0, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

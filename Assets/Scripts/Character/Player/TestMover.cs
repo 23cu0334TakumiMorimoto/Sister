@@ -52,11 +52,10 @@ public class TestMover : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //Î‚ß‚ÌˆÚ“®‹——£‚ğ³‹K‰»ˆ—‚ğs‚¢‹Ïˆê‰»‚·‚é
+        Vector2 dir = new Vector2(_moveInputValue.x, _moveInputValue.y).normalized;
         // ˆÊ’u‚ğˆÚ“®‚³‚¹‚é
-        _rigidbody.velocity = (new Vector2(
-            _moveInputValue.x,
-            _moveInputValue.y
-        ) * statusdata.SPEED);
+        _rigidbody.velocity = dir * statusdata.SPEED;
     }
 
     private void FlipSprite()
