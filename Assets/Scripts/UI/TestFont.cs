@@ -6,86 +6,67 @@ using TMPro;
 
 public class TestFost : MonoBehaviour
 {
-    public int SpriteNumber; //入れるための番号を設置
-    public GameObject TextDisplay; //表示するためのテキストを指定
-    private TextMeshProUGUI Testtext;
-    public string SpriteText = "0123456789"; // スプライトテキストをここで指定
+    public GameObject TextDisplay;           //表示するためのテキストを指定
 
-    private int currentsoul;
-    private float timeReset;
-    private float time;
+    public int SpriteNumber;                 //入れるための番号を設置
+    public string SpriteText = "0123456789"; // スプライトテキストをここで指定
+    public float Timespeed;                  //ゆっくり数値を足していくためのスピード変数
+
+    private TextMeshProUGUI _testtext;       //TextMeshProUGUIを格納するための変数
+    private int _currentsoul;                //現在の魂の数
+    private float _time;                     //時間計測するための変数
     // Start is called before the first frame update
     void Start()
     {
-        Testtext = TextDisplay.GetComponent<TextMeshProUGUI>();
+        _testtext = TextDisplay.GetComponent<TextMeshProUGUI>();
         SpriteNumber = 0;
-        time = 0;
-        timeReset = 0.2f;
+        _time = 0;
+       
     }
 
     // Update is called once per frame
     void Update()
     {
+        //スペースキーが押されたら魂を１０取得する
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            currentsoul += 10;
+            _currentsoul += 10;
         }
         // 時間計測
-        time += Time.deltaTime;
+        _time += Time.deltaTime;
 
-        // 0.2より早く加算されないようにしてカウンターが進んでいるように見せる
-        if (time > timeReset)
+        //早く加算されないようにしてカウンターが進んでいるように見せる
+        if (_time > Timespeed)
         {
-            // 右矢印キーが押された場合、数値を増加
-            if (SpriteNumber<currentsoul && SpriteNumber < 999) // 0から999まで
+            // 999まで指定しておく。また現在の魂の数より増えているなら追加する
+            if (SpriteNumber<_currentsoul && SpriteNumber < 999) // 0から999まで
             {
+                //数値が増えるように見せるため１ずつ足していく
                 SpriteNumber++;
                 // 時間をリセット
-                time = 0;
+                _time = 0;
             }
         }
         // 数値を桁ごとに表示する
-        Testtext.text = FormatNumber(SpriteNumber);
-        //string SpriteText = SpriteNumber.ToString();
-        //TextDisplay.GetComponent<TextMeshProUGUI>().text = "";
-        //for (int i = 0; i <= SpriteText.Length - 1; i++)
-        //{
-        //    TextDisplay.GetComponent<TextMeshProUGUI>().text += "<sprite=" + SpriteText[i] + ">";
-        //}
-
-        //時間計測
-        //time += Time.deltaTime;
-
-        ////0.01より早く加算されないようにしてカウンターが進んでいるように見せる
-        //if (time > timeReset)
-        //{
-        //    //10の値を魂の獲得数として加算していく
-        //    if (Input.GetKeyDown(KeyCode.RightArrow) && SpriteNumber < SpriteText.Length -1)
-        //    {
-        //        //1ずつ足していって増えているようにみせる
-        //        SpriteNumber++;
-        //        //時間をリセット
-        //        time = 0;
-        //    }
-        //}
-        //// SpriteTextの範囲内で表示
-        //    Testtext.text = "<sprite=" + SpriteText[SpriteNumber] + ">";
-
-        //SpriteText = SpriteNumber.ToString();
-        //Testtext.text = "<sprite=" + SpriteText[SpriteNumber] + ">";
+        _testtext.text = FormatNumber(SpriteNumber);
+       
     }
+    //数値を文字列に変換し、スプライトとして表示する関数
     private string FormatNumber(int number)
     {
         // 数値を文字列に変換
-        //D3はフォーマット指定子。
+        //D3はフォーマット指定子。詳しいことは勉強する
         string numberString = number.ToString("D3");
-
+        
         // 各桁をスプライトとして表示するために文字列を変換
-        string result = "";
+
+        string result = "";//resultは、最終的にスプライトを表示するための文字列を蓄える変数
+
+        //numberStringの各文字（桁）を一つずつ取り出すためのループ
         foreach (char digit in numberString)
         {
             // スプライトとして表示するために、各桁に対応するスプライトを追加
-            result += "<sprite=" + digit + ">";
+            result += "<sprite=" + digit + ">";//"<sprite=" + digit + ">"の部分は、TextMeshProでスプライトを表示するため
         }
         return result;
     }
