@@ -18,11 +18,14 @@ public class IsDamaged : MonoBehaviour
     private GameObject Hitmark;
     private Vector3 Hitpos;
 
+    // 魂のプレハブ
+    [SerializeField] 
+    private GameObject _expPrefab;
 
     //攻撃を受けるかどうかの切り替えを行う
     bool MUTEKI;
 
-    private float _currentHP;
+    public float _currentHP;
     private float currentTime = 0f;
    
     private Rigidbody2D rb;
@@ -57,10 +60,17 @@ public class IsDamaged : MonoBehaviour
             Hitpos.z = -2f;
             Hitmark.transform.position = Hitpos;
             Hitmark.GetComponent<SpriteRenderer>().enabled = true;
-            // オブジェクトを破棄する
-            Destroy(this.gameObject);
+
+            for (int i = 0; statusdata.EXP > i; i++)
+            {
+                var exp = Instantiate(_expPrefab, transform.position, transform.rotation);
+
+                // オブジェクトを破棄する
+                Destroy(this.gameObject);
+            }
         }
     }
+
     public void Damage(float damage)
     {
         if (!MUTEKI)

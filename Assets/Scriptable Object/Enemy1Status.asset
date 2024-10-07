@@ -18,4 +18,6 @@ MonoBehaviour:
   SPEED: 0.5
   NockBack: 0
   MUTEKI_SPAN: 0.2
-  EXP: 0
+  Attack_SPAN: 0
+  Attack_STIFFNESS: 0
+  EXP: 3

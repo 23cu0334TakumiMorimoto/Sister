@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - God
+  - Soul
   layers:
   - Default
   - TransparentFX
