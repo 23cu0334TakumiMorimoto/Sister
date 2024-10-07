@@ -13,6 +13,7 @@ public class TestMover : MonoBehaviour
     private PlayerInputs _gameInputs;
     private Vector2 _moveInputValue;
 
+
     private void Awake()
     {
         _sr = GetComponent<SpriteRenderer>();
