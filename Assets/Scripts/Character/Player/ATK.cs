@@ -23,21 +23,6 @@ public class ATK : MonoBehaviour
         Destroy(gameObject, destroyTime);
     }
 
-    //public void Shoot(Vector2 direction)
-    //{
-
-    //    // 弾に Rigidbody2D コンポーネントがアタッチされているか確認した上で
-    //    if (TryGetComponent(out Rigidbody2D rb))
-    //    {
-
-    //        // Rigidbody2D の AddForce メソッドを利用して、プレイヤーの進行方向と同じ方向に弾を発射する
-    //        rb.AddForce(direction * bulletSpeed);
-    //    }
-
-    //    // 一定時間後に弾を破壊する
-    //    Destroy(gameObject, destroyTime);
-    //}
-
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "Enemy")

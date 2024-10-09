@@ -6,6 +6,10 @@ using UnityEngine;
 
 public class StatusData : ScriptableObject
 {
+    //// ó‘Ô
+    //// 0:’Êí 1:‰¼€
+    //public int ENEMY_STATE;
+
     public float MAXHP; //Å‘åHP
     public float ATK; //UŒ‚—Í@
     public float DEF; //–hŒä—Í
@@ -14,5 +18,6 @@ public class StatusData : ScriptableObject
     public float MUTEKI_SPAN; //–³“GŠÔ
     public float Attack_SPAN; // UŒ‚‚Ü‚Å‚ÌŠÔ
     public float Attack_STIFFNESS; // UŒ‚‚Ìd’¼
+    public float DEAD_TIME; // ‰¼€ó‘Ô‚ÌŠÔ
     public int EXP; //ŒoŒ±’l
 }

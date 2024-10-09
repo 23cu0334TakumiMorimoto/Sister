@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c63e4b0e2b7b5ce49b7ac5841169645a, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  PLAYER_PERSON: 1
+  PLAYER_PERSON: 0
   MAXHP: 100
   ATK: 1
   SISTER_DEF: 0
   DEVIL_DEF: 0
   SISTER_SPEED: 5
   DEVIL_SPEED: 2
-  NockBack: 3
+  NockBack: 2
   MUTEKI_SPAN: 0
   Attack_SPAN: 0.2
   Attack_STIFFNESS: 0.5

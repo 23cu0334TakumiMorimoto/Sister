@@ -14,7 +14,7 @@ public class PlayerChange : MonoBehaviour
     private SpriteRenderer image;
 
     GameObject gameManagerObj;
-    Inoperable IChanged;
+    Inoperable IsChanged;
     private Rigidbody2D rb;
     // タイマー
     [SerializeField]
@@ -27,7 +27,7 @@ public class PlayerChange : MonoBehaviour
         image = GetComponent<SpriteRenderer>();
         // スクリプトを取得
         gameManagerObj = GameObject.Find("GameManager");
-        IChanged = gameManagerObj.GetComponent<Inoperable>();
+        IsChanged = gameManagerObj.GetComponent<Inoperable>();
         rb = GetComponent<Rigidbody2D>();//Rigidbody2Dの取得
         ChangeCoolTimer = 3;
     }
@@ -62,7 +62,7 @@ public class PlayerChange : MonoBehaviour
             Debug.Log("チェンジシスター");
             image.sprite = SisterSprite;
             // 指定された時間プレイヤー操作を無効にする
-            IChanged.CallInoperable(statusdata.CHANGE_TRANSITION_TIME);
+            IsChanged.CallInoperable(statusdata.CHANGE_TRANSITION_TIME);
             // 速度を０にする
             rb.velocity = new Vector2(0, 0);
             // 人格を切り替えてステータスを切り替える
@@ -80,7 +80,7 @@ public class PlayerChange : MonoBehaviour
             Debug.Log("チェンジデビル");
             image.sprite = DevilSprite;
             // 指定された時間プレイヤー操作を無効にする
-            IChanged.CallInoperable(statusdata.CHANGE_TRANSITION_TIME);
+            IsChanged.CallInoperable(statusdata.CHANGE_TRANSITION_TIME);
             // 速度を０にする
             rb.velocity = new Vector2(0, 0);
             // 人格を切り替えてステータスを切り替える

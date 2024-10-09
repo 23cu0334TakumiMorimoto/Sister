@@ -15,6 +15,9 @@ public class EnemyMovement : MonoBehaviour
     private Vector3 _diff;
     private Vector3 _vector;
 
+    public GameObject Enemy;
+    IsDamaged Dead;
+
     Rigidbody2D rb;
 
     private void Start()
@@ -23,27 +26,32 @@ public class EnemyMovement : MonoBehaviour
         _godPos = _god.transform.position;
         this.transform.LookAt(_godPos);
         rb = GetComponent<Rigidbody2D>();
+        Dead = Enemy.GetComponent<IsDamaged>();
     }
     private void Update()
     {
-        //神の現在位置を取得
-        _godPos = _god.transform.position;
-        //現在位置から神の位置に向けて移動
-        transform.position = Vector2.MoveTowards(transform.position, _godPos, statusdata.SPEED * Time.deltaTime);
-        //神と敵キャラのX軸の位置関係を取得する
-        _diff.x = _godPos.x - this.transform.position.x;
+        // 仮死状態ではないなら処理
+        if (Dead.IsDead == false)
+        {
+            //神の現在位置を取得
+            _godPos = _god.transform.position;
+            //現在位置から神の位置に向けて移動
+            transform.position = Vector2.MoveTowards(transform.position, _godPos, statusdata.SPEED * Time.deltaTime);
+            //神と敵キャラのX軸の位置関係を取得する
+            _diff.x = _godPos.x - this.transform.position.x;
 
-        if (_diff.x > 0)
-        {
-            // Godが敵キャラの右側にいる時右側を向く
-            _vector = new Vector3(0, -180, 0);
-            this.transform.eulerAngles = _vector;
-        }
-        if (_diff.x < 0)
-        {
-            // Godが敵キャラの左側にいる時左側を向く
-            _vector = new Vector3(0, 0, 0);
-            this.transform.eulerAngles = _vector;
+            if (_diff.x > 0)
+            {
+                // Godが敵キャラの右側にいる時右側を向く
+                _vector = new Vector3(0, -180, 0);
+                this.transform.eulerAngles = _vector;
+            }
+            if (_diff.x < 0)
+            {
+                // Godが敵キャラの左側にいる時左側を向く
+                _vector = new Vector3(0, 0, 0);
+                this.transform.eulerAngles = _vector;
+            }
         }
     }
 }

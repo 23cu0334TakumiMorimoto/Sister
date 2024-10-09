@@ -22,6 +22,14 @@ public class IsDamaged : MonoBehaviour
     [SerializeField] 
     private GameObject _expPrefab;
 
+    [Header("敵の状態が仮死状態かどうか")]
+    public bool IsDead;
+
+    [SerializeField]
+    [Header("死亡タイマー")]
+    // 仮死状態のタイマー
+    private float _deadTimer;
+
     //攻撃を受けるかどうかの切り替えを行う
     bool MUTEKI;
 
@@ -39,10 +47,12 @@ public class IsDamaged : MonoBehaviour
         this.transform.LookAt(_playerPos);
         _currentHP = statusdata.MAXHP;
         rb = GetComponent<Rigidbody2D>();//Rigidbody2Dの取得
+
+        _deadTimer = 0f;
     }
     void Update()
     {
-        if (MUTEKI)//攻撃を受けてから0.2秒後にする処理
+        if (MUTEKI) //攻撃を受けてから0.2秒後にする処理
         {
             currentTime += Time.deltaTime;
             if (currentTime > statusdata.MUTEKI_SPAN)
@@ -54,66 +64,85 @@ public class IsDamaged : MonoBehaviour
             }
 
         }
-        if (_currentHP <= 0)//HPが0以下になったら消える
+
+        if (_currentHP <= 0) 
         {
             Hitpos = this.transform.position;
             Hitpos.z = -2f;
             Hitmark.transform.position = Hitpos;
             Hitmark.GetComponent<SpriteRenderer>().enabled = true;
 
-            for (int i = 0; statusdata.EXP > i; i++)
-            {
-                var exp = Instantiate(_expPrefab, transform.position, transform.rotation);
 
+
+                //HPが0以下になったら仮死状態にする
+                IsDead = true;
                 // オブジェクトを破棄する
-                Destroy(this.gameObject);
-            }
+                //Destroy(this.gameObject);
+        }
+
+        // 仮死状態なら
+        if(IsDead == true)
+        {
+            Asphyxia();
         }
     }
 
     public void Damage(float damage)
     {
-        if (!MUTEKI)
-        {//無敵状態じゃないときに攻撃を受ける
+        // 仮死状態ではないなら処理
+        if (IsDead == false)
+        {
+            if (!MUTEKI)
+            {//無敵状態じゃないときに攻撃を受ける
 
-            Hitpos = this.transform.position;
-            Hitpos.z = -2f;//Z軸を敵キャラよりも手前に設定
-            Hitmark.transform.position = Hitpos;//ヒットマークの画像位置を移動させる
-            Hitmark.GetComponent<SpriteRenderer>().enabled = true; //ヒットマーク画像を表示する
+                Hitpos = this.transform.position;
+                Hitpos.z = -2f;//Z軸を敵キャラよりも手前に設定
+                Hitmark.transform.position = Hitpos;//ヒットマークの画像位置を移動させる
+                Hitmark.GetComponent<SpriteRenderer>().enabled = true; //ヒットマーク画像を表示する
 
-            _currentHP -= damage;//HP減少
-            Debug.Log(_currentHP);//現在のHPを表示
-            MUTEKI = true;//無敵状態にする
+                _currentHP -= damage;//HP減少
+                Debug.Log(_currentHP);//現在のHPを表示
+                MUTEKI = true;//無敵状態にする
+            }
         }
     }
     // 引数１：ノックバックの強さ
     // 引数２：神像に触れたかどうか
     public void NockBack(float nockback, bool IsGod)
     {
-        Vector2 thisPos = transform.position;
-
-        //Vector2 distination = new Vector2(thisPos.x - _playerPos.x, thisPos.y - _playerPos.y);//攻撃を受けて時点での敵キャラとプレイヤーとの位置関係   
-        //Debug.Log(distination);
-        //rb.AddForce(distination * nockback, ForceMode2D.Impulse);
-        //// 初期化
-        //distination = Vector2.zero;
-
-        if(IsGod == true)
+        // 仮死状態ではないなら処理
+        if (IsDead == false)
         {
-            //攻撃を受けた時点での敵キャラと神像との位置関係
-            float distinationX = thisPos.x - _godPos.x;
-            float distinationY = thisPos.y - _godPos.y;
-            rb.velocity = new Vector2(distinationX * nockback, distinationY * nockback);//殴った方向に飛んでいく
-        }
+            Vector2 thisPos = transform.position;
 
-        else
-        {
-            //攻撃を受けた時点での敵キャラとプレイヤーとの位置関係
-            float distinationX = thisPos.x - _playerPos.x;
-            float distinationY = thisPos.y - _playerPos.y;
-            rb.velocity = new Vector2(distinationX * nockback, distinationY * nockback);//殴った方向に飛んでいく
+            if (IsGod == true)
+            {
+                //攻撃を受けた時点での敵キャラと神像との位置関係
+                float distinationX = thisPos.x - _godPos.x;
+                float distinationY = thisPos.y - _godPos.y;
+                rb.velocity = new Vector2(distinationX * nockback, distinationY * nockback);//殴った方向に飛んでいく
+            }
+
+            else
+            {
+                //攻撃を受けた時点での敵キャラとプレイヤーとの位置関係
+                float distinationX = thisPos.x - _playerPos.x;
+                float distinationY = thisPos.y - _playerPos.y;
+                rb.velocity = new Vector2(distinationX * nockback, distinationY * nockback);//殴った方向に飛んでいく
+            }
+            MUTEKI = true;//無敵状態にする
+            Debug.Log("ノックバック！");
         }
-        MUTEKI = true;//無敵状態にする
-        Debug.Log("ノックバック！");
+    }
+
+    // 仮死状態
+    public void Asphyxia()
+    {
+        _deadTimer += Time.deltaTime;
+        if(_deadTimer > statusdata.DEAD_TIME)
+        {
+            // オブジェクトを破棄する
+            Destroy(this.gameObject);
+        }
     }
 }
