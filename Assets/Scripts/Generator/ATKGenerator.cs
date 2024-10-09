@@ -23,7 +23,7 @@ public class ATKGenerator : MonoBehaviour
     [Header("攻撃方向")]
     [Header("1:上 2:下 3:左 4:右")]
     private int _atkDirection;
-    private float timer = 0f;       // タイマー
+    private float timer;       // タイマー
     // 自動で攻撃するか手動で攻撃するか
     [SerializeField]
     [Header("自動攻撃")]
@@ -32,6 +32,8 @@ public class ATKGenerator : MonoBehaviour
     GameObject gameManagerObj;
     Inoperable IAttacked;
 
+    private bool ATKflg;
+
     private Rigidbody2D rb;
 
     private void Start()
@@ -39,6 +41,8 @@ public class ATKGenerator : MonoBehaviour
         gameManagerObj = GameObject.Find("GameManager");
         IAttacked = gameManagerObj.GetComponent<Inoperable>(); // スクリプトを取得
         rb = GetComponent<Rigidbody2D>();//Rigidbody2Dの取得
+        timer = 0;
+        ATKflg = false;
     }
 
 
@@ -67,6 +71,11 @@ public class ATKGenerator : MonoBehaviour
             // Jキーかスペースキーで攻撃
             if(Input.GetKey(KeyCode.J) || Input.GetKey(KeyCode.Space))
             {
+                ATKflg = true;
+            }
+
+            if(ATKflg == true)
+            {
                 // タイマーを更新
                 timer += Time.deltaTime;
                 // 弾の生成
@@ -78,6 +87,11 @@ public class ATKGenerator : MonoBehaviour
                     IAttacked.CallInoperable(statusdata.Attack_STIFFNESS);
                     // 速度を０にする
                     rb.velocity = new Vector2(0, 0);
+
+                    // タイマーをリセット
+                    timer = 0;
+                    // フラグを元に戻す
+                    ATKflg = false;
                 }
             }
         }
