@@ -7,7 +7,7 @@ public class ATKGenerator : MonoBehaviour
 {
 
     // ステータスデータを読み込む
-    [SerializeField] StatusData statusdata;
+    [SerializeField] PlayerData statusdata;
     // 攻撃判定の弾のプレハブ
     [SerializeField] private GameObject _atkPrefab;
     // 弾を生成する座標の基準

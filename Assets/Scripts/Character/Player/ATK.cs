@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ATK : MonoBehaviour
 {
-    [SerializeField] StatusData statusdata;
+    [SerializeField] PlayerData statusdata;
 
     [SerializeField] private float bulletSpeed;@// ’e‚Ì‘¬“x
     [SerializeField] private float destroyTime;@// ’e‚Ì¶‘¶ŠúŠÔ

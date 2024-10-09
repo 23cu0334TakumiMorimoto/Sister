@@ -928,6 +928,7 @@ GameObject:
   - component: {fileID: 1750458182}
   - component: {fileID: 1750458183}
   - component: {fileID: 1750458184}
+  - component: {fileID: 1750458185}
   m_Layer: 0
   m_Name: TestSister
   m_TagString: Player
@@ -976,7 +977,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 8b2679c903821d34c8c317cb375c3685, type: 3}
+  m_Sprite: {fileID: 21300000, guid: be6882d6a203f3f44ad77ca032927db1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1041,7 +1042,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f89f8df1537e09b4f9ec990aff8ac975, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statusdata: {fileID: 11400000, guid: 4587d889b6eed834f833c4a73eb9dda6, type: 2}
+  statusdata: {fileID: 11400000, guid: 5a9840cb11c374646a320ac7a30231f6, type: 2}
 --- !u!114 &1750458182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1115,12 +1116,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44956c8340350b545b2b6a179617638c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statusdata: {fileID: 11400000, guid: 4587d889b6eed834f833c4a73eb9dda6, type: 2}
+  statusdata: {fileID: 11400000, guid: 5a9840cb11c374646a320ac7a30231f6, type: 2}
   _atkPrefab: {fileID: 5646100487231528239, guid: 539ec2515f2436841be51f2d7e57a92e, type: 3}
   _atkCoordinate: {fileID: 1750458178}
   _fireRate: 3
   _atkDirection: 1
   _autoAttack: 0
+--- !u!114 &1750458185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750458174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e37285deec0c4f41a4e66de3cd6ccd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statusdata: {fileID: 11400000, guid: 5a9840cb11c374646a320ac7a30231f6, type: 2}
+  SisterSprite: {fileID: 21300000, guid: 8b2679c903821d34c8c317cb375c3685, type: 3}
+  DevilSprite: {fileID: 21300000, guid: be6882d6a203f3f44ad77ca032927db1, type: 3}
+  ChangeSprite: {fileID: 0}
 --- !u!1 &2002878921
 GameObject:
   m_ObjectHideFlags: 0

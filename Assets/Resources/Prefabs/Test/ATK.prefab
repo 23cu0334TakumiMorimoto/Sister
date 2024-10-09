@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73bc5756530dbcf489026bbb66b2a00c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statusdata: {fileID: 11400000, guid: 4587d889b6eed834f833c4a73eb9dda6, type: 2}
+  statusdata: {fileID: 11400000, guid: 5a9840cb11c374646a320ac7a30231f6, type: 2}
   bulletSpeed: 5
   destroyTime: 0.2
   Sound: {fileID: 8300000, guid: 00924ff4385a0464dbbb65c5785d3ab7, type: 3}

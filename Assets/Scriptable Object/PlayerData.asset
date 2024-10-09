@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 218bb36d2ef506343a2370d9ab6bd3bd, type: 3}
-  m_Name: PlayerStatus
+  m_Script: {fileID: 11500000, guid: c63e4b0e2b7b5ce49b7ac5841169645a, type: 3}
+  m_Name: PlayerData
   m_EditorClassIdentifier: 
+  PLAYER_PERSON: 0
   MAXHP: 100
   ATK: 1
   DEF: 0

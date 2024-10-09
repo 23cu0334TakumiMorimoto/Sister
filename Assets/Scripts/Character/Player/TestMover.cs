@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class TestMover : MonoBehaviour
 {
     // ステータスデータを読み込む
-    [SerializeField] StatusData statusdata;
+    [SerializeField] PlayerData statusdata;
 
     private SpriteRenderer _sr;
     private Rigidbody2D _rigidbody;
