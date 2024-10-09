@@ -55,8 +55,19 @@ public class TestMover : MonoBehaviour
     {
         //斜めの移動距離を正規化処理を行い均一化する
         Vector2 dir = new Vector2(_moveInputValue.x, _moveInputValue.y).normalized;
-        // 位置を移動させる
-        _rigidbody.velocity = dir * statusdata.SPEED;
+
+        //現在の状態がシスターの時
+        if (statusdata.PLAYER_PERSON == 0)
+        {
+            // 位置を移動させる
+            _rigidbody.velocity = dir * statusdata.SISTER_SPEED;
+        }
+        // 現在の状態がデビルの時
+        if (statusdata.PLAYER_PERSON == 1)
+        {
+            // 位置を移動させる
+            _rigidbody.velocity = dir * statusdata.DEVIL_SPEED;
+        }
     }
 
     private void FlipSprite()

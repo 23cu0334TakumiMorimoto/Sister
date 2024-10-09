@@ -51,47 +51,50 @@ public class ATKGenerator : MonoBehaviour
         // 攻撃方向を更新
         GetDirection();
 
-        if(_autoAttack == true)
+        if (statusdata.PLAYER_PERSON != 0)
         {
-            // タイマーを更新
-            timer += Time.deltaTime;
-
-            // 指定の間隔で弾を生成して発射
-            if (timer >= _fireRate)
-            {
-                // 弾の生成
-                FireAtk();
-
-                timer = 0f; // タイマーをリセット
-            }
-        }
-
-        else
-        {
-            // Jキーかスペースキーで攻撃
-            if(Input.GetKey(KeyCode.J) || Input.GetKey(KeyCode.Space))
-            {
-                ATKflg = true;
-            }
-
-            if(ATKflg == true)
+            if (_autoAttack == true)
             {
                 // タイマーを更新
                 timer += Time.deltaTime;
-                // 弾の生成
-                if (timer >= statusdata.Attack_SPAN)
+
+                // 指定の間隔で弾を生成して発射
+                if (timer >= _fireRate)
                 {
+                    // 弾の生成
                     FireAtk();
 
-                    // 指定された時間プレイヤー操作を無効にする
-                    IAttacked.CallInoperable(statusdata.Attack_STIFFNESS);
-                    // 速度を０にする
-                    rb.velocity = new Vector2(0, 0);
+                    timer = 0f; // タイマーをリセット
+                }
+            }
 
-                    // タイマーをリセット
-                    timer = 0;
-                    // フラグを元に戻す
-                    ATKflg = false;
+            else
+            {
+                // JキーかZキーで攻撃
+                if (Input.GetKey(KeyCode.J) || Input.GetKey(KeyCode.Z))
+                {
+                    ATKflg = true;
+                }
+
+                if (ATKflg == true)
+                {
+                    // タイマーを更新
+                    timer += Time.deltaTime;
+                    // 弾の生成
+                    if (timer >= statusdata.Attack_SPAN)
+                    {
+                        FireAtk();
+
+                        // 指定された時間プレイヤー操作を無効にする
+                        IAttacked.CallInoperable(statusdata.Attack_STIFFNESS);
+                        // 速度を０にする
+                        rb.velocity = new Vector2(0, 0);
+
+                        // タイマーをリセット
+                        timer = 0;
+                        // フラグを元に戻す
+                        ATKflg = false;
+                    }
                 }
             }
         }
