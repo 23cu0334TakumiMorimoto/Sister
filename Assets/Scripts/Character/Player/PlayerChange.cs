@@ -30,6 +30,9 @@ public class PlayerChange : MonoBehaviour
         IsChanged = gameManagerObj.GetComponent<Inoperable>();
         rb = GetComponent<Rigidbody2D>();//Rigidbody2D‚Ìæ“¾
         ChangeCoolTimer = 3;
+
+        // ƒvƒŒƒCƒ„[‚Ìó‘Ô‚ğ‰Šú‰»
+        statusdata.PLAYER_PERSON = 1;
     }
 
     // Update is called once per frame

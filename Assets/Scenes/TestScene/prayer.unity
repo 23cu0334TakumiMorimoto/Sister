@@ -178,7 +178,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5451201076323808951, guid: b1293856fc8f71344bf83d4457f6fbe3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1914812379}
   m_SourcePrefab: {fileID: 100100000, guid: b1293856fc8f71344bf83d4457f6fbe3, type: 3}
 --- !u!1 &1714253362
 GameObject:
@@ -190,7 +193,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1714253365}
   - component: {fileID: 1714253364}
-  - component: {fileID: 1714253363}
   m_Layer: 0
   m_Name: TestSister
   m_TagString: Untagged
@@ -198,21 +200,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1714253363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1714253362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f9e7db3b51c70a4bb8028ce4a284cd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Prayarea: {fileID: 5451201076323808951, guid: b1293856fc8f71344bf83d4457f6fbe3, type: 3}
-  Expandspeed: 0.1
-  Areasize: 0.1
 --- !u!212 &1714253364
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -372,6 +359,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1914812376 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5451201076323808951, guid: b1293856fc8f71344bf83d4457f6fbe3, type: 3}
+  m_PrefabInstance: {fileID: 1520320436}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1914812379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914812376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccf12390fb8698d42a515c592e542777, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ExpandPower: 0.002
+  ExpandSpeed: 0.1
+  AreaSize: 0
+  ExpandLimit: 5
+  _destroyTime: 0.2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

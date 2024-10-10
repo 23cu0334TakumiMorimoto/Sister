@@ -28,8 +28,8 @@ public class Testpray : MonoBehaviour
     {
         // 時間計測
         _time += Time.deltaTime;
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
            
             //エリアが大きくなる速さ
             if (_time > Expandspeed)
@@ -43,7 +43,7 @@ public class Testpray : MonoBehaviour
                     _time = 0;
 
                 }
-            }
+          //  }
             //値を加算し、大きくする
             Prayarea.transform.localScale = new Vector3(Areasize, Areasize, Areasize);
         }

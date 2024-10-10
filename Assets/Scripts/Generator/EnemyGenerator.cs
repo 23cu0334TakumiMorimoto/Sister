@@ -69,7 +69,7 @@ public class EnemyGeneratorScript : MonoBehaviour
         _enemySpawnPos = _enemySpawnPos + _myPos;//プレイヤーの位置に先ほどの乱数を足した位置に生成する
         var enemy = Instantiate(Enemy, _enemySpawnPos, transform.rotation);//Prefabを生成する
 
-        Debug.Log(_enemySpawnPos);
+        //Debug.Log(_enemySpawnPos);
     }
 
 }
