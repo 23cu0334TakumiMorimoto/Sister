@@ -108,18 +108,15 @@ public class IsDamaged : MonoBehaviour
 
     }
 
-    //public void Dead()
-    //{
-    //    // 仮死状態なら処理
-    //    if (IsDead == true)
-    //    {
-    //        if (Input.GetKeyUp(KeyCode.J) || Input.GetKeyUp(KeyCode.J))
-    //        {
-    //            // オブジェクトを破棄する
-    //            Destroy(this.gameObject);
-    //        }
-    //    }
-    //}
+    public void Dead()
+    {
+        // 仮死状態なら処理
+        if (IsDead == true)
+        {
+            // オブジェクトを破棄する
+            Destroy(this.gameObject);
+        }
+    }
 
     // 引数１：ノックバックの強さ
     // 引数２：神像に触れたかどうか

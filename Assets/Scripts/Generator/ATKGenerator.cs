@@ -86,7 +86,7 @@ public class ATKGenerator : MonoBehaviour
                         FireAtk();
 
                         // 指定された時間プレイヤー操作を無効にする
-                        IAttacked.CallInoperable(statusdata.Attack_STIFFNESS);
+                        IAttacked.CallInoperable(statusdata.Attack_STIFFNESS, 0);
                         // 速度を０にする
                         rb.velocity = new Vector2(0, 0);
 

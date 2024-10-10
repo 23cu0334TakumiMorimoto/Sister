@@ -65,7 +65,7 @@ public class PlayerChange : MonoBehaviour
             Debug.Log("チェンジシスター");
             image.sprite = SisterSprite;
             // 指定された時間プレイヤー操作を無効にする
-            IsChanged.CallInoperable(statusdata.CHANGE_TRANSITION_TIME);
+            IsChanged.CallInoperable(statusdata.CHANGE_TRANSITION_TIME, 1);
             // 速度を０にする
             rb.velocity = new Vector2(0, 0);
             // 人格を切り替えてステータスを切り替える
@@ -83,7 +83,7 @@ public class PlayerChange : MonoBehaviour
             Debug.Log("チェンジデビル");
             image.sprite = DevilSprite;
             // 指定された時間プレイヤー操作を無効にする
-            IsChanged.CallInoperable(statusdata.CHANGE_TRANSITION_TIME);
+            IsChanged.CallInoperable(statusdata.CHANGE_TRANSITION_TIME, 1);
             // 速度を０にする
             rb.velocity = new Vector2(0, 0);
             // 人格を切り替えてステータスを切り替える
