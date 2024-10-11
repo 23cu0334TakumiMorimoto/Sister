@@ -100,11 +100,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf12390fb8698d42a515c592e542777, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  statusdata: {fileID: 0}
   ExpandPower: 0.002
   ExpandSpeed: 0.1
   AreaSize: 0
   ExpandLimit: 5
-  _destroyTime: 0.2
+  _destroyTime: 0
 --- !u!114 &-5285263360205437451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,7 +120,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statusdata: {fileID: 11400000, guid: 5a9840cb11c374646a320ac7a30231f6, type: 2}
   Sound: {fileID: 8300000, guid: c805ed12ea771d9429da70a7e0f8a9c1, type: 3}
-  _pray: 0
 --- !u!58 &8220528362892068777
 CircleCollider2D:
   m_ObjectHideFlags: 0

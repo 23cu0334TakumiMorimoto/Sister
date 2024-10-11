@@ -48,20 +48,10 @@ public class ExpandPray : MonoBehaviour
             }
         }
             transform.localScale = new Vector3(AreaSize, AreaSize, AreaSize);
-        // ãFÇËçUåÇÇîjä¸
-        OnDestroy();
     }
 
     private void FixedUpdate()
     {
         _pray.position = _player.transform.position;
-    }
-
-    private void OnDestroy()
-    {
-        if(Input.GetKeyUp(KeyCode.J) || Input.GetKeyUp(KeyCode.Z))
-        {
-            Destroy(gameObject, _destroyTime);
-        }
     }
 }

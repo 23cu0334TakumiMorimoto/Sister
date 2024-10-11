@@ -59,8 +59,16 @@ public class TestMover : MonoBehaviour
         //現在の状態がシスターの時
         if (statusdata.PLAYER_PERSON == 0)
         {
-            // 位置を移動させる
-            _rigidbody.velocity = dir * statusdata.SISTER_SPEED;
+            if(statusdata.IsPrayed != true)
+            {
+                // 位置を移動させる
+                _rigidbody.velocity = dir * statusdata.SISTER_SPEED;
+            }
+            else
+            {
+                // 速度を０にする
+                _rigidbody.velocity = new Vector2(0, 0);
+            }
         }
         // 現在の状態がデビルの時
         if (statusdata.PLAYER_PERSON == 1)

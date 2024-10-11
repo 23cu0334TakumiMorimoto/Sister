@@ -26,3 +26,5 @@ MonoBehaviour:
   CHANGE_TRANSITION_TIME: 0.2
   CHANGE_COOL_TIME: 3
   EXP: 0
+  IsPrayed: 0
+  DESTROY_PRAY: 0.1

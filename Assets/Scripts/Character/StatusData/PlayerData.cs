@@ -23,4 +23,10 @@ public class PlayerData : ScriptableObject
     public float CHANGE_TRANSITION_TIME; // 変身までの時間
     public float CHANGE_COOL_TIME; // 再変身までのクールタイム
     public int EXP; //経験値
+
+
+    // 祈っているかどうか
+    public bool IsPrayed;
+    // 祈りの消去時間
+    public float DESTROY_PRAY;
 }

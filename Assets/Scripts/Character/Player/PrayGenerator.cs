@@ -12,7 +12,7 @@ public class PrayGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        statusdata.IsPrayed = false;
     }
 
     // Update is called once per frame
@@ -22,6 +22,7 @@ public class PrayGenerator : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.Z))
             {
+                Debug.Log("ãFÇËê∂ê¨");
                 Instantiate(_prayPrefab, transform.position, Quaternion.identity);
                 Debug.Log("Pray");
             }

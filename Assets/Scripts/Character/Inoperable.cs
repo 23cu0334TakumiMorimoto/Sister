@@ -59,7 +59,7 @@ public class Inoperable : MonoBehaviour
     }
 
     // 第二引数は呼び出すコルーチン
-    // 0: All 1:MoveとAttack 2:Moveのみ
+    // 0: All 1:MoveとAttack 2:MoveとChange
     public void CallInoperable(float i,int num)
     {
         if(num == 0)
@@ -78,6 +78,7 @@ public class Inoperable : MonoBehaviour
         else if (num == 2)
         {
             StartCoroutine("MoveActiveInoperable", i); // 他のスクリプトから呼び出す用
+            StartCoroutine("ChangeActiveInoperable", i); // 他のスクリプトから呼び出す用
         }
 
     }
