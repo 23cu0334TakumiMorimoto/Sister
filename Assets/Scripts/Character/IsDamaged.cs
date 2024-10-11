@@ -42,6 +42,7 @@ public class IsDamaged : MonoBehaviour
     bool IsGetKeyUp;
    
     private Rigidbody2D rb;
+    private Animator _animator;
 
     void Start()
     {
@@ -53,6 +54,8 @@ public class IsDamaged : MonoBehaviour
         _currentHP = statusdata.MAXHP;
         rb = GetComponent<Rigidbody2D>();//Rigidbody2Dの取得
         IsGetKeyUp = false;
+        _animator = GetComponent<Animator>();
+        _animator.SetInteger("Action", 0);
 
         _deadTimer = 0f;
     }
@@ -158,6 +161,7 @@ public class IsDamaged : MonoBehaviour
     // 仮死状態
     public void Asphyxia()
     {
+        _animator.SetInteger("Action", 1);
         _deadTimer += Time.deltaTime;
         if(_deadTimer > statusdata.DEAD_TIME)
         {

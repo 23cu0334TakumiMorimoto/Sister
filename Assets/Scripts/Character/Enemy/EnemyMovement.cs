@@ -19,6 +19,7 @@ public class EnemyMovement : MonoBehaviour
     IsDamaged Dead;
 
     Rigidbody2D rb;
+    Animator _animator;
 
     private void Start()
     {

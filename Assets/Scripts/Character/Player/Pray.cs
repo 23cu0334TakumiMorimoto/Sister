@@ -8,6 +8,7 @@ public class Pray : MonoBehaviour
 
     public AudioClip Sound;
     private AudioSource _audioSource;
+    private Animator _animator;
 
     private bool _pray;
     private bool _audio;
@@ -19,6 +20,7 @@ public class Pray : MonoBehaviour
     {
         _audioSource = GetComponent<AudioSource>();
         _pray = false;
+        _animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame

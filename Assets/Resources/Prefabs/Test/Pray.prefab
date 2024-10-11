@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf12390fb8698d42a515c592e542777, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statusdata: {fileID: 0}
+  statusdata: {fileID: 11400000, guid: 5a9840cb11c374646a320ac7a30231f6, type: 2}
   ExpandPower: 0.005
   ExpandSpeed: 0.1
   AreaSize: 0

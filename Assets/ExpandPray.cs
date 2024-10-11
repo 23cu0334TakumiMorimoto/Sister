@@ -5,10 +5,8 @@ using UnityEngine;
 public class ExpandPray : MonoBehaviour
 {
     [SerializeField] PlayerData statusdata;
-    public float ExpandPower;
     public float ExpandSpeed;
     public float AreaSize;
-    public float ExpandLimit;
     public float _destroyTime;
     private float _expandTimer;              //時間計測するための変数
 
@@ -37,13 +35,13 @@ public class ExpandPray : MonoBehaviour
             // 指定された時間プレイヤー操作を無効にする
             IPrayed.CallInoperable(_expandTimer, 2);
 
-            if (ExpandLimit >= AreaSize)
+            if (statusdata.LIMIT_PRAY >= AreaSize)
             {
                 // 時間計測
                 _expandTimer += Time.deltaTime;
                 if (_expandTimer > ExpandSpeed)
                 {
-                    AreaSize += ExpandPower;
+                    AreaSize += statusdata.EXPAND_PRAY;
                 }
             }
         }

@@ -29,4 +29,8 @@ public class PlayerData : ScriptableObject
     public bool IsPrayed;
     // ‹F‚è‚ÌÁ‹ŠÔ
     public float DESTROY_PRAY;
+    // ‹F‚è‚Ì‘‰Á‚·‚é‹­‚³
+    public float EXPAND_PRAY;
+    // ‹F‚è‚Ì”ÍˆÍ§ŒÀ
+    public float LIMIT_PRAY;
 }

@@ -20,5 +20,5 @@ MonoBehaviour:
   MUTEKI_SPAN: 0.2
   Attack_SPAN: 0
   Attack_STIFFNESS: 0
-  DEAD_TIME: 10
+  DEAD_TIME: 20
   EXP: 3
