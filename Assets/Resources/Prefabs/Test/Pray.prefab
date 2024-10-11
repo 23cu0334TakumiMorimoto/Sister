@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -6228219455132468556}
   m_Layer: 0
   m_Name: Pray
-  m_TagString: Untagged
+  m_TagString: Pray
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statusdata: {fileID: 0}
-  ExpandPower: 0.002
+  ExpandPower: 0.005
   ExpandSpeed: 0.1
   AreaSize: 0
   ExpandLimit: 5
@@ -120,6 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statusdata: {fileID: 11400000, guid: 5a9840cb11c374646a320ac7a30231f6, type: 2}
   Sound: {fileID: 8300000, guid: c805ed12ea771d9429da70a7e0f8a9c1, type: 3}
+  _destroyTime: 0
 --- !u!58 &8220528362892068777
 CircleCollider2D:
   m_ObjectHideFlags: 0

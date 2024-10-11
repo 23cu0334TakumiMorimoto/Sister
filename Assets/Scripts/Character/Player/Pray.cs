@@ -11,7 +11,6 @@ public class Pray : MonoBehaviour
 
     private bool _pray;
     private bool _audio;
-    private bool _colEnemy;
 
     public float _destroyTime;
 
@@ -19,7 +18,6 @@ public class Pray : MonoBehaviour
     void Start()
     {
         _audioSource = GetComponent<AudioSource>();
-        _colEnemy = false;
         _pray = false;
     }
 
@@ -42,37 +40,24 @@ public class Pray : MonoBehaviour
             {
                 statusdata.IsPrayed = false;
             }
-
-            // ‹F‚è‚ª“G‚ÉÚG‚µ‚Ä‚¢‚é‚©
-            if(_colEnemy == true)
-            {
-                _pray = true;
-            }
-            else
-            {
-                // ‹F‚èUŒ‚‚ğ”jŠü
-                OnDestroy();
-            }
+            // ‹F‚èUŒ‚‚ğ”jŠü
+            OnDestroy();
         }
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (_pray == true)
-        {
-            if (col.gameObject.tag == "Enemy")
-            {
-                Debug.Log("‹F‚èŠJn");
-                col.gameObject.GetComponent<IsDamaged>().Dead();
-                // ‹F‚èUŒ‚‚ğ”jŠü
-                OnDestroy();
-                _pray = false;
-            }
-        }
-        if (col.gameObject.tag == "Enemy")
-        {
-            _colEnemy = true;
-        }
+        //if (_pray == true)
+        //{
+        //    if (col.gameObject.tag == "Enemy")
+        //    {
+        //        Debug.Log("‹F‚èŠJn");
+        //        col.gameObject.GetComponent<IsDamaged>().Dead();
+        //        // ‹F‚èUŒ‚‚ğ”jŠü
+        //        OnDestroy();
+        //        _pray = false;
+        //    }
+        //}
     }
 
     private void OnDestroy()

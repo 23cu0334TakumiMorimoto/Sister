@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.LowLevel;
 
 public class IsDamaged : MonoBehaviour
 {
@@ -35,6 +36,10 @@ public class IsDamaged : MonoBehaviour
 
     public float _currentHP;
     private float currentTime = 0f;
+
+    [SerializeField]
+    [Header("キーを離したかどうか")]
+    bool IsGetKeyUp;
    
     private Rigidbody2D rb;
 
@@ -47,6 +52,7 @@ public class IsDamaged : MonoBehaviour
         this.transform.LookAt(_playerPos);
         _currentHP = statusdata.MAXHP;
         rb = GetComponent<Rigidbody2D>();//Rigidbody2Dの取得
+        IsGetKeyUp = false;
 
         _deadTimer = 0f;
     }
@@ -85,6 +91,8 @@ public class IsDamaged : MonoBehaviour
         {
             Asphyxia();
         }
+
+        KeyState();
     }
 
     public void Damage(float damage)
@@ -157,4 +165,29 @@ public class IsDamaged : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    private void KeyState()
+    {
+        if (Input.GetKeyUp(KeyCode.J) || Input.GetKeyUp(KeyCode.Z))
+        {
+            IsGetKeyUp = true;
+            Debug.Log("Key Up");
+        }
+
+        else if(Input.GetKey(KeyCode.J) || Input.GetKey(KeyCode.Z) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.J))
+        {
+            IsGetKeyUp = false;
+            Debug.Log("Key Down");
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "Pray" && IsDead == true && IsGetKeyUp == true)
+        {
+            Debug.Log("祈りに衝突");
+            Destroy(gameObject);
+        }
+    }
+
 }
