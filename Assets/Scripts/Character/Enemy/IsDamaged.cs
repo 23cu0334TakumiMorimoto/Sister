@@ -12,7 +12,10 @@ public class IsDamaged : MonoBehaviour
     private Vector2 _godPos;
 
     // ステータスデータを読み込む
-    [SerializeField] StatusData statusdata;
+    [SerializeField] 
+    private StatusData _statusdata;
+    [SerializeField] 
+    private PlayerData _playerdata;
 
     // 攻撃を受けたときに出す画像
     [SerializeField]
@@ -43,6 +46,8 @@ public class IsDamaged : MonoBehaviour
    
     private Rigidbody2D rb;
     private Animator _animator;
+    private AudioSource _audioSource;
+    public AudioClip Sound;
 
     void Start()
     {
@@ -51,11 +56,12 @@ public class IsDamaged : MonoBehaviour
         _god = GameObject.FindGameObjectWithTag("God");
         _godPos = _god.transform.position;
         this.transform.LookAt(_playerPos);
-        _currentHP = statusdata.MAXHP;
+        _currentHP = _statusdata.MAXHP;
         rb = GetComponent<Rigidbody2D>();//Rigidbody2Dの取得
         IsGetKeyUp = false;
         _animator = GetComponent<Animator>();
         _animator.SetInteger("Action", 0);
+        _audioSource = GetComponent<AudioSource>();
 
         _deadTimer = 0f;
     }
@@ -64,7 +70,7 @@ public class IsDamaged : MonoBehaviour
         if (MUTEKI) //攻撃を受けてから0.2秒後にする処理
         {
             currentTime += Time.deltaTime;
-            if (currentTime > statusdata.MUTEKI_SPAN)
+            if (currentTime > _statusdata.MUTEKI_SPAN)
             {
                 currentTime = 0f;
                 MUTEKI = false;//無敵状態終わらせる
@@ -163,7 +169,7 @@ public class IsDamaged : MonoBehaviour
     {
         _animator.SetInteger("Action", 1);
         _deadTimer += Time.deltaTime;
-        if(_deadTimer > statusdata.DEAD_TIME)
+        if(_deadTimer > _statusdata.DEAD_TIME)
         {
             // オブジェクトを破棄する
             Destroy(this.gameObject);
@@ -185,12 +191,27 @@ public class IsDamaged : MonoBehaviour
         }
     }
 
+    private void SendSoul()
+    {
+        _playerdata.EXP += _statusdata.EXP;
+        Destroy(gameObject);
+    }
+
     void OnTriggerExit2D(Collider2D col)
     {
         if (col.gameObject.tag == "Pray" && IsDead == true && IsGetKeyUp == true)
         {
             Debug.Log("祈りに衝突");
-            Destroy(gameObject);
+            SendSoul();
+        }
+
+        if(col.gameObject.tag == "Attack")
+        {
+            NockBack(_statusdata.NockBack, false);
+            if(IsDead != true)
+            {
+                _audioSource.PlayOneShot(Sound);
+            }
         }
     }
 

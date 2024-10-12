@@ -27,9 +27,9 @@ public class ATK : MonoBehaviour
     {
         if (col.gameObject.tag == "Enemy")
         {
-            _audioSource.PlayOneShot(Sound);
+            // ‰¹‚ğ–Â‚ç‚µ‚Äƒ_ƒ[ƒW‚ğ—^‚¦‚é
+            //_audioSource.PlayOneShot(Sound);
             col.gameObject.GetComponent<IsDamaged>().Damage(statusdata.ATK);
-            col.gameObject.GetComponent<IsDamaged>().NockBack(statusdata.NockBack,false);
         }
     }
 }

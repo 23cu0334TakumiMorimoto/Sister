@@ -6,6 +6,10 @@ using TMPro;
 
 public class TestFost : MonoBehaviour
 {
+    // ステータスデータを読み込む
+    [SerializeField]
+    private PlayerData _statusdata;
+
     public GameObject TextDisplay;           //表示するためのテキストを指定
 
     public int SpriteNumber;                 //入れるための番号を設置
@@ -21,17 +25,20 @@ public class TestFost : MonoBehaviour
         _testtext = TextDisplay.GetComponent<TextMeshProUGUI>();
         SpriteNumber = 0;
         _time = 0;
-       
+        _statusdata.EXP = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //スペースキーが押されたら魂を１０取得する
-        if (Input.GetKeyDown(KeyCode.Space))
+        // プレイヤーの魂を反映する
+        _currentsoul = _statusdata.EXP;
+
+        if(Input.GetKeyDown(KeyCode.Space))
         {
-            _currentsoul += 10;
+            _currentsoul -= 10;
         }
+
         // 時間計測
         _time += Time.deltaTime;
 
