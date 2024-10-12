@@ -38,4 +38,20 @@ public class CallPauseUi : MonoBehaviour
         }
     }
 
+    public void PressButton()
+    {
+        if(_pauseFlg == true)
+        {
+            Time.timeScale = 1;
+            _pauseFlg = false;
+            _pauseUI.SetActive(false);
+        }
+        else
+        {
+            Time.timeScale = 0;
+            _pauseFlg = true;
+            _pauseUI.SetActive(true);
+        }
+    }
+
 }

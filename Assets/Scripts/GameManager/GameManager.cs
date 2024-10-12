@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.F1))
         {
+            Scene ThisScene = SceneManager.GetActiveScene();
             SceneManager.LoadScene("TestMainGame");
         }
     }
