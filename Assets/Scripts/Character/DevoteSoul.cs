@@ -7,14 +7,13 @@ public class NewBehaviourScript : MonoBehaviour
     // ステータスデータを読み込む
     [SerializeField]
     private PlayerData _playerdata;
-
-    // 現在の魂
-    public int _currentSoul;
+    [SerializeField]
+    private GodData _goddata;
 
     // Start is called before the first frame update
     void Start()
     {
-        _currentSoul = 0;
+        _goddata.EXP = 0;
     }
 
     // Update is called once per frame
@@ -35,7 +34,7 @@ public class NewBehaviourScript : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.L))
         {
-            _currentSoul += _playerdata.EXP;
+            _goddata.EXP += _playerdata.EXP;
             _playerdata.EXP = 0;
         }
     }
