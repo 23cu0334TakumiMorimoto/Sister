@@ -34,10 +34,10 @@ public class TestFost : MonoBehaviour
         // プレイヤーの魂を反映する
         _currentsoul = _statusdata.EXP;
 
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            _currentsoul -= 10;
-        }
+        //if(Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    _statusdata.EXP -= 10;
+        //}
 
         // 時間計測
         _time += Time.deltaTime;
@@ -53,7 +53,16 @@ public class TestFost : MonoBehaviour
                 // 時間をリセット
                 _time = 0;
             }
+            // 999まで指定しておく。また現在の魂の数より減っているなら減算する
+            else if (SpriteNumber > _currentsoul && SpriteNumber < 999) // 0から999まで
+            {
+                //数値が減るように見せるため１ずつ引いていく
+                SpriteNumber--;
+                // 時間をリセット
+                _time = 0;
+            }
         }
+
         // 数値を桁ごとに表示する
         _testtext.text = FormatNumber(SpriteNumber);
        

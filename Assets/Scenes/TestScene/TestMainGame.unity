@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 317164834}
   - component: {fileID: 317164837}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 1, g: 0.97164285, b: 0, a: 1}
     m_PressedColor: {r: 0, g: 0.42557764, b: 1, a: 1}
     m_SelectedColor: {r: 1, g: 0, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -1357,7 +1357,7 @@ GameObject:
   - component: {fileID: 1418915195}
   - component: {fileID: 1418915196}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Retry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1405,7 +1405,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9553981, g: 1, b: 0, a: 1}
     m_PressedColor: {r: 0, g: 0.42557764, b: 1, a: 1}
     m_SelectedColor: {r: 1, g: 0, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -1603,6 +1603,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1616097248 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7123402313978303136, guid: d6bc058e4b3eb39459ec9604fab62616, type: 3}
+  m_PrefabInstance: {fileID: 5639419079561798210}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1616097254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616097248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67d2d852a16f7ce43a9edf3f4bbd1a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerdata: {fileID: 11400000, guid: 5a9840cb11c374646a320ac7a30231f6, type: 2}
+  _currentSoul: 0
 --- !u!4 &1696932031 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5795790146733264729, guid: 8566857b4aa18224d96702ccc53a08a2, type: 3}
@@ -1639,7 +1658,7 @@ GameObject:
   - component: {fileID: 1966043602}
   - component: {fileID: 1966043601}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: SoulUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2132,7 +2151,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7123402313978303136, guid: d6bc058e4b3eb39459ec9604fab62616, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1616097254}
   m_SourcePrefab: {fileID: 100100000, guid: d6bc058e4b3eb39459ec9604fab62616, type: 3}
 --- !u!1001 &6511856392400555875
 PrefabInstance:

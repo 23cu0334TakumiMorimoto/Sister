@@ -62,7 +62,7 @@ public class God : MonoBehaviour
                 Destroy(col.gameObject);
             }
         }
-        Debug.Log("è’ìÀ");
+        //Debug.Log("è’ìÀ");
     }
 
     private void UpdateHp()
