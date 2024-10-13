@@ -33,3 +33,5 @@ MonoBehaviour:
     exp: 120
   - level: 10
     exp: 150
+  - level: 11
+    exp: 10000
