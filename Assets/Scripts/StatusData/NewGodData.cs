@@ -4,8 +4,8 @@ using UnityEngine;
 
 [CreateAssetMenu(menuName = "Data/Create GodData")]
 
-public class GodData : ScriptableObject
-{
+public class NewGodData : ScriptableObject
+{ 
     public float MAXHP; // ç≈ëÂHP
     public int LV;
     public int EXP; //åoå±íl

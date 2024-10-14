@@ -10,7 +10,7 @@ public class LVCount : MonoBehaviour
     [SerializeField]
     private NecessarySoul _lvData;
     [SerializeField]
-    private GodData _godData;
+    private NewGodData _godData;
 
     //表示するためのテキストを指定
     public GameObject TextDisplay;
@@ -21,6 +21,9 @@ public class LVCount : MonoBehaviour
 
     private int _nowLevel;
 
+    private GameObject _gameManager;
+    private CallUI _callUI;
+
     void Start()
     {
         // 神の像のステータス初期化
@@ -30,6 +33,9 @@ public class LVCount : MonoBehaviour
         _testtext = TextDisplay.GetComponent<TextMeshProUGUI>();
         SpriteNumber = 0;
         _nowLevel = 1;
+
+        _gameManager = GameObject.Find("GameManager");
+        _callUI = _gameManager.GetComponent<CallUI>();
     }
 
     void Update()
@@ -46,6 +52,8 @@ public class LVCount : MonoBehaviour
         {
             _godData.LV += 1;
             _nowLevel += 1;
+            // レベルアップウィンドウを呼び出す
+            _callUI.LVUP();
         }
     }
 

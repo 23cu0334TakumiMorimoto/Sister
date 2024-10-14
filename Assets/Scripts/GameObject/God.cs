@@ -5,7 +5,7 @@ using UnityEngine;
 public class God : MonoBehaviour
 {
 
-    [SerializeField] GodData statusdata;
+    [SerializeField] NewGodData statusdata;
 
     [SerializeField]
     [Header("Å‘å‘Ì—Í")]

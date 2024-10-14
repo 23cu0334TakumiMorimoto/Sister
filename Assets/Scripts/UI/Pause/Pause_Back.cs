@@ -8,12 +8,12 @@ public class Pause_Back : MonoBehaviour
 {
     public Button myButton;
     private GameObject _gameManager;
-    private CallPauseUi _pause;
+    private CallUI _pause;
 
     void Start()
     {
         _gameManager = GameObject.Find("GameManager");
-        _pause = _gameManager.GetComponent<CallPauseUi>();
+        _pause = _gameManager.GetComponent<CallUI>();
 
         if (myButton != null)
         {
@@ -23,6 +23,6 @@ public class Pause_Back : MonoBehaviour
 
     void OnButtonClick()
     {
-        _pause.PressButton();
+        _pause.PressPause();
     }
 }

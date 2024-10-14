@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CallPauseUi : MonoBehaviour
+public class CallUI : MonoBehaviour
 {
     private bool _pauseFlg;
     private GameObject _pauseUI;
+    private GameObject _lvUpUI;
 
     private void Start()
     {
         _pauseFlg = false;
         _pauseUI = GameObject.Find("PauseUI");
+        _lvUpUI = GameObject.Find("LVupUI");
 
         _pauseUI.SetActive(false);
+        _lvUpUI.SetActive(false);
     }
 
     private void Update()
@@ -38,7 +41,7 @@ public class CallPauseUi : MonoBehaviour
         }
     }
 
-    public void PressButton()
+    public void PressPause()
     {
         if(_pauseFlg == true)
         {
@@ -52,6 +55,12 @@ public class CallPauseUi : MonoBehaviour
             _pauseFlg = true;
             _pauseUI.SetActive(true);
         }
+    }
+
+    public void LVUP()
+    {
+        _lvUpUI.SetActive(true);
+        Time.timeScale = 0;
     }
 
 }

@@ -10,13 +10,13 @@ public class Pause_Retry : MonoBehaviour
 {
     public Button myButton;
     private GameObject _gameManager;
-    private CallPauseUi _pause;
+    private CallUI _pause;
 
     // Start is called before the first frame update
     void Start()
     {
         _gameManager = GameObject.Find("GameManager");
-        _pause = _gameManager.GetComponent<CallPauseUi>();
+        _pause = _gameManager.GetComponent<CallUI>();
         if (myButton != null)
         {
             myButton.onClick.AddListener(OnButtonClick);
@@ -25,7 +25,7 @@ public class Pause_Retry : MonoBehaviour
 
     void OnButtonClick()
     {
-        _pause.PressButton();
+        _pause.PressPause();
         SceneManager.LoadScene("TestMainGame");
     }
 }

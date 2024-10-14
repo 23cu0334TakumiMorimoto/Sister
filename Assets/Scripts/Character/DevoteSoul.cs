@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class DevoteSoul : MonoBehaviour
 {
     // ステータスデータを読み込む
     [SerializeField]
     private PlayerData _playerdata;
     [SerializeField]
-    private GodData _goddata;
+    private NewGodData _goddata;
 
     // Start is called before the first frame update
     void Start()
@@ -26,11 +26,11 @@ public class NewBehaviourScript : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-            DevoteSoul();
+            ActiveDevoteSoul();
         }
     }
 
-    private void DevoteSoul()
+    private void ActiveDevoteSoul()
     {
         if(Input.GetKeyDown(KeyCode.L))
         {

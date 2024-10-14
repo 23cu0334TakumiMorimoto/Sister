@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e37871387cef0ec4992f60316daa7e45, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b0c939ad47b6a144a97546e12ef2f2f, type: 3}
   m_Name: GodData
   m_EditorClassIdentifier: 
-  MAXHP: 0
-  LV: 9
-  EXP: 130
+  MAXHP: 100
+  LV: 4
+  EXP: 30
