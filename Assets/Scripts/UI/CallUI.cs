@@ -5,17 +5,34 @@ using UnityEngine;
 public class CallUI : MonoBehaviour
 {
     private bool _pauseFlg;
+    [SerializeField]
     private GameObject _pauseUI;
+    [SerializeField]
     private GameObject _lvUpUI;
+    [SerializeField]
+    private GameObject _pauseArrow;
+    [SerializeField]
+    private GameObject _lvArrow;
+    [SerializeField]
+    private GameObject _initPause;
+    [SerializeField]
+    private GameObject _initLV;
+
+    private PauseSelectUI _pauseSelect;
+    private SkillSelectUI _skillSelect;
+
 
     private void Start()
     {
         _pauseFlg = false;
-        _pauseUI = GameObject.Find("PauseUI");
-        _lvUpUI = GameObject.Find("LVupUI");
 
         _pauseUI.SetActive(false);
         _lvUpUI.SetActive(false);
+        _pauseArrow.SetActive(false);
+        _lvArrow.SetActive(false);
+
+        _pauseSelect = gameObject.GetComponent<PauseSelectUI>();
+        _skillSelect = gameObject.GetComponent<SkillSelectUI>();
     }
 
     private void Update()
@@ -30,13 +47,18 @@ public class CallUI : MonoBehaviour
             Time.timeScale = 0;
             _pauseFlg = true;
             _pauseUI.SetActive(true);
+            _pauseArrow.SetActive(true);
             Debug.Log("ポーズ開始");
+
+            // 矢印の位置初期化
+            _pauseSelect.InitSelect();
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && _pauseFlg == true)
         {
             Time.timeScale = 1;
             _pauseFlg = false;
             _pauseUI.SetActive(false);
+            _pauseArrow.SetActive(false);
             Debug.Log("ポーズ終了");
         }
     }
@@ -48,6 +70,7 @@ public class CallUI : MonoBehaviour
             Time.timeScale = 1;
             _pauseFlg = false;
             _pauseUI.SetActive(false);
+            _pauseArrow.SetActive(false);
         }
         else
         {
@@ -60,7 +83,16 @@ public class CallUI : MonoBehaviour
     public void LVUP()
     {
         _lvUpUI.SetActive(true);
+        _lvArrow.SetActive(true);
         Time.timeScale = 0;
+        // 矢印の位置初期化
+        _skillSelect.InitSelect();
     }
 
+    public void PressLVUP()
+    {
+        Time.timeScale = 1;
+        _lvUpUI.SetActive(false);
+        _lvArrow.SetActive(false);
+    }
 }
