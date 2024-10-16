@@ -31,8 +31,8 @@ public class CallUI : MonoBehaviour
         _pauseArrow.SetActive(false);
         _lvArrow.SetActive(false);
 
-        _pauseSelect = gameObject.GetComponent<PauseSelectUI>();
-        _skillSelect = gameObject.GetComponent<SkillSelectUI>();
+        _pauseSelect = _initPause.GetComponent<PauseSelectUI>();
+        _skillSelect = _initLV.GetComponent<SkillSelectUI>();
     }
 
     private void Update()

@@ -144,6 +144,8 @@ public class PauseSelectUI : Selectable, IPointerClickHandler
             EventSystem.current.SetSelectedGameObject(gameObject);
             // ƒtƒ‰ƒO‚ğ—LŒø‰»
             IsSelected = true;
+
+            Debug.Log("–îˆó‰Šú‰»");
         }
     }
 }
