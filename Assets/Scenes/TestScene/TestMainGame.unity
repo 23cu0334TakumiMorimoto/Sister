@@ -3358,30 +3358,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1990138561}
-  - component: {fileID: 1990138560}
+  - component: {fileID: 1990138562}
   m_Layer: 0
-  m_Name: LV_UIGenerator
+  m_Name: SkillManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1990138560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1990138559}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6945306e917275d4ca8ba965802c17df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillData:
-  - SkillNumber: 0
-    SkillGrade: 0
-    SkillSprite: {fileID: 0}
 --- !u!4 &1990138561
 Transform:
   m_ObjectHideFlags: 0
@@ -3397,6 +3381,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1990138562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990138559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 626d0f5a3984550419b35214d07c3e56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillData:
+  - SkillNumber: 0
+    SkillName: HP_UP
+    SkillGrade: 0
+    AppearPhase: 0
+    SkillSprite: {fileID: 0}
+  _normalProbability: 70
+  _rareProbability: 20
+  _superRareProbability: 10
 --- !u!1 &2002878921
 GameObject:
   m_ObjectHideFlags: 0
@@ -3987,7 +3992,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7488580249280154552, guid: 5f2d4478bfa231c4a802eb19268092e0, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
