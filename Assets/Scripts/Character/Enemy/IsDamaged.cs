@@ -210,7 +210,7 @@ public class IsDamaged : MonoBehaviour
             NockBack(_statusdata.NockBack, false);
             if(IsDead != true)
             {
-                _audioSource.PlayOneShot(Sound);
+                //_audioSource.PlayOneShot(Sound);
             }
         }
     }
