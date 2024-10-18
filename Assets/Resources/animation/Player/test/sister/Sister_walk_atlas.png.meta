@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bd516f330be58fb4da08614e07938720
+guid: 0505cde79eba16d4a8af033ef6397a99
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 135
+  spritePixelsToUnits: 260
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,9 +70,9 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AngrySister_attack_atlas_0
+      name: Sister_walk_atlas_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1200
-        width: 1400
-        height: 1200
+        y: 720
+        width: 512
+        height: 720
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 371adf73d84e125489e5213c0b7c6fb5
-      internalID: -1350705486
+      spriteID: df7ba671c856fbb499a432b2a4e5191e
+      internalID: -273363358
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AngrySister_attack_atlas_1
+      name: Sister_walk_atlas_1
       rect:
         serializedVersion: 2
-        x: 1400
-        y: 1200
-        width: 1400
-        height: 1200
+        x: 512
+        y: 720
+        width: 512
+        height: 720
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,20 +132,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2a65e643110a1643a056cbc11ed1fa6
-      internalID: 1142686801
+      spriteID: cf5f510db8ed2494ea90cbb04a79ac7a
+      internalID: -1621652203
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AngrySister_attack_atlas_2
+      name: Sister_walk_atlas_2
       rect:
         serializedVersion: 2
-        x: 2800
-        y: 1200
-        width: 1400
-        height: 1200
+        x: 1024
+        y: 720
+        width: 512
+        height: 720
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 329d16eaf86f85a4fa3dc9c51ba024db
-      internalID: 527804394
+      spriteID: 7167c2cd36a06c948b4676a3bc9eb99d
+      internalID: 514065819
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AngrySister_attack_atlas_3
+      name: Sister_walk_atlas_3
       rect:
         serializedVersion: 2
-        x: 4200
-        y: 1200
-        width: 1400
-        height: 1200
+        x: 1536
+        y: 720
+        width: 512
+        height: 720
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,20 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a7d23cb52f59ec459b5f065162c58ee
-      internalID: -258014999
+      spriteID: 4c8456fe11e67c94c8a63c7957da9864
+      internalID: 2051500860
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AngrySister_attack_atlas_4
+      name: Sister_walk_atlas_4
       rect:
         serializedVersion: 2
-        x: 5600
-        y: 1200
-        width: 1400
-        height: 1200
+        x: 2048
+        y: 720
+        width: 512
+        height: 720
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,20 +195,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eaad15c5edfab2c459650c0d991b47de
-      internalID: 978885568
+      spriteID: 017840222a485bb44bbb801a38457a24
+      internalID: 303863781
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AngrySister_attack_atlas_5
+      name: Sister_walk_atlas_5
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 720
+        width: 512
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ccf506f4c1f17446b54402acdadeb61
+      internalID: -1993264197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sister_walk_atlas_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1400
-        height: 1200
+        width: 512
+        height: 720
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,20 +237,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ce9451de5a0eb14e9fe6a4e04c661b5
-      internalID: -221135624
+      spriteID: 456598495f2f8cf418f7cc9ae2bb45b0
+      internalID: 1232738018
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AngrySister_attack_atlas_6
+      name: Sister_walk_atlas_7
       rect:
         serializedVersion: 2
-        x: 1400
+        x: 512
         y: 0
-        width: 1400
-        height: 1200
+        width: 512
+        height: 720
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,20 +258,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 313ca376a9e44a34e95c7671f1c026b8
-      internalID: -1052046412
+      spriteID: b938855d376a2444e9913d6797543ade
+      internalID: -1455049149
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AngrySister_attack_atlas_7
+      name: Sister_walk_atlas_8
       rect:
         serializedVersion: 2
-        x: 2800
+        x: 1024
         y: 0
-        width: 1400
-        height: 1200
+        width: 512
+        height: 720
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,20 +279,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4abf7a57f21d7a40b97314576a26156
-      internalID: 1332004899
+      spriteID: 2f1fdc4381f9f4f41935e87b88207c2e
+      internalID: 1095006327
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AngrySister_attack_atlas_8
+      name: Sister_walk_atlas_9
       rect:
         serializedVersion: 2
-        x: 4200
+        x: 1536
         y: 0
-        width: 1400
-        height: 1200
+        width: 512
+        height: 720
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -279,20 +300,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85258c14fd9e68f4b89189f5299dad82
-      internalID: 1849973794
+      spriteID: 725fb251a769fca49b7f5cc21afbbbeb
+      internalID: -2039618555
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AngrySister_attack_atlas_9
+      name: Sister_walk_atlas_10
       rect:
         serializedVersion: 2
-        x: 5600
+        x: 2048
         y: 0
-        width: 1400
-        height: 1200
+        width: 512
+        height: 720
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -300,8 +321,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2a94c58abf1963448bb96cf030ce04cf
-      internalID: -1457680654
+      spriteID: 883044e49a912cf408a6cf59875a4c49
+      internalID: -934582255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sister_walk_atlas_11
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 0
+        width: 512
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d5596092d84f5c459cf20ca671b1e9f
+      internalID: 1726225085
       vertices: []
       indices: 
       edges: []
@@ -317,16 +359,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      AngrySister_attack_atlas_0: -1350705486
-      AngrySister_attack_atlas_1: 1142686801
-      AngrySister_attack_atlas_2: 527804394
-      AngrySister_attack_atlas_3: -258014999
-      AngrySister_attack_atlas_4: 978885568
-      AngrySister_attack_atlas_5: -221135624
-      AngrySister_attack_atlas_6: -1052046412
-      AngrySister_attack_atlas_7: 1332004899
-      AngrySister_attack_atlas_8: 1849973794
-      AngrySister_attack_atlas_9: -1457680654
+      Sister_walk_atlas_0: -273363358
+      Sister_walk_atlas_1: -1621652203
+      Sister_walk_atlas_10: -934582255
+      Sister_walk_atlas_11: 1726225085
+      Sister_walk_atlas_2: 514065819
+      Sister_walk_atlas_3: 2051500860
+      Sister_walk_atlas_4: 303863781
+      Sister_walk_atlas_5: -1993264197
+      Sister_walk_atlas_6: 1232738018
+      Sister_walk_atlas_7: -1455049149
+      Sister_walk_atlas_8: 1095006327
+      Sister_walk_atlas_9: -2039618555
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3bccb2b2cc3f7a248a6edfaec2175465
+guid: bd516f330be58fb4da08614e07938720
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 350
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,9 +70,9 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sister_pray_atlas_0
+      name: AngrySister_attack_atlas_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 720
-        width: 512
-        height: 720
+        y: 1200
+        width: 1400
+        height: 1200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3beed444f4554054bafcab7566ed5388
-      internalID: -1765940783
+      spriteID: 371adf73d84e125489e5213c0b7c6fb5
+      internalID: -1350705486
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sister_pray_atlas_1
+      name: AngrySister_attack_atlas_1
       rect:
         serializedVersion: 2
-        x: 512
-        y: 720
-        width: 512
-        height: 720
+        x: 1400
+        y: 1200
+        width: 1400
+        height: 1200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,20 +132,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8db85722dd7f4f2409b067341f732a54
-      internalID: 85701196
+      spriteID: c2a65e643110a1643a056cbc11ed1fa6
+      internalID: 1142686801
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sister_pray_atlas_2
+      name: AngrySister_attack_atlas_2
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 720
-        width: 512
-        height: 720
+        x: 2800
+        y: 1200
+        width: 1400
+        height: 1200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f6ca9aebcdd88e4f9a9ca03bc4a0a10
-      internalID: 903471270
+      spriteID: 329d16eaf86f85a4fa3dc9c51ba024db
+      internalID: 527804394
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sister_pray_atlas_3
+      name: AngrySister_attack_atlas_3
       rect:
         serializedVersion: 2
-        x: 1536
-        y: 720
-        width: 512
-        height: 720
+        x: 4200
+        y: 1200
+        width: 1400
+        height: 1200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,20 +174,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29ad85c709320d548bf3d72138243193
-      internalID: 2146332161
+      spriteID: 4a7d23cb52f59ec459b5f065162c58ee
+      internalID: -258014999
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sister_pray_atlas_4
+      name: AngrySister_attack_atlas_4
+      rect:
+        serializedVersion: 2
+        x: 5600
+        y: 1200
+        width: 1400
+        height: 1200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaad15c5edfab2c459650c0d991b47de
+      internalID: 978885568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AngrySister_attack_atlas_5
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 512
-        height: 720
+        width: 1400
+        height: 1200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,20 +216,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36e05ba2f6c4e6348a08d17b23bf3129
-      internalID: -466013742
+      spriteID: 0ce9451de5a0eb14e9fe6a4e04c661b5
+      internalID: -221135624
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sister_pray_atlas_5
+      name: AngrySister_attack_atlas_6
       rect:
         serializedVersion: 2
-        x: 512
+        x: 1400
         y: 0
-        width: 512
-        height: 720
+        width: 1400
+        height: 1200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,20 +237,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4883d412fb438224990b1755561ca2c8
-      internalID: -1207319301
+      spriteID: 313ca376a9e44a34e95c7671f1c026b8
+      internalID: -1052046412
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sister_pray_atlas_6
+      name: AngrySister_attack_atlas_7
       rect:
         serializedVersion: 2
-        x: 1024
+        x: 2800
         y: 0
-        width: 512
-        height: 720
+        width: 1400
+        height: 1200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,20 +258,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dfe411f023ebe30438baa7e2aa81c51d
-      internalID: -1554184746
+      spriteID: f4abf7a57f21d7a40b97314576a26156
+      internalID: 1332004899
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sister_pray_atlas_7
+      name: AngrySister_attack_atlas_8
       rect:
         serializedVersion: 2
-        x: 1536
+        x: 4200
         y: 0
-        width: 512
-        height: 720
+        width: 1400
+        height: 1200
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,8 +279,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f394f5e1caabb648bc9ae735d4071a4
-      internalID: 1097517332
+      spriteID: 85258c14fd9e68f4b89189f5299dad82
+      internalID: 1849973794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AngrySister_attack_atlas_9
+      rect:
+        serializedVersion: 2
+        x: 5600
+        y: 0
+        width: 1400
+        height: 1200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a94c58abf1963448bb96cf030ce04cf
+      internalID: -1457680654
       vertices: []
       indices: 
       edges: []
@@ -275,14 +317,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Sister_pray_atlas_0: -1765940783
-      Sister_pray_atlas_1: 85701196
-      Sister_pray_atlas_2: 903471270
-      Sister_pray_atlas_3: 2146332161
-      Sister_pray_atlas_4: -466013742
-      Sister_pray_atlas_5: -1207319301
-      Sister_pray_atlas_6: -1554184746
-      Sister_pray_atlas_7: 1097517332
+      AngrySister_attack_atlas_0: -1350705486
+      AngrySister_attack_atlas_1: 1142686801
+      AngrySister_attack_atlas_2: 527804394
+      AngrySister_attack_atlas_3: -258014999
+      AngrySister_attack_atlas_4: 978885568
+      AngrySister_attack_atlas_5: -221135624
+      AngrySister_attack_atlas_6: -1052046412
+      AngrySister_attack_atlas_7: 1332004899
+      AngrySister_attack_atlas_8: 1849973794
+      AngrySister_attack_atlas_9: -1457680654
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

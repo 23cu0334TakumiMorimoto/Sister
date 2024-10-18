@@ -35,6 +35,7 @@ public class ATKGenerator : MonoBehaviour
     private bool ATKflg;
 
     private Rigidbody2D rb;
+    private Animator _animator;
 
     private void Start()
     {
@@ -71,7 +72,7 @@ public class ATKGenerator : MonoBehaviour
             else
             {
                 // JキーかZキーで攻撃
-                if (Input.GetKey(KeyCode.J) || Input.GetKey(KeyCode.Z))
+                if (Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.Z))
                 {
                     ATKflg = true;
                 }

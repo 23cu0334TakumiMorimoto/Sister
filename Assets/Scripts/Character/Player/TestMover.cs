@@ -13,12 +13,17 @@ public class TestMover : MonoBehaviour
     private PlayerInputs _gameInputs;
     private Vector2 _moveInputValue;
 
+    private Animator _animator;
+
 
     private void Awake()
     {
         _sr = GetComponent<SpriteRenderer>();
         _rigidbody = GetComponent<Rigidbody2D>();
         _rigidbody.gravityScale = 0;
+
+        _animator = GetComponent<Animator>();
+        _animator.SetInteger("Action", 0);
 
         // Actionスクリプトのインスタンス生成
         _gameInputs = new PlayerInputs();
@@ -59,15 +64,28 @@ public class TestMover : MonoBehaviour
         //現在の状態がシスターの時
         if (statusdata.PLAYER_PERSON == 0)
         {
+            // 祈っていないなら
             if(statusdata.IsPrayed != true)
             {
                 // 位置を移動させる
                 _rigidbody.velocity = dir * statusdata.SISTER_SPEED;
+                if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) ||
+                    Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
+                    {
+                    _animator.SetInteger("Action", 1);
+                }
+                else
+                {
+                    _animator.SetInteger("Action", 0);
+                }
+                
             }
+            // 祈っているなら
             else
             {
                 // 速度を０にする
                 _rigidbody.velocity = new Vector2(0, 0);
+                _animator.SetInteger("Action", 2);
             }
         }
         // 現在の状態がデビルの時
@@ -75,6 +93,21 @@ public class TestMover : MonoBehaviour
         {
             // 位置を移動させる
             _rigidbody.velocity = dir * statusdata.DEVIL_SPEED;
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) ||
+                    Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow) && !Input.GetKeyDown(KeyCode.J))
+            {
+               
+                _animator.SetInteger("Action", 4);
+                
+            }
+            else if(Input.GetKeyDown(KeyCode.J))
+            {
+                _animator.SetInteger("Action", 5);
+            }
+            else
+            {
+                _animator.SetInteger("Action", 3);   
+            }
         }
     }
 
