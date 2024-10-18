@@ -16,7 +16,7 @@ MonoBehaviour:
   ATK: 1
   DEF: 0
   SPEED: 1
-  NockBack: 3
+  NockBack: 5
   MUTEKI_SPAN: 0.2
   Attack_SPAN: 0
   Attack_STIFFNESS: 0

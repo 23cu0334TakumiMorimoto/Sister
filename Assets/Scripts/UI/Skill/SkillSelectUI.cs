@@ -29,6 +29,9 @@ public class SkillSelectUI : Selectable, IPointerClickHandler
     private GameObject _gameManager;
     private CallUI _pause;
 
+    // 差し替え画像
+    private Image image;
+
     protected override void Start()
     {
         //if (InitArrow == true)
@@ -48,6 +51,9 @@ public class SkillSelectUI : Selectable, IPointerClickHandler
         //GetComponent<Image>().material.color = new Color(255, 255, 255);
         _gameManager = GameObject.Find("GameManager");
         _pause = _gameManager.GetComponent<CallUI>();
+
+        // SpriteRendererを取得
+        image = GetComponent<Image>();
     }
 
     private void Update()
@@ -123,6 +129,7 @@ public class SkillSelectUI : Selectable, IPointerClickHandler
     }
 
     // 外部からのみアクセス
+    // 矢印の初期化
     public void InitSelect()
     {
         if (InitArrow == true)
@@ -136,6 +143,13 @@ public class SkillSelectUI : Selectable, IPointerClickHandler
             // フラグを有効化
             IsSelected = true;
         }
+    }
+
+    // 能力を反映する
+    public void ReceiveSkillData(int SkillNum, Sprite SkillSprite)
+    {
+        Debug.Log(SkillNum);
+        image.sprite = SkillSprite;
     }
 }
 
