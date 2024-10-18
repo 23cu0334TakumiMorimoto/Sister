@@ -9,6 +9,11 @@ public class PrayGenerator : MonoBehaviour
     // UŒ‚”»’è‚Ì’e‚ÌƒvƒŒƒnƒu
     [SerializeField] private GameObject _prayPrefab;
 
+    void Awake()
+    {
+        Application.targetFrameRate = 60;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
