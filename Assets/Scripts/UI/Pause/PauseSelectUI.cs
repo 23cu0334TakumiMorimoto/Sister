@@ -23,6 +23,7 @@ public class PauseSelectUI : Selectable, IPointerClickHandler
 
     // 現在のセレクト状態
     private bool IsSelected;
+    private bool OnClicked;
 
     private GameObject _gameManager;
     private CallUI _pause;
@@ -75,6 +76,9 @@ public class PauseSelectUI : Selectable, IPointerClickHandler
 
         // transformのアニメーション
         transform.localScale = Vector3.one * 1.3f;
+
+        // フラグを有効化
+        IsSelected = true;
     }
 
     public override void OnDeselect(BaseEventData eventData)
@@ -93,32 +97,33 @@ public class PauseSelectUI : Selectable, IPointerClickHandler
 
         // フラグを無効化
         IsSelected = false;
+        OnClicked = false;
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("押された");
 
-        if (IsSelected == true)
+        if (OnClicked == true)
         {
             // クリックされた時に行いたい処理
             PauseProcess();
         }
 
         // フラグを有効化
-        IsSelected = true;
+        OnClicked = true;
     }
 
     void PauseProcess()
     {
-        if(_UI == UIList.Retry)
+        if(_UI == UIList.Retry && IsSelected == true)
         {
             Debug.Log("リトライ処理");
             // シーンをリロード
             _pause.PressPause();
             SceneManager.LoadScene("TestMainGame");
         }
-        else if (_UI == UIList.Back)
+        else if (_UI == UIList.Back && IsSelected == true)
         {
             Debug.Log("バック処理");
             // ウィンドウを閉じる
