@@ -137,7 +137,7 @@ public class IsDamaged : MonoBehaviour
 
     // 引数１：ノックバックの強さ
     // 引数２：神像に触れたかどうか
-    public void NockBack(float nockback, bool IsGod)
+    public void KnockBack(float nockback, bool IsGod)
     {
         // 仮死状態ではないなら処理
         if (IsDead == false)
@@ -154,10 +154,13 @@ public class IsDamaged : MonoBehaviour
 
             else
             {
-                //攻撃を受けた時点での敵キャラとプレイヤーとの位置関係
-                float distinationX = thisPos.x - _playerPos.x;
-                float distinationY = thisPos.y - _playerPos.y;
-                rb.velocity = new Vector2(distinationX * nockback, distinationY * nockback);//殴った方向に飛んでいく
+                if(_currentHP > 0)
+                {
+                    //攻撃を受けた時点での敵キャラとプレイヤーとの位置関係
+                    float distinationX = thisPos.x - _playerPos.x;
+                    float distinationY = thisPos.y - _playerPos.y;
+                    rb.velocity = new Vector2(distinationX * nockback, distinationY * nockback);//殴った方向に飛んでいく
+                }
             }
             MUTEKI = true;//無敵状態にする
             Debug.Log("ノックバック！");
@@ -205,14 +208,14 @@ public class IsDamaged : MonoBehaviour
             SendSoul();
         }
 
-        if(col.gameObject.tag == "Attack")
-        {
-            NockBack(_statusdata.NockBack, false);
-            if(IsDead != true)
-            {
-                //_audioSource.PlayOneShot(Sound);
-            }
-        }
+        //if(col.gameObject.tag == "Attack")
+        //{
+        //    KnockBack(_statusdata.NockBack, false);
+        //    if(IsDead != true)
+        //    {
+        //        //_audioSource.PlayOneShot(Sound);
+        //    }
+        //}
     }
 
 }

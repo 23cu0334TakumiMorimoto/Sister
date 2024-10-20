@@ -46,3 +46,27 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BG
+    uniqueID: 3064738443
+    locked: 0
+  - name: God
+    uniqueID: 884624769
+    locked: 0
+  - name: ATK
+    uniqueID: 1440987965
+    locked: 0
+  - name: Enemy
+    uniqueID: 2166324309
+    locked: 0
+  - name: HP
+    uniqueID: 738499243
+    locked: 0
+  - name: Player
+    uniqueID: 430302059
+    locked: 0
+  - name: UI
+    uniqueID: 2460559535
+    locked: 0
+  - name: Arrow
+    uniqueID: 3384724059
+    locked: 0
