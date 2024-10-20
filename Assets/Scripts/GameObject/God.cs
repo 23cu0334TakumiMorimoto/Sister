@@ -15,7 +15,7 @@ public class God : MonoBehaviour
     [SerializeField]
     [Header("現在の体力")]
     //現在の体力
-    private float _currentHealth;
+    public float _currentHealth;
 
     [SerializeField]
     [Header("ノックバック値")]
