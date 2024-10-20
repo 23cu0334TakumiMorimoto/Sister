@@ -30,7 +30,7 @@ public class ATK : MonoBehaviour
             // ‰¹‚ğ–Â‚ç‚µ‚Äƒ_ƒ[ƒW‚ğ—^‚¦‚é
             //_audioSource.PlayOneShot(Sound);
             col.gameObject.GetComponent<IsDamaged>().Damage(statusdata.ATK);
-            col.gameObject.GetComponent<IsDamaged>().KnockBack(statusdata.NockBack, false);
+            col.gameObject.GetComponent<IsDamaged>().KnockBack(statusdata.KnockBack, false);
         }
     }
 }

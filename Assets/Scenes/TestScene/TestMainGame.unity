@@ -4525,47 +4525,57 @@ MonoBehaviour:
     AppearPhase: 0
     SkillSprite: {fileID: 21300000, guid: ae06a714edbfed84aab259d5a8c50bc5, type: 3}
   - SkillNumber: 3
-    SkillName: "\u30CE\u30FC\u30DE\u30EB3"
-    SkillGrade: 0
-    AppearPhase: 0
-    SkillSprite: {fileID: 21300000, guid: ae06a714edbfed84aab259d5a8c50bc5, type: 3}
-  - SkillNumber: 4
-    SkillName: "\u30CE\u30FC\u30DE\u30EB4"
-    SkillGrade: 0
-    AppearPhase: 0
-    SkillSprite: {fileID: 21300000, guid: ae06a714edbfed84aab259d5a8c50bc5, type: 3}
-  - SkillNumber: 5
-    SkillName: "\u30CE\u30FC\u30DE\u30EB5"
-    SkillGrade: 0
-    AppearPhase: 0
-    SkillSprite: {fileID: 21300000, guid: ae06a714edbfed84aab259d5a8c50bc5, type: 3}
-  - SkillNumber: 6
-    SkillName: "\u30CE\u30FC\u30DE\u30EB6"
-    SkillGrade: 0
-    AppearPhase: 0
-    SkillSprite: {fileID: 21300000, guid: ae06a714edbfed84aab259d5a8c50bc5, type: 3}
-  - SkillNumber: 7
-    SkillName: "\u30CE\u30FC\u30DE\u30EB7"
-    SkillGrade: 0
-    AppearPhase: 0
-    SkillSprite: {fileID: 21300000, guid: ae06a714edbfed84aab259d5a8c50bc5, type: 3}
-  - SkillNumber: 8
     SkillName: "\u30EC\u30A21"
     SkillGrade: 1
     AppearPhase: 0
     SkillSprite: {fileID: 21300000, guid: 8b17289cde235aa4c85833dd224bf69c, type: 3}
-  - SkillNumber: 9
+  - SkillNumber: 4
+    SkillName: "\u30CE\u30FC\u30DE\u30EB3"
+    SkillGrade: 0
+    AppearPhase: 0
+    SkillSprite: {fileID: 21300000, guid: ae06a714edbfed84aab259d5a8c50bc5, type: 3}
+  - SkillNumber: 5
+    SkillName: "\u30CE\u30FC\u30DE\u30EB4"
+    SkillGrade: 0
+    AppearPhase: 0
+    SkillSprite: {fileID: 21300000, guid: ae06a714edbfed84aab259d5a8c50bc5, type: 3}
+  - SkillNumber: 6
     SkillName: "\u30EC\u30A22"
     SkillGrade: 1
     AppearPhase: 0
     SkillSprite: {fileID: 21300000, guid: 8b17289cde235aa4c85833dd224bf69c, type: 3}
+  - SkillNumber: 7
+    SkillName: "\u30CE\u30FC\u30DE\u30EB5"
+    SkillGrade: 0
+    AppearPhase: 0
+    SkillSprite: {fileID: 21300000, guid: ae06a714edbfed84aab259d5a8c50bc5, type: 3}
+  - SkillNumber: 8
+    SkillName: "\u30EC\u30A23"
+    SkillGrade: 1
+    AppearPhase: 0
+    SkillSprite: {fileID: 21300000, guid: 8b17289cde235aa4c85833dd224bf69c, type: 3}
+  - SkillNumber: 9
+    SkillName: "\u30CE\u30FC\u30DE\u30EB6"
+    SkillGrade: 0
+    AppearPhase: 0
+    SkillSprite: {fileID: 21300000, guid: ae06a714edbfed84aab259d5a8c50bc5, type: 3}
   - SkillNumber: 10
     SkillName: "\u30B9\u30FC\u30D1\u30FC\u30EC\u30A21"
     SkillGrade: 2
     AppearPhase: 0
     SkillSprite: {fileID: 21300000, guid: 6bdd14bc5e13e8c4a9612e3eb8ef9641, type: 3}
   - SkillNumber: 11
+    SkillName: "\u30EC\u30A24"
+    SkillGrade: 1
+    AppearPhase: 0
+    SkillSprite: {fileID: 21300000, guid: 8b17289cde235aa4c85833dd224bf69c, type: 3}
+  - SkillNumber: 12
     SkillName: "\u30B9\u30FC\u30D1\u30FC\u30EC\u30A22"
+    SkillGrade: 2
+    AppearPhase: 0
+    SkillSprite: {fileID: 21300000, guid: 6bdd14bc5e13e8c4a9612e3eb8ef9641, type: 3}
+  - SkillNumber: 13
+    SkillName: "\u30B9\u30FC\u30D1\u30FC\u30EC\u30A23"
     SkillGrade: 2
     AppearPhase: 0
     SkillSprite: {fileID: 21300000, guid: 6bdd14bc5e13e8c4a9612e3eb8ef9641, type: 3}

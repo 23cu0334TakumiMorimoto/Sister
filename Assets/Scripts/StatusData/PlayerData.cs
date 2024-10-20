@@ -16,7 +16,7 @@ public class PlayerData : ScriptableObject
     public float DEVIL_DEF; // 防御力(デビル)
     public float SISTER_SPEED; // 移動速度(シスター)
     public float DEVIL_SPEED; // 移動速度(デビル)
-    public float NockBack; // ノックバック値
+    public float KnockBack; // ノックバック値
     public float MUTEKI_SPAN; // 無敵時間
     public float Attack_SPAN; // 攻撃までの時間
     public float Attack_STIFFNESS; // 攻撃の硬直
