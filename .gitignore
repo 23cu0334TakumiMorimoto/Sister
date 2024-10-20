@@ -70,3 +70,8 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+#2024 10/21 
+Assets/TextMesh Pro/Fonts/AdobeClean-Light SDF.asset
+Assets/TextMesh Pro/Fonts/Corporate-Logo-Rounded-Bold-ver3 SDF.asset
+Assets/TextMesh Pro/Fonts/UDDigiKyokashoN-B SDF.asset

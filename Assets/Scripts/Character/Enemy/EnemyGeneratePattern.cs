@@ -17,6 +17,8 @@ public class EnemyGeneratePattern : MonoBehaviour
     // 敵プレハブ
     [Header("敵プレハブ")]
     [SerializeField] private GameObject _Enemy1;
+    [Header("敵ボスプレハブ")]
+    [SerializeField] private GameObject _BossEnemy;
 
     // 敵の出現を管理するフラグ
     private List<bool> _wave1Flag = new List<bool>();
@@ -78,6 +80,60 @@ public class EnemyGeneratePattern : MonoBehaviour
         {
             _right.EnemyGenerate(_Enemy1);
             _wave1Flag[3] = true;
+        }
+        // 5
+        if (_wave1Flag[4] == false && _wave1Time[4] < currentTime)
+        {
+            _left.EnemyGenerate(_Enemy1);
+            _left.EnemyGenerate(_Enemy1);
+            _wave1Flag[4] = true;
+        }
+        // 6
+        if (_wave1Flag[5] == false && _wave1Time[5] < currentTime)
+        {
+            _right.EnemyGenerate(_Enemy1);
+            _down.EnemyGenerate(_Enemy1);
+            _wave1Flag[5] = true;
+        }
+        // 7
+        if (_wave1Flag[6] == false && _wave1Time[6] < currentTime)
+        {
+            _up.EnemyGenerate(_Enemy1);
+            _left.EnemyGenerate(_Enemy1);
+            _wave1Flag[6] = true;
+        }
+        // 8
+        if (_wave1Flag[7] == false && _wave1Time[7] < currentTime)
+        {
+            _up.EnemyGenerate(_Enemy1);
+            _right.EnemyGenerate(_Enemy1);
+            _down.EnemyGenerate(_Enemy1);
+            _left.EnemyGenerate(_Enemy1);
+            _wave1Flag[7] = true;
+        }
+        // 9
+        if (_wave1Flag[8] == false && _wave1Time[8] < currentTime)
+        {
+            _up.EnemyGenerate(_Enemy1);
+            _wave1Flag[8] = true;
+        }
+        // 10
+        if (_wave1Flag[9] == false && _wave1Time[9] < currentTime)
+        {
+            _down.EnemyGenerate(_Enemy1);
+            _wave1Flag[9] = true;
+        }
+        // 11
+        if (_wave1Flag[10] == false && _wave1Time[10] < currentTime)
+        {
+            _left.EnemyGenerate(_Enemy1);
+            _wave1Flag[10] = true;
+        }
+        // 12
+        if (_wave1Flag[11] == false && _wave1Time[11] < currentTime)
+        {
+            _right.EnemyGenerate(_BossEnemy);
+            _wave1Flag[11] = true;
         }
     }
 }

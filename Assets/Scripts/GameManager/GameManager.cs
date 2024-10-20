@@ -9,9 +9,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _god;
 
     // フェードイン関係のスクリプト
-    [SerializeField] private string loadScene;
+    [SerializeField] private string loadGameOver;
+    [SerializeField] private string loadClear;
     [SerializeField] private Color fadeColor = Color.black;
-    [SerializeField] private float fadeSpeedMultiplier = 1.0f;
+    [SerializeField] private Color clearColor = Color.white;
+    [SerializeField] private float fadeSpeedMultiplier = 3.0f;
 
     // シェイク関係のスクリプト
     public GameObject mainCamera;
@@ -40,13 +42,23 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void SwitchClear()
+    {
+        if (_godScript._currentHealth < 0)
+        {
+            Time.timeScale = 0.5f;
+            StartCoroutine("CameraShake");
+            Initiate.Fade(loadClear, clearColor, fadeSpeedMultiplier);
+        }
+    }
+
     void SwitchGameOver()
     {
         if (_godScript._currentHealth < 0)
         {
             Time.timeScale = 0.5f;
             StartCoroutine("CameraShake");
-            Initiate.Fade(loadScene, fadeColor, fadeSpeedMultiplier);
+            Initiate.Fade(loadGameOver, fadeColor, fadeSpeedMultiplier);
         }
     }
 

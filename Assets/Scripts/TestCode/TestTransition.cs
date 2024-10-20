@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Test : MonoBehaviour
+public class TestTransition : MonoBehaviour
 {
     // フェードイン関係のスクリプト
     [SerializeField] private string loadScene;
@@ -12,7 +12,7 @@ public class Test : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Time.timeScale = 1f;
     }
 
     // Update is called once per frame

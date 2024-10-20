@@ -49,6 +49,18 @@ public class IsDamaged : MonoBehaviour
     private AudioSource _audioSource;
     public AudioClip Sound;
 
+    [SerializeField]
+    [Header("ボスであるかどうか")]
+    private bool IsBoss;
+
+    //[SerializeField]
+    //private GameObject manager;
+    //private GameManager _GM;
+
+    [SerializeField] private string loadClear;
+    [SerializeField] private Color clearColor = Color.white;
+    [SerializeField] private float fadeSpeedMultiplier = 3.0f;
+
     void Start()
     {
         _player = GameObject.FindGameObjectWithTag("Player");
@@ -64,6 +76,10 @@ public class IsDamaged : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
 
         _deadTimer = 0f;
+
+        //_GM = manager.GetComponent<GameManager>();
+
+        
     }
     void Update()
     {
@@ -196,8 +212,17 @@ public class IsDamaged : MonoBehaviour
 
     private void SendSoul()
     {
-        _playerdata.EXP += _statusdata.EXP;
-        Destroy(gameObject);
+        if(IsBoss == true)
+        {
+            SwitchClear();
+            _playerdata.EXP += _statusdata.EXP;
+            Destroy(gameObject);
+        }
+        else
+        {
+            _playerdata.EXP += _statusdata.EXP;
+            Destroy(gameObject);
+        }
     }
 
     void OnTriggerExit2D(Collider2D col)
@@ -216,6 +241,15 @@ public class IsDamaged : MonoBehaviour
         //        //_audioSource.PlayOneShot(Sound);
         //    }
         //}
+    }
+
+    public void SwitchClear()
+    {
+        
+            Time.timeScale = 0.5f;
+            StartCoroutine("CameraShake");
+            Initiate.Fade(loadClear, clearColor, fadeSpeedMultiplier);
+       
     }
 
 }
