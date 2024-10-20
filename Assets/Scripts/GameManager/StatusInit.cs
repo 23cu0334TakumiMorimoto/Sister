@@ -19,7 +19,7 @@ public class StatusInit : MonoBehaviour
         _playerdata.KnockBack = 3;
         _playerdata.Attack_SPAN = 0.3f;
         _playerdata.Attack_STIFFNESS = 0.5f;
-        _playerdata.CHANGE_TRANSITION_TIME = 0.3f;
+        _playerdata.CHANGE_TRANSITION_TIME = 0.5f;
         _playerdata.CHANGE_COOL_TIME = 1;
         _playerdata.EXP = 0;
         _playerdata.DESTROY_PRAY = 0.1f;

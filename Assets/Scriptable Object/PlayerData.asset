@@ -17,13 +17,13 @@ MonoBehaviour:
   ATK: 1
   SISTER_DEF: 0
   DEVIL_DEF: 0
-  SISTER_SPEED: 5
-  DEVIL_SPEED: 2
-  NockBack: 2
+  SISTER_SPEED: 3
+  DEVIL_SPEED: 1.5
+  KnockBack: 3
   MUTEKI_SPAN: 0
-  Attack_SPAN: 0.2
+  Attack_SPAN: 0.3
   Attack_STIFFNESS: 0.5
-  CHANGE_TRANSITION_TIME: 0.2
+  CHANGE_TRANSITION_TIME: 0.5
   CHANGE_COOL_TIME: 1
   EXP: 0
   IsPrayed: 0

@@ -19,7 +19,9 @@ public class PlayerChange : MonoBehaviour
     // タイマー
     [SerializeField]
     [Header("変身のクールタイマー")]
-    private float ChangeCoolTimer;       
+    private float ChangeCoolTimer;
+
+    private Animator _animator;
 
     void Start()
     {
@@ -33,6 +35,8 @@ public class PlayerChange : MonoBehaviour
 
         // プレイヤーの状態を初期化
         statusdata.PLAYER_PERSON = 1;
+
+        _animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -64,6 +68,7 @@ public class PlayerChange : MonoBehaviour
         {
             Debug.Log("チェンジシスター");
             image.sprite = SisterSprite;
+            _animator.SetInteger("Action", 7);
             // 指定された時間プレイヤー操作を無効にする
             IsChanged.CallInoperable(statusdata.CHANGE_TRANSITION_TIME, 1);
             // 速度を０にする
@@ -82,6 +87,7 @@ public class PlayerChange : MonoBehaviour
         {
             Debug.Log("チェンジデビル");
             image.sprite = DevilSprite;
+            _animator.SetInteger("Action", 6);
             // 指定された時間プレイヤー操作を無効にする
             IsChanged.CallInoperable(statusdata.CHANGE_TRANSITION_TIME, 1);
             // 速度を０にする

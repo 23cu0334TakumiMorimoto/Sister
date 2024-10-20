@@ -36,6 +36,7 @@ public class ATKGenerator : MonoBehaviour
 
     private Rigidbody2D rb;
     private Animator _animator;
+    float anim_speed;
 
     private void Start()
     {
@@ -44,6 +45,8 @@ public class ATKGenerator : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();//Rigidbody2Dの取得
         timer = 0;
         ATKflg = false;
+
+        _animator = GetComponent<Animator>();
     }
 
 
@@ -51,6 +54,7 @@ public class ATKGenerator : MonoBehaviour
     {
         // 攻撃方向を更新
         GetDirection();
+        anim_speed = statusdata.Attack_STIFFNESS;
 
         if (statusdata.PLAYER_PERSON != 0)
         {
@@ -86,6 +90,7 @@ public class ATKGenerator : MonoBehaviour
                     {
                         FireAtk();
 
+                        _animator.SetInteger("Action", 5);
                         // 指定された時間プレイヤー操作を無効にする
                         IAttacked.CallInoperable(statusdata.Attack_STIFFNESS, 0);
                         // 速度を０にする

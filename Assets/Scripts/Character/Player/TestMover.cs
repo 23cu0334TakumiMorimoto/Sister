@@ -100,10 +100,6 @@ public class TestMover : MonoBehaviour
                 _animator.SetInteger("Action", 4);
                 
             }
-            else if(Input.GetKeyDown(KeyCode.J))
-            {
-                _animator.SetInteger("Action", 5);
-            }
             else
             {
                 _animator.SetInteger("Action", 3);   
