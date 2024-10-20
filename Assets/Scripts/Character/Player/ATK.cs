@@ -15,6 +15,7 @@ public class ATK : MonoBehaviour
     private void Start()
     {
         _audioSource = GetComponent<AudioSource>();
+        statusdata.KnockBack = 3;
     }
 
     private void Update()

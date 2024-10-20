@@ -140,6 +140,7 @@ GameObject:
   - component: {fileID: 57545523}
   - component: {fileID: 57545522}
   - component: {fileID: 57545524}
+  - component: {fileID: 57545525}
   m_Layer: 5
   m_Name: SkillUI2
   m_TagString: Untagged
@@ -250,6 +251,19 @@ MonoBehaviour:
   _disableArrow1: {fileID: 1242689490}
   _disableArrow2: {fileID: 1705843310}
   _disableArrow3: {fileID: 741250680}
+--- !u!114 &57545525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57545520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab288e20d68acc0459d0ce33d1fb73a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerdata: {fileID: 11400000, guid: 5a9840cb11c374646a320ac7a30231f6, type: 2}
 --- !u!4 &188602437 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5624802381128508926, guid: 5f2d4478bfa231c4a802eb19268092e0, type: 3}
@@ -1207,6 +1221,7 @@ GameObject:
   - component: {fileID: 738942760}
   - component: {fileID: 738942759}
   - component: {fileID: 738942761}
+  - component: {fileID: 738942762}
   m_Layer: 5
   m_Name: SkillUI1
   m_TagString: Untagged
@@ -1317,6 +1332,19 @@ MonoBehaviour:
   _disableArrow1: {fileID: 274253016}
   _disableArrow2: {fileID: 1705843310}
   _disableArrow3: {fileID: 741250680}
+--- !u!114 &738942762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738942757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab288e20d68acc0459d0ce33d1fb73a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerdata: {fileID: 11400000, guid: 5a9840cb11c374646a320ac7a30231f6, type: 2}
 --- !u!1 &741250680
 GameObject:
   m_ObjectHideFlags: 0
@@ -2325,6 +2353,7 @@ GameObject:
   - component: {fileID: 998907007}
   - component: {fileID: 998907006}
   - component: {fileID: 998907008}
+  - component: {fileID: 998907009}
   m_Layer: 5
   m_Name: SkillUI3
   m_TagString: Untagged
@@ -2435,6 +2464,19 @@ MonoBehaviour:
   _disableArrow1: {fileID: 1242689490}
   _disableArrow2: {fileID: 274253016}
   _disableArrow3: {fileID: 741250680}
+--- !u!114 &998907009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998907004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab288e20d68acc0459d0ce33d1fb73a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerdata: {fileID: 11400000, guid: 5a9840cb11c374646a320ac7a30231f6, type: 2}
 --- !u!1 &999003583 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7488580249280154552, guid: 5f2d4478bfa231c4a802eb19268092e0, type: 3}
@@ -3714,6 +3756,7 @@ GameObject:
   - component: {fileID: 1707461079}
   - component: {fileID: 1707461078}
   - component: {fileID: 1707461080}
+  - component: {fileID: 1707461081}
   m_Layer: 5
   m_Name: SkillUI4
   m_TagString: Untagged
@@ -3824,6 +3867,19 @@ MonoBehaviour:
   _disableArrow1: {fileID: 1242689490}
   _disableArrow2: {fileID: 1705843310}
   _disableArrow3: {fileID: 274253016}
+--- !u!114 &1707461081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707461076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab288e20d68acc0459d0ce33d1fb73a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerdata: {fileID: 11400000, guid: 5a9840cb11c374646a320ac7a30231f6, type: 2}
 --- !u!1 &1733011481
 GameObject:
   m_ObjectHideFlags: 0
@@ -4514,12 +4570,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillData:
-  - SkillNumber: 0
+  - SkillNumber: 1
     SkillName: "\u30CE\u30FC\u30DE\u30EB\uFF11"
     SkillGrade: 0
     AppearPhase: 0
     SkillSprite: {fileID: 21300000, guid: ae06a714edbfed84aab259d5a8c50bc5, type: 3}
-  - SkillNumber: 1
+  - SkillNumber: 2
     SkillName: "\u30CE\u30FC\u30DE\u30EB\uFF12"
     SkillGrade: 0
     AppearPhase: 0
@@ -4808,6 +4864,7 @@ GameObject:
   - component: {fileID: 2053994210}
   - component: {fileID: 2053994211}
   - component: {fileID: 2053994212}
+  - component: {fileID: 2053994213}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4901,6 +4958,19 @@ MonoBehaviour:
   - 10
   - 15
   - 20
+--- !u!114 &2053994213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053994207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb96fc1726e92c1458fb32f7a54b1bd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerdata: {fileID: 11400000, guid: 5a9840cb11c374646a320ac7a30231f6, type: 2}
 --- !u!1001 &1255321631196459878
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5134,7 +5204,7 @@ PrefabInstance:
     - target: {fileID: 3739807953183742131, guid: d6bc058e4b3eb39459ec9604fab62616, type: 3}
       propertyPath: health_Bar
       value: 
-      objectReference: {fileID: 1281542979}
+      objectReference: {fileID: 966796045}
     - target: {fileID: 3739807953183742131, guid: d6bc058e4b3eb39459ec9604fab62616, type: 3}
       propertyPath: statusdata
       value: 
@@ -5269,6 +5339,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1243018743361768318, guid: 886ee0b65ef1ec74e98093171bf090fd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1243018743361768318, guid: 886ee0b65ef1ec74e98093171bf090fd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1243018743361768318, guid: 886ee0b65ef1ec74e98093171bf090fd, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1243018743361768318, guid: 886ee0b65ef1ec74e98093171bf090fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.92
       objectReference: {fileID: 0}
@@ -5307,6 +5389,10 @@ PrefabInstance:
     - target: {fileID: 1243018743361768318, guid: 886ee0b65ef1ec74e98093171bf090fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1243018743361768318, guid: 886ee0b65ef1ec74e98093171bf090fd, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1613334672668227837, guid: 886ee0b65ef1ec74e98093171bf090fd, type: 3}
       propertyPath: m_SortingLayer

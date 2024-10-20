@@ -32,6 +32,7 @@ public class DrawingSkill : LV_UIData
     private SkillSelectUI _skill3Select;
     private SkillSelectUI _skill4Select;
 
+    [Space(10)]
     [SerializeField]
     private GameObject _skill1;
     [SerializeField]

@@ -163,7 +163,7 @@ public class IsDamaged : MonoBehaviour
                 }
             }
             MUTEKI = true;//無敵状態にする
-            Debug.Log("ノックバック！");
+           // Debug.Log("ノックバック！");
         }
     }
 
@@ -184,13 +184,13 @@ public class IsDamaged : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.J) || Input.GetKeyUp(KeyCode.Z))
         {
             IsGetKeyUp = true;
-            Debug.Log("Key Up");
+            //Debug.Log("Key Up");
         }
 
         else if(Input.GetKey(KeyCode.J) || Input.GetKey(KeyCode.Z) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.J))
         {
             IsGetKeyUp = false;
-            Debug.Log("Key Down");
+           // Debug.Log("Key Down");
         }
     }
 

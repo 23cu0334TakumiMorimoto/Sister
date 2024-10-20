@@ -25,12 +25,15 @@ public class SkillSelectUI : Selectable, IPointerClickHandler
 
     // 現在のセレクト状態
     private bool IsSelected;
+    private bool OnClicked;
 
     private GameObject _gameManager;
     private CallUI _pause;
 
     // 差し替え画像
     private Image image;
+    private SkillProcess _skill;
+    private int _callSkill;
 
     protected override void Start()
     {
@@ -54,6 +57,7 @@ public class SkillSelectUI : Selectable, IPointerClickHandler
 
         // SpriteRendererを取得
         image = GetComponent<Image>();
+        _skill = GetComponent<SkillProcess>();
     }
 
     private void Update()
@@ -61,7 +65,7 @@ public class SkillSelectUI : Selectable, IPointerClickHandler
         // Enterキーが押されたら処理
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            Debug.Log("押された");
+            //Debug.Log("押された");
             SkillProcess();
         }
     }
@@ -69,7 +73,7 @@ public class SkillSelectUI : Selectable, IPointerClickHandler
     public override void OnSelect(BaseEventData eventData)
     {
         //base.OnSelect(eventData);
-        Debug.Log($"{gameObject.name}が選択された");
+       // Debug.Log($"{gameObject.name}が選択された");
 
         // 矢印を有効化
         _activeArrow.SetActive(true);
@@ -79,12 +83,15 @@ public class SkillSelectUI : Selectable, IPointerClickHandler
 
         // transformのアニメーション
         transform.localScale = Vector3.one * 1.3f;
+
+        // フラグを有効化
+        IsSelected = true;
     }
 
     public override void OnDeselect(BaseEventData eventData)
     {
         base.OnDeselect(eventData);
-        Debug.Log($"{gameObject.name}の選択が外れた");
+       // Debug.Log($"{gameObject.name}の選択が外れた");
 
         // 矢印を無効化
         _activeArrow.SetActive(false);
@@ -97,35 +104,34 @@ public class SkillSelectUI : Selectable, IPointerClickHandler
 
         // フラグを無効化
         IsSelected = false;
+        OnClicked = false;
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("押された");
 
-        if (IsSelected == true)
+        if (OnClicked == true)
         {
             // クリックされた時に行いたい処理
             SkillProcess();
         }
 
         // フラグを有効化
-        IsSelected = true;
+        OnClicked = true;
     }
 
     void SkillProcess()
     {
-        Debug.Log("スキル処理");
-        
-        //// 初期選択状態なら
-        //if (InitArrow == true)
-        //{
-        //    // 選択状態にする
-        //    EventSystem.current.SetSelectedGameObject(gameObject);
-        //}
+        if (IsSelected == true)
+        {
+            Debug.Log("スキル処理");
 
-        // ウィンドウを閉じる
-        _pause.PressLVUP();
+            _skill.ChooseSkill(_callSkill);
+
+            // ウィンドウを閉じる
+            _pause.PressLVUP();
+        }
     }
 
     // 外部からのみアクセス
@@ -150,6 +156,8 @@ public class SkillSelectUI : Selectable, IPointerClickHandler
     {
         Debug.Log(SkillNum);
         image.sprite = SkillSprite;
+        _callSkill = SkillNum;
+        //skill.ChooseSkill(SkillNum);
     }
 }
 
