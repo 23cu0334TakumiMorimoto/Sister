@@ -41,11 +41,11 @@ public class EnemyGeneratePattern : MonoBehaviour
 
         // リストの要素数を取得
         _wave1Count = _wave1Time.Count;
-        for(int i = 0; i < _wave1Count; ++i)
+        for (int i = 0; i < _wave1Count; ++i)
         {
             _wave1Flag.Add(false);
         }
-       
+
     }
 
     // Update is called once per frame
@@ -58,7 +58,7 @@ public class EnemyGeneratePattern : MonoBehaviour
     void Wave1()
     {
         // 1
-        if(_wave1Flag[0] == false && _wave1Time[0] < currentTime)
+        if (_wave1Flag[0] == false && _wave1Time[0] < currentTime)
         {
             _up.EnemyGenerate(_Enemy1);
             _wave1Flag[0] = true;
@@ -134,6 +134,14 @@ public class EnemyGeneratePattern : MonoBehaviour
         {
             _right.EnemyGenerate(_BossEnemy);
             _wave1Flag[11] = true;
+        }
+        // 自動出現させる
+        if (_wave1Flag[11] == true)
+        {
+            _up.IsSpawn = true;
+            _right.IsSpawn = true;
+            _down.IsSpawn = true;
+            _left.IsSpawn = true;
         }
     }
 }

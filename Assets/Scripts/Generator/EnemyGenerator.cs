@@ -12,9 +12,9 @@ public class EnemyGenerator : MonoBehaviour
     [SerializeField]
     [Header("スポーンまでの時間(自動出現）")]
     private float SpawnTime;
-    [SerializeField]
+
     [Header("自動出現するかどうか")]
-    private bool IsSpawn;
+    public bool IsSpawn;
     [SerializeField]
     [Header("敵をスポーンする座標のランダムの範囲")]
     public float RandomSpawnMinX;
@@ -44,10 +44,10 @@ public class EnemyGenerator : MonoBehaviour
     void Update()
     {
         // 自動出現させるなら
-        if(IsSpawn == true)
+        if (IsSpawn == true)
         {
             _currentTime += Time.deltaTime;//時間経過をcurrentTimeに代入し時間を測る
-            if (_currentTime > SpawnTime)//spanで設定した3秒を越えたら処理を実行
+            if (_currentTime > SpawnTime)//spanで設定した時間を越えたら処理を実行
             {
                 // ジェネレートする
                 EnemyGenerate(EnemyPrefab);

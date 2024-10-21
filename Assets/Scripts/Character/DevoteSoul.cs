@@ -32,10 +32,9 @@ public class DevoteSoul : MonoBehaviour
 
     private void ActiveDevoteSoul()
     {
-        if(Input.GetKeyDown(KeyCode.L))
-        {
+        
             _goddata.EXP += _playerdata.EXP;
             _playerdata.EXP = 0;
-        }
+        
     }
 }
