@@ -25,11 +25,10 @@ public class PrayGenerator : MonoBehaviour
     {
         if (statusdata.PLAYER_PERSON != 1)
         {
-            if(Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.Z))
+            if (Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Joystick1Button3))
             {
                 Debug.Log("ãFÇËê∂ê¨");
                 Instantiate(_prayPrefab, transform.position, Quaternion.identity);
-                Debug.Log("Pray");
             }
         }
     }

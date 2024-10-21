@@ -63,7 +63,7 @@ public class SkillSelectUI : Selectable, IPointerClickHandler
     private void Update()
     {
         // Enterキーが押されたら処理
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Joystick1Button1))
         {
             //Debug.Log("押された");
             SkillProcess();
@@ -73,7 +73,7 @@ public class SkillSelectUI : Selectable, IPointerClickHandler
     public override void OnSelect(BaseEventData eventData)
     {
         //base.OnSelect(eventData);
-       // Debug.Log($"{gameObject.name}が選択された");
+        // Debug.Log($"{gameObject.name}が選択された");
 
         // 矢印を有効化
         _activeArrow.SetActive(true);
@@ -91,7 +91,7 @@ public class SkillSelectUI : Selectable, IPointerClickHandler
     public override void OnDeselect(BaseEventData eventData)
     {
         base.OnDeselect(eventData);
-       // Debug.Log($"{gameObject.name}の選択が外れた");
+        // Debug.Log($"{gameObject.name}の選択が外れた");
 
         // 矢印を無効化
         _activeArrow.SetActive(false);

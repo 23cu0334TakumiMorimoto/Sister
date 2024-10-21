@@ -12,9 +12,9 @@ public class IsDamaged : MonoBehaviour
     private Vector2 _godPos;
 
     // ステータスデータを読み込む
-    [SerializeField] 
+    [SerializeField]
     private StatusData _statusdata;
-    [SerializeField] 
+    [SerializeField]
     private PlayerData _playerdata;
 
     // 攻撃を受けたときに出す画像
@@ -23,7 +23,7 @@ public class IsDamaged : MonoBehaviour
     private Vector3 Hitpos;
 
     // 魂のプレハブ
-    [SerializeField] 
+    [SerializeField]
     private GameObject _expPrefab;
 
     [Header("敵の状態が仮死状態かどうか")]
@@ -43,7 +43,7 @@ public class IsDamaged : MonoBehaviour
     [SerializeField]
     [Header("キーを離したかどうか")]
     bool IsGetKeyUp;
-   
+
     private Rigidbody2D rb;
     private Animator _animator;
     private AudioSource _audioSource;
@@ -79,7 +79,7 @@ public class IsDamaged : MonoBehaviour
 
         //_GM = manager.GetComponent<GameManager>();
 
-        
+
     }
     void Update()
     {
@@ -96,7 +96,7 @@ public class IsDamaged : MonoBehaviour
 
         }
 
-        if (_currentHP <= 0) 
+        if (_currentHP <= 0)
         {
             Hitpos = this.transform.position;
             Hitpos.z = -2f;
@@ -105,14 +105,14 @@ public class IsDamaged : MonoBehaviour
 
 
 
-                //HPが0以下になったら仮死状態にする
-                IsDead = true;
-                // オブジェクトを破棄する
-                //Destroy(this.gameObject);
+            //HPが0以下になったら仮死状態にする
+            IsDead = true;
+            // オブジェクトを破棄する
+            //Destroy(this.gameObject);
         }
 
         // 仮死状態なら
-        if(IsDead == true)
+        if (IsDead == true)
         {
             Asphyxia();
         }
@@ -170,7 +170,7 @@ public class IsDamaged : MonoBehaviour
 
             else
             {
-                if(_currentHP > 0)
+                if (_currentHP > 0)
                 {
                     //攻撃を受けた時点での敵キャラとプレイヤーとの位置関係
                     float distinationX = thisPos.x - _playerPos.x;
@@ -179,7 +179,7 @@ public class IsDamaged : MonoBehaviour
                 }
             }
             MUTEKI = true;//無敵状態にする
-           // Debug.Log("ノックバック！");
+                          // Debug.Log("ノックバック！");
         }
     }
 
@@ -188,7 +188,7 @@ public class IsDamaged : MonoBehaviour
     {
         _animator.SetInteger("Action", 1);
         _deadTimer += Time.deltaTime;
-        if(_deadTimer > _statusdata.DEAD_TIME)
+        if (_deadTimer > _statusdata.DEAD_TIME)
         {
             // オブジェクトを破棄する
             Destroy(this.gameObject);
@@ -197,22 +197,22 @@ public class IsDamaged : MonoBehaviour
 
     private void KeyState()
     {
-        if (Input.GetKeyUp(KeyCode.J) || Input.GetKeyUp(KeyCode.Z))
+        if (Input.GetKeyUp(KeyCode.J) || Input.GetKeyUp(KeyCode.Z) || Input.GetKeyUp(KeyCode.Joystick1Button3))
         {
             IsGetKeyUp = true;
             //Debug.Log("Key Up");
         }
 
-        else if(Input.GetKey(KeyCode.J) || Input.GetKey(KeyCode.Z) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.J))
+        else if (Input.GetKey(KeyCode.J) || Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.Joystick1Button3) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.Joystick1Button3))
         {
             IsGetKeyUp = false;
-           // Debug.Log("Key Down");
+            // Debug.Log("Key Down");
         }
     }
 
     private void SendSoul()
     {
-        if(IsBoss == true)
+        if (IsBoss == true)
         {
             SwitchClear();
             _playerdata.EXP += _statusdata.EXP;
@@ -245,11 +245,11 @@ public class IsDamaged : MonoBehaviour
 
     public void SwitchClear()
     {
-        
-            Time.timeScale = 0.5f;
-            StartCoroutine("CameraShake");
-            Initiate.Fade(loadClear, clearColor, fadeSpeedMultiplier);
-       
+
+        Time.timeScale = 0.5f;
+        StartCoroutine("CameraShake");
+        Initiate.Fade(loadClear, clearColor, fadeSpeedMultiplier);
+
     }
 
 }

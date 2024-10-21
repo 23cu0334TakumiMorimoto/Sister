@@ -24,7 +24,7 @@ public class Pray : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.J) || Input.GetKey(KeyCode.Z))
+        if (Input.GetKey(KeyCode.J) || Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.Joystick1Button3))
         {
             if (_audio == false)
             {
@@ -34,8 +34,9 @@ public class Pray : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyUp(KeyCode.J) || Input.GetKeyUp(KeyCode.Z))
+        if (Input.GetKeyUp(KeyCode.J) || Input.GetKeyUp(KeyCode.Z) || Input.GetKeyUp(KeyCode.Joystick1Button3))
         {
+            Debug.Log("ãFÇËèIóπ");
             if (statusdata.IsPrayed == true)
             {
                 statusdata.IsPrayed = false;

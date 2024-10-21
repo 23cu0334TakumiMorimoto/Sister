@@ -30,7 +30,7 @@ public class ExpandPray : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.J) || Input.GetKey(KeyCode.Z))
+        if (Input.GetKey(KeyCode.J) || Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.Joystick1Button3))
         {
             // 指定された時間プレイヤー操作を無効にする
             IPrayed.CallInoperable(_expandTimer, 2);
@@ -45,7 +45,7 @@ public class ExpandPray : MonoBehaviour
                 }
             }
         }
-            transform.localScale = new Vector3(AreaSize, AreaSize, AreaSize);
+        transform.localScale = new Vector3(AreaSize, AreaSize, AreaSize);
     }
 
     private void FixedUpdate()

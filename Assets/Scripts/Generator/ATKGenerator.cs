@@ -17,7 +17,7 @@ public class ATKGenerator : MonoBehaviour
     // 弾を生成する角度
     private Quaternion _atkRot;
     // 発射間隔(秒)
-    [SerializeField] private float _fireRate; 
+    [SerializeField] private float _fireRate;
     // 攻撃方向
     [SerializeField]
     [Header("攻撃方向")]
@@ -38,6 +38,9 @@ public class ATKGenerator : MonoBehaviour
     private Animator _animator;
     float anim_speed;
 
+    private PlayerInputs _gameInputs;
+    private Vector2 _moveInputValue;
+
     private void Start()
     {
         gameManagerObj = GameObject.Find("GameManager");
@@ -47,6 +50,21 @@ public class ATKGenerator : MonoBehaviour
         ATKflg = false;
 
         _animator = GetComponent<Animator>();
+
+        // Actionスクリプトのインスタンス生成
+        _gameInputs = new PlayerInputs();
+        // Input Actionを機能させるためには、
+        // 有効化する必要がある
+        _gameInputs.Enable();
+
+
+    }
+
+    private void OnDestroy()
+    {
+        // 自身でインスタンス化したActionクラスはIDisposableを実装しているので、
+        // 必ずDisposeする必要がある
+        _gameInputs?.Dispose();
     }
 
 
@@ -76,7 +94,7 @@ public class ATKGenerator : MonoBehaviour
             else
             {
                 // JキーかZキーで攻撃
-                if (Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.Z))
+                if (Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Joystick1Button3))
                 {
                     ATKflg = true;
                 }
@@ -109,9 +127,9 @@ public class ATKGenerator : MonoBehaviour
     void FireAtk()
     {
         // 上方向を代入
-        if(_atkDirection == 1)
+        if (_atkDirection == 1)
         {
-            _atkPoint = new Vector2(_atkCoordinate.position.x, _atkCoordinate.position.y + 1f); 
+            _atkPoint = new Vector2(_atkCoordinate.position.x, _atkCoordinate.position.y + 1f);
             _atkRot = Quaternion.Euler(0, 0, 0);
         }
         // 下方向を代入
@@ -139,25 +157,32 @@ public class ATKGenerator : MonoBehaviour
 
     private void GetDirection()
     {
-        if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+        // ゲームパッド（デバイス取得）
+        var gamepad = Gamepad.current;
+        if (gamepad == null) return;
+        // ゲームパッドの左右のスティックの入力値を取得
+        var x = gamepad.leftStick.x.ReadValue();
+        var y = gamepad.leftStick.y.ReadValue();
+
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow) || y > 0)
         {
             // 攻撃方向を上に設定
             _atkDirection = 1;
         }
 
-        else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+        else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow) || y < 0)
         {
             // 攻撃方向を下に設定
             _atkDirection = 2;
         }
 
-        else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow) || x < 0)
         {
             // 攻撃方向を左に設定
             _atkDirection = 3;
         }
 
-        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow) || x > 0)
         {
             // 攻撃方向を右に設定
             _atkDirection = 4;

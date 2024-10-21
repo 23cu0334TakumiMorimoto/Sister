@@ -64,7 +64,7 @@ public class PlayerChange : MonoBehaviour
     private void ChangeSister()
     {
 
-        if (Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.Joystick1Button5) || Input.GetKeyDown(KeyCode.Joystick1Button4))
         {
             Debug.Log("チェンジシスター");
             image.sprite = SisterSprite;
@@ -83,7 +83,7 @@ public class PlayerChange : MonoBehaviour
 
     private void ChangeDevil()
     {
-        if (Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.Joystick1Button5) || Input.GetKeyDown(KeyCode.Joystick1Button4))
         {
             Debug.Log("チェンジデビル");
             image.sprite = DevilSprite;

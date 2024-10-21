@@ -52,7 +52,7 @@ public class CallUI : MonoBehaviour
     {
         if (_calledSkill != true)
         {
-            if (Input.GetKeyDown(KeyCode.Escape) && _pauseFlg == false)
+            if (Input.GetKeyDown(KeyCode.Escape) && _pauseFlg == false || Input.GetKeyDown(KeyCode.Joystick1Button7) && _pauseFlg == false)
             {
                 _calledPause = true;
                 Time.timeScale = 0;
@@ -64,7 +64,7 @@ public class CallUI : MonoBehaviour
                 // ñÓàÛÇÃà íuèâä˙âª
                 _pauseSelect.InitSelect();
             }
-            else if (Input.GetKeyDown(KeyCode.Escape) && _pauseFlg == true)
+            else if (Input.GetKeyDown(KeyCode.Escape) && _pauseFlg == true || Input.GetKeyDown(KeyCode.Joystick1Button7) && _pauseFlg == true)
             {
                 _calledPause = false;
                 Time.timeScale = 1;

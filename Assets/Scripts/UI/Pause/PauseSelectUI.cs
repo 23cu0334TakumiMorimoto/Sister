@@ -57,7 +57,7 @@ public class PauseSelectUI : Selectable, IPointerClickHandler
     private void Update()
     {
         // Enterキーが押されたら処理
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Joystick1Button1))
         {
             Debug.Log("押された");
             PauseProcess();
@@ -116,7 +116,7 @@ public class PauseSelectUI : Selectable, IPointerClickHandler
 
     void PauseProcess()
     {
-        if(_UI == UIList.Retry && IsSelected == true)
+        if (_UI == UIList.Retry && IsSelected == true)
         {
             Debug.Log("リトライ処理");
             // シーンをリロード
