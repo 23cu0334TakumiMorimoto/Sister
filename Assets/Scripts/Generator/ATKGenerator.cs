@@ -157,32 +157,32 @@ public class ATKGenerator : MonoBehaviour
 
     private void GetDirection()
     {
-        // ゲームパッド（デバイス取得）
-        var gamepad = Gamepad.current;
-        if (gamepad == null) return;
-        // ゲームパッドの左右のスティックの入力値を取得
-        var x = gamepad.leftStick.x.ReadValue();
-        var y = gamepad.leftStick.y.ReadValue();
+        //// ゲームパッド（デバイス取得）
+        //var gamepad = Gamepad.current;
+        //if (gamepad == null) return;
+        //// ゲームパッドの左右のスティックの入力値を取得
+        //var x = gamepad.leftStick.x.ReadValue();
+        //var y = gamepad.leftStick.y.ReadValue();
 
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow) || y > 0)
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) //|| y > 0)
         {
             // 攻撃方向を上に設定
             _atkDirection = 1;
         }
 
-        else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow) || y < 0)
+        else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) //|| y < 0)
         {
             // 攻撃方向を下に設定
             _atkDirection = 2;
         }
 
-        else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow) || x < 0)
+        else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) //|| x < 0)
         {
             // 攻撃方向を左に設定
             _atkDirection = 3;
         }
 
-        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow) || x > 0)
+        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) //|| x > 0)
         {
             // 攻撃方向を右に設定
             _atkDirection = 4;

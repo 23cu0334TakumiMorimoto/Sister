@@ -61,6 +61,17 @@ public class IsDamaged : MonoBehaviour
     [SerializeField] private Color clearColor = Color.white;
     [SerializeField] private float fadeSpeedMultiplier = 3.0f;
 
+    [SerializeField]
+    [Header("経験値加算までの時間")]
+    private float _expTime;
+    private float _timer;
+
+    private SpriteRenderer _sr;
+    private float cla;
+    [SerializeField]
+    [Header("透明になる速度")]
+    private float speed;
+
     void Start()
     {
         _player = GameObject.FindGameObjectWithTag("Player");
@@ -74,6 +85,7 @@ public class IsDamaged : MonoBehaviour
         _animator = GetComponent<Animator>();
         _animator.SetInteger("Action", 0);
         _audioSource = GetComponent<AudioSource>();
+        _sr = GetComponent<SpriteRenderer>();
 
         _deadTimer = 0f;
 
@@ -212,20 +224,34 @@ public class IsDamaged : MonoBehaviour
 
     private void SendSoul()
     {
+        Instantiate(_expPrefab, transform.position, Quaternion.identity);
+        _timer += Time.deltaTime;
+
         if (IsBoss == true)
         {
+            cla = _sr.color.a;
+            StartCoroutine(Display());
+
             SwitchClear();
-            _playerdata.EXP += _statusdata.EXP;
-            Destroy(gameObject);
+            if (_expTime < _timer)
+            {
+                _playerdata.EXP += _statusdata.EXP;
+            }
         }
         else
         {
-            _playerdata.EXP += _statusdata.EXP;
-            Destroy(gameObject);
+
+            cla = _sr.color.a;
+            StartCoroutine(Display());
+
+            if (_expTime < _timer)
+            {
+                _playerdata.EXP += _statusdata.EXP;
+            }
         }
     }
 
-    void OnTriggerExit2D(Collider2D col)
+    private void OnTriggerExit2D(Collider2D col)
     {
         if (col.gameObject.tag == "Pray" && IsDead == true && IsGetKeyUp == true)
         {
@@ -252,4 +278,15 @@ public class IsDamaged : MonoBehaviour
 
     }
 
+    IEnumerator Display()
+    {
+        while (cla > 0f)
+        {
+            cla -= speed;
+            _sr.color = new Color(_sr.color.r, _sr.color.g, _sr.color.b, cla);
+            yield return null;
+        }
+        Destroy(gameObject);
+
+    }
 }

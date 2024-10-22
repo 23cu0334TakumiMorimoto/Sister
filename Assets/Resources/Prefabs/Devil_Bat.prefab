@@ -77,7 +77,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2128642987
-  m_SortingLayer: 3
+  m_SortingLayer: 5
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 10c1535edecbc2c4185bd1a68adf1b68, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -187,6 +187,12 @@ MonoBehaviour:
   _currentHP: 0
   IsGetKeyUp: 0
   Sound: {fileID: 8300000, guid: 23a9410a2472d37498292c02fd5f3ff4, type: 3}
+  IsBoss: 0
+  loadClear: 
+  clearColor: {r: 1, g: 1, b: 1, a: 1}
+  fadeSpeedMultiplier: 3
+  _expTime: 1.1
+  speed: 0.01
 --- !u!95 &9129185280259514597
 Animator:
   serializedVersion: 5

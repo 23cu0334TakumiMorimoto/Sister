@@ -70,17 +70,17 @@ public class TestMover : MonoBehaviour
             return;
         }
 
-        // キーの入力状態取得
-        var aKey = current.aKey;
-        var leftArrowKey = current.leftArrowKey;
-        var dKey = current.dKey;
-        var rightArrowKey = current.rightArrowKey;
-        // ゲームパッド（デバイス取得）
-        var gamepad = Gamepad.current;
-        if (gamepad == null) return;
-        // ゲームパッドの左右のスティックの入力値を取得
-        var x = gamepad.leftStick.x.ReadValue();
-        var y = gamepad.leftStick.y.ReadValue();
+        //// キーの入力状態取得
+        //var aKey = current.aKey;
+        //var leftArrowKey = current.leftArrowKey;
+        //var dKey = current.dKey;
+        //var rightArrowKey = current.rightArrowKey;
+        //// ゲームパッド（デバイス取得）
+        //var gamepad = Gamepad.current;
+        //if (gamepad == null) return;
+        //// ゲームパッドの左右のスティックの入力値を取得
+        //var x = gamepad.leftStick.x.ReadValue();
+        //var y = gamepad.leftStick.y.ReadValue();
 
         //斜めの移動距離を正規化処理を行い均一化する
         Vector2 dir = new Vector2(_moveInputValue.x, _moveInputValue.y).normalized;
@@ -94,8 +94,8 @@ public class TestMover : MonoBehaviour
                 // 位置を移動させる
                 _rigidbody.velocity = dir * statusdata.SISTER_SPEED;
                 if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) ||
-                    Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow)
-                    || x > 0 || x < 0 || y > 0 || y < 0)
+                    Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
+                    //|| x > 0 || x < 0 || y > 0 || y < 0)
                 {
                     _animator.SetInteger("Action", 1);
                 }
@@ -119,8 +119,8 @@ public class TestMover : MonoBehaviour
             // 位置を移動させる
             _rigidbody.velocity = dir * statusdata.DEVIL_SPEED;
             if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) ||
-                    Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow) && !Input.GetKeyDown(KeyCode.J)
-                    || x > 0 || x < 0 || y > 0 || y < 0)
+                    Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow) && !Input.GetKeyDown(KeyCode.J))
+                    //|| x > 0 || x < 0 || y > 0 || y < 0)
             {
 
                 _animator.SetInteger("Action", 4);
@@ -151,15 +151,15 @@ public class TestMover : MonoBehaviour
         var leftArrowKey = current.leftArrowKey;
         var dKey = current.dKey;
         var rightArrowKey = current.rightArrowKey;
-        // ゲームパッド（デバイス取得）
-        var gamepad = Gamepad.current;
-        if (gamepad == null) return;
-        // ゲームパッドの左右のスティックの入力値を取得
-        var x = gamepad.leftStick.x.ReadValue();
-        var y = gamepad.leftStick.y.ReadValue();
+        //// ゲームパッド（デバイス取得）
+        //var gamepad = Gamepad.current;
+        //if (gamepad == null) return;
+        //// ゲームパッドの左右のスティックの入力値を取得
+        //var x = gamepad.leftStick.x.ReadValue();
+        //var y = gamepad.leftStick.y.ReadValue();
 
         // Aキーもしくは左キーが押されているかどうか
-        if (aKey.isPressed || leftArrowKey.isPressed || x < 0)
+        if (aKey.isPressed || leftArrowKey.isPressed) //|| x < 0)
         {
             if (_sr.flipX == true)
             {
@@ -168,7 +168,7 @@ public class TestMover : MonoBehaviour
         }
 
         // Dキーもしくは右キーが押されているかどうか
-        if (dKey.isPressed || rightArrowKey.isPressed || x > 0)
+        if (dKey.isPressed || rightArrowKey.isPressed) //|| x > 0)
         {
             if (_sr.flipX == false)
             {

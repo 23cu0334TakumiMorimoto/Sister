@@ -55,6 +55,9 @@ TagManager:
   - name: ATK
     uniqueID: 1440987965
     locked: 0
+  - name: Soul
+    uniqueID: 2765521965
+    locked: 0
   - name: Enemy
     uniqueID: 2166324309
     locked: 0
