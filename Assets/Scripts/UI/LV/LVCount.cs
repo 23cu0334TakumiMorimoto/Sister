@@ -62,7 +62,7 @@ public class LVCount : MonoBehaviour
     {
         // 数値を文字列に変換
         //D3はフォーマット指定子。詳しいことは勉強する
-        string numberString = number.ToString("D3");
+        string numberString = number.ToString("D2");
 
         // 各桁をスプライトとして表示するために文字列を変換
 

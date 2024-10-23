@@ -67,6 +67,9 @@ TagManager:
   - name: Player
     uniqueID: 430302059
     locked: 0
+  - name: SideBar
+    uniqueID: 883735197
+    locked: 0
   - name: UI
     uniqueID: 2460559535
     locked: 0
