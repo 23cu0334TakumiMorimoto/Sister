@@ -28,10 +28,12 @@ public class Soul : MonoBehaviour
     [SerializeField]
     private PlayerData _playerdata;
 
+    private bool _absorb;
+
     // Start is called before the first frame update
     void Start()
     {
-        _player = GameObject.Find("Player");
+        _player = GameObject.Find("God");
         Init();
     }
 
@@ -53,6 +55,9 @@ public class Soul : MonoBehaviour
 
             // 加速しながら近づく
             m_followSpeed += m_followAccel;
+
+            // フラグ更新
+            _absorb = true;
         }
        
 
@@ -87,12 +92,15 @@ public class Soul : MonoBehaviour
     // 他のオブジェクトと衝突した時に呼び出される関数
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // 衝突したオブジェクトがプレイヤーではない場合は無視する
-        if (collision.gameObject.tag == "Player")
+        if(_absorb == true)
         {
-            // アイテムを削除する
-            Destroy(gameObject);
+            if (collision.gameObject.tag == "God")
+            {
+                // アイテムを削除する
+                Destroy(gameObject);
+            }
         }
+        
 
 
     }
