@@ -180,6 +180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _statusdata: {fileID: 11400000, guid: e6f600985e4c1894c99cd47d3fb954c7, type: 2}
   _playerdata: {fileID: 11400000, guid: 5a9840cb11c374646a320ac7a30231f6, type: 2}
+  _goddata: {fileID: 11400000, guid: 673d823451323f5479e3e61f47695c32, type: 2}
   Hitmark: {fileID: 1679186590682017070, guid: 151d96a3813b4784a9a0b9a1b1e80ef0, type: 3}
   _expPrefab: {fileID: 4852027576173093877, guid: 31d9a80b7bdd1964c9ecf22d0c811042, type: 3}
   IsDead: 0

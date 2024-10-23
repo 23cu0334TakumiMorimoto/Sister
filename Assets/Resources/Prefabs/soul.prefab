@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _absorbTime: 1
-  _playerdata: {fileID: 0}
+  _playerdata: {fileID: 11400000, guid: 5a9840cb11c374646a320ac7a30231f6, type: 2}
 --- !u!50 &1816535397096586339
 Rigidbody2D:
   serializedVersion: 4

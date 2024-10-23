@@ -24,6 +24,7 @@ public class LVCount : MonoBehaviour
     private GameObject _gameManager;
     private CallUI _callUI;
 
+
     void Start()
     {
         // 神の像のステータス初期化
@@ -52,6 +53,7 @@ public class LVCount : MonoBehaviour
         {
             _godData.LV += 1;
             _nowLevel += 1;
+
             // レベルアップウィンドウを呼び出す
             _callUI.LVUP();
         }

@@ -16,6 +16,8 @@ public class IsDamaged : MonoBehaviour
     private StatusData _statusdata;
     [SerializeField]
     private PlayerData _playerdata;
+    [SerializeField]
+    private NewGodData _goddata;
 
     // 攻撃を受けたときに出す画像
     [SerializeField]
@@ -60,11 +62,6 @@ public class IsDamaged : MonoBehaviour
     [SerializeField] private string loadClear;
     [SerializeField] private Color clearColor = Color.white;
     [SerializeField] private float fadeSpeedMultiplier = 3.0f;
-
-    [SerializeField]
-    [Header("経験値加算までの時間")]
-    private float _expTime;
-    private float _timer;
 
     private SpriteRenderer _sr;
     private float cla;
@@ -225,7 +222,6 @@ public class IsDamaged : MonoBehaviour
     private void SendSoul()
     {
         Instantiate(_expPrefab, transform.position, Quaternion.identity);
-        _timer += Time.deltaTime;
 
         if (IsBoss == true)
         {
@@ -233,21 +229,11 @@ public class IsDamaged : MonoBehaviour
             StartCoroutine(Display());
 
             SwitchClear();
-            if (_expTime < _timer)
-            {
-                _playerdata.EXP += _statusdata.EXP;
-            }
         }
         else
         {
-
             cla = _sr.color.a;
             StartCoroutine(Display());
-
-            if (_expTime < _timer)
-            {
-                _playerdata.EXP += _statusdata.EXP;
-            }
         }
     }
 
@@ -286,7 +272,7 @@ public class IsDamaged : MonoBehaviour
             _sr.color = new Color(_sr.color.r, _sr.color.g, _sr.color.b, cla);
             yield return null;
         }
+        _goddata.EXP += _statusdata.EXP;
         Destroy(gameObject);
-
     }
 }

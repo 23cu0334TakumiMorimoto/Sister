@@ -8,7 +8,7 @@ public class TestFost : MonoBehaviour
 {
     // ステータスデータを読み込む
     [SerializeField]
-    private PlayerData _statusdata;
+    private NewGodData _statusdata;
 
     public GameObject TextDisplay;           //表示するためのテキストを指定
 
