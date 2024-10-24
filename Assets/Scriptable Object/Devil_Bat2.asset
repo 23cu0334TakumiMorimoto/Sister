@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 218bb36d2ef506343a2370d9ab6bd3bd, type: 3}
-  m_Name: Enemy1Status
+  m_Name: Devil_Bat2
   m_EditorClassIdentifier: 
-  MAXHP: 3
-  ATK: 1
+  MAXHP: 5
+  ATK: 3
   DEF: 0
   SPEED: 1
   NockBack: 5
@@ -21,4 +21,4 @@ MonoBehaviour:
   Attack_SPAN: 0
   Attack_STIFFNESS: 0
   DEAD_TIME: 20
-  EXP: 10
+  EXP: 30

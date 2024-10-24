@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 9129185280259514597}
   - component: {fileID: 6737800866431925348}
   m_Layer: 0
-  m_Name: Devil_Bat
+  m_Name: Devil_Bat1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
