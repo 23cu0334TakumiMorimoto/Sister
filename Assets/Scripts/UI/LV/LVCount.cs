@@ -25,6 +25,7 @@ public class LVCount : MonoBehaviour
     private CallUI _callUI;
 
 
+
     void Start()
     {
         // 神の像のステータス初期化

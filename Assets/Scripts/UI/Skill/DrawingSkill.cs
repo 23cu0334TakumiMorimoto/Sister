@@ -45,6 +45,10 @@ public class DrawingSkill : LV_UIData
     // 抽選した回数
     private int _countDrawing;
 
+    // 一度にウィンドウが呼ばれた数
+    public int _callCount;
+    public bool _oneMoreSkill;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -103,36 +107,39 @@ public class DrawingSkill : LV_UIData
     public void DrawingRarity()
     {
         Debug.Log("抽選開始");
-        // 抽選回数が5回未満なら
-        if (_countDrawing < 4)
-        {
-            // 各レアリティの合計値の間でランダムな整数値が返る
-            _randomNum = Random.Range(0, _normalProbability + _rareProbability + _superRareProbability);
 
-            // ノーマル
-            if (_randomNum < _normalProbability)
+        
+            // 抽選回数が5回未満なら
+            if (_countDrawing < 4)
             {
-                Debug.Log("ノーマル排出");
-                SelectNormal();
+                // 各レアリティの合計値の間でランダムな整数値が返る
+                _randomNum = Random.Range(0, _normalProbability + _rareProbability + _superRareProbability);
+
+                // ノーマル
+                if (_randomNum < _normalProbability)
+                {
+                    Debug.Log("ノーマル排出");
+                    SelectNormal();
+                }
+                // レア
+                else if (_randomNum >= _normalProbability && _randomNum < _normalProbability + _rareProbability)
+                {
+                    Debug.Log("レア排出");
+                    SelectRare();
+                }
+                // スーパーレア
+                else if (_randomNum >= _normalProbability + _rareProbability)
+                {
+                    Debug.Log("スーパーレア排出");
+                    SelectSuperRare();
+                }
             }
-            // レア
-            else if (_randomNum >= _normalProbability && _randomNum < _normalProbability + _rareProbability)
+            // 抽選回数が5回以上なら
+            else
             {
-                Debug.Log("レア排出");
-                SelectRare();
+                _countDrawing = 0;
             }
-            // スーパーレア
-            else if (_randomNum >= _normalProbability + _rareProbability)
-            {
-                Debug.Log("スーパーレア排出");
-                SelectSuperRare();
-            }
-        }
-        // 抽選回数が5回以上なら
-        else
-        {
-            _countDrawing = 0;
-        }
+
     }
 
     void SelectNormal()

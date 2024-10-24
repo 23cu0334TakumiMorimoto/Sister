@@ -108,7 +108,18 @@ public class CallUI : MonoBehaviour
             Time.timeScale = 0;
             // 矢印の位置初期化
             _skillSelect.InitSelect();
-            _drawingSkill.DrawingRarity();
+            // 呼び出される回数をカウント
+            _drawingSkill._callCount++;
+
+            if(_drawingSkill._callCount == 1)
+            {
+                _drawingSkill.DrawingRarity();
+            }
+            else
+            {
+                _drawingSkill._oneMoreSkill = true;
+            }
+            
         }
     }
 
@@ -120,6 +131,14 @@ public class CallUI : MonoBehaviour
             Time.timeScale = 1;
             _lvUpUI.SetActive(false);
             _lvArrow.SetActive(false);
+
+            // 一度に複数回レベルアップしたなら処理
+            if(_drawingSkill._oneMoreSkill == true)
+            {
+                _drawingSkill._callCount--;
+                _drawingSkill._oneMoreSkill = false;
+                _drawingSkill.DrawingRarity();
+            }
         }
     }
 }
