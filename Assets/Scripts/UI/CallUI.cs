@@ -27,6 +27,10 @@ public class CallUI : MonoBehaviour
     private bool _calledPause;
     private bool _calledSkill;
 
+    // 一度にスキルウィンドウが呼ばれた数
+    public int _callCount;
+    public bool _oneMoreSkill;
+
 
     private void Start()
     {
@@ -103,21 +107,21 @@ public class CallUI : MonoBehaviour
         if (_calledPause != true)
         {
             _calledSkill = true;
-            _lvUpUI.SetActive(true);
-            _lvArrow.SetActive(true);
-            Time.timeScale = 0;
-            // 矢印の位置初期化
-            _skillSelect.InitSelect();
             // 呼び出される回数をカウント
-            _drawingSkill._callCount++;
+            _callCount++;
 
-            if(_drawingSkill._callCount == 1)
+            if(_callCount == 1 || _oneMoreSkill == true)
             {
+                _lvUpUI.SetActive(true);
+                _lvArrow.SetActive(true);
+                Time.timeScale = 0;
+                // 矢印の位置初期化
+                _skillSelect.InitSelect();
                 _drawingSkill.DrawingRarity();
             }
             else
             {
-                _drawingSkill._oneMoreSkill = true;
+                _oneMoreSkill = true;
             }
             
         }
@@ -128,16 +132,24 @@ public class CallUI : MonoBehaviour
         if (_calledPause != true)
         {
             _calledSkill = false;
+            _callCount--;
             Time.timeScale = 1;
             _lvUpUI.SetActive(false);
             _lvArrow.SetActive(false);
 
             // 一度に複数回レベルアップしたなら処理
-            if(_drawingSkill._oneMoreSkill == true)
+            // レベルアップ回数が残り１回なら
+            if(_oneMoreSkill == true && _callCount == 1)
             {
-                _drawingSkill._callCount--;
-                _drawingSkill._oneMoreSkill = false;
-                _drawingSkill.DrawingRarity();
+                _oneMoreSkill = false;
+                _callCount--;
+                LVUP();
+            }
+            // レベルアップ回数が残り２回以上なら
+            else if (_oneMoreSkill == true && _callCount >= 2)
+            {
+                _callCount--;
+                LVUP();
             }
         }
     }

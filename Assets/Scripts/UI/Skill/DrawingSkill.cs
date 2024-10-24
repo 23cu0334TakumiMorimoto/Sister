@@ -45,9 +45,9 @@ public class DrawingSkill : LV_UIData
     // 抽選した回数
     private int _countDrawing;
 
-    // 一度にウィンドウが呼ばれた数
-    public int _callCount;
-    public bool _oneMoreSkill;
+    //// 一度にウィンドウが呼ばれた数
+    //public int _callCount;
+    //public bool _oneMoreSkill;
 
     // Start is called before the first frame update
     void Start()
