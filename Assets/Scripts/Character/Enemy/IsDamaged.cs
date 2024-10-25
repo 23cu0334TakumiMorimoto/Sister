@@ -20,8 +20,8 @@ public class IsDamaged : MonoBehaviour
     private NewGodData _goddata;
 
     // 攻撃を受けたときに出す画像
-    [SerializeField]
-    private GameObject Hitmark;
+   // [SerializeField]
+    //private GameObject Hitmark;
     private Vector3 Hitpos;
 
     // 魂のプレハブ
@@ -105,7 +105,7 @@ public class IsDamaged : MonoBehaviour
                 currentTime = 0f;
                 MUTEKI = false;//無敵状態終わらせる
                 rb.velocity = new Vector2(0, 0);//ノックバックをとめる
-                Hitmark.GetComponent<SpriteRenderer>().enabled = false;
+                //Hitmark.GetComponent<SpriteRenderer>().enabled = false;
             }
 
         }
@@ -114,8 +114,8 @@ public class IsDamaged : MonoBehaviour
         {
             Hitpos = this.transform.position;
             Hitpos.z = -2f;
-            Hitmark.transform.position = Hitpos;
-            Hitmark.GetComponent<SpriteRenderer>().enabled = true;
+            //Hitmark.transform.position = Hitpos;
+            //Hitmark.GetComponent<SpriteRenderer>().enabled = true;
 
 
 
@@ -144,8 +144,8 @@ public class IsDamaged : MonoBehaviour
 
                 Hitpos = this.transform.position;
                 Hitpos.z = -2f;//Z軸を敵キャラよりも手前に設定
-                Hitmark.transform.position = Hitpos;//ヒットマークの画像位置を移動させる
-                Hitmark.GetComponent<SpriteRenderer>().enabled = true; //ヒットマーク画像を表示する
+                //Hitmark.transform.position = Hitpos;//ヒットマークの画像位置を移動させる
+                //Hitmark.GetComponent<SpriteRenderer>().enabled = true; //ヒットマーク画像を表示する
 
                 _currentHP -= damage;//HP減少
                 Debug.Log(_currentHP);//現在のHPを表示

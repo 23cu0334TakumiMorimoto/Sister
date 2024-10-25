@@ -29,8 +29,6 @@ public class EnemyMovement : MonoBehaviour
     Rigidbody2D rb;
     Animator _animator;
 
-    // a=円運動の大きさ, b=円運動の速さ
-    public float CircleAx, CircleAy, CircleBx, CircleBy;
     // タイマー
     float t;
 
@@ -92,8 +90,8 @@ public class EnemyMovement : MonoBehaviour
             //神の現在位置を取得
             _godPos = _god.transform.position;
             t += Time.deltaTime;
-            float x = CircleAx * Mathf.Cos(t * CircleBx);
-            float y = CircleAy * Mathf.Sin(t * CircleBy);
+            float x = statusdata.CircleX * Mathf.Cos(t * statusdata.SPEED);
+            float y = statusdata.CircleY * Mathf.Sin(t * statusdata.SPEED);
             transform.position
                 = new Vector3(_godPos.x + x, _godPos.y + y, 0.0f);
             transform.rotation = Quaternion.identity;

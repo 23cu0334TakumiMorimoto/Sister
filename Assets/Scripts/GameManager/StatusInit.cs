@@ -16,7 +16,7 @@ public class StatusInit : MonoBehaviour
         _playerdata.ATK = 1;
         _playerdata.SISTER_SPEED = 3;
         _playerdata.DEVIL_SPEED = 1.5f;
-        _playerdata.KnockBack = 3;
+        _playerdata.KnockBack = 0;
         _playerdata.Attack_SPAN = 0.3f;
         _playerdata.Attack_STIFFNESS = 0.5f;
         _playerdata.CHANGE_TRANSITION_TIME = 0.5f;

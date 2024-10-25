@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 218bb36d2ef506343a2370d9ab6bd3bd, type: 3}
-  m_Name: Devil_Bat2
+  m_Name: Devil_Goat
   m_EditorClassIdentifier: 
   MAXHP: 5
   ATK: 3
   DEF: 0
-  SPEED: 0.8
-  NockBack: 4
+  SPEED: 0.5
+  NockBack: 5
   MUTEKI_SPAN: 0.2
   Attack_STIFFNESS: 0
   DEAD_TIME: 20
   EXP: 30
-  CircleX: 0
-  CircleY: 0
-  ATK_Interval: 0
+  CircleX: 4
+  CircleY: 3.7
+  ATK_Interval: 3

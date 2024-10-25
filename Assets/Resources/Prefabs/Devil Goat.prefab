@@ -74,7 +74,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6275610245064567029, guid: f862a90ba47c9ff48ab5956cd7a0a67e, type: 3}
       propertyPath: m_Name
-      value: Goat Devil Variant
+      value: Devil Goat
       objectReference: {fileID: 0}
     - target: {fileID: 6275610245064567029, guid: f862a90ba47c9ff48ab5956cd7a0a67e, type: 3}
       propertyPath: m_TagString
@@ -96,6 +96,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6275610245064567029, guid: f862a90ba47c9ff48ab5956cd7a0a67e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 9088188699474033188}
+    - targetCorrespondingSourceObject: {fileID: 6275610245064567029, guid: f862a90ba47c9ff48ab5956cd7a0a67e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1342520565372044897}
   m_SourcePrefab: {fileID: 100100000, guid: f862a90ba47c9ff48ab5956cd7a0a67e, type: 3}
 --- !u!1 &7275628811368967140 stripped
 GameObject:
@@ -177,12 +180,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyMove: 1
-  statusdata: {fileID: 11400000, guid: e6f600985e4c1894c99cd47d3fb954c7, type: 2}
+  statusdata: {fileID: 11400000, guid: 1421b35012e2ffc4ab1ebec7eb15ffeb, type: 2}
   Enemy: {fileID: 7275628811368967140}
-  CircleAx: 3
-  CircleAy: 3
-  CircleBx: 0.5
-  CircleBy: 0.5
 --- !u!114 &9088188699474033188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,18 +194,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a171f03e48d0a942a62e64ed1934abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _statusdata: {fileID: 11400000, guid: e6f600985e4c1894c99cd47d3fb954c7, type: 2}
+  _statusdata: {fileID: 11400000, guid: 1421b35012e2ffc4ab1ebec7eb15ffeb, type: 2}
   _playerdata: {fileID: 11400000, guid: 5a9840cb11c374646a320ac7a30231f6, type: 2}
   _goddata: {fileID: 11400000, guid: 673d823451323f5479e3e61f47695c32, type: 2}
-  Hitmark: {fileID: 0}
-  _expPrefab: {fileID: 0}
+  _expPrefab: {fileID: 4852027576173093877, guid: 31d9a80b7bdd1964c9ecf22d0c811042, type: 3}
   IsDead: 0
   _deadTimer: 0
   _currentHP: 0
   IsGetKeyUp: 0
   Sound: {fileID: 0}
-  IsBoss: 1
+  IsBoss: 0
   loadClear: 
   clearColor: {r: 1, g: 1, b: 1, a: 1}
   fadeSpeedMultiplier: 3
-  speed: 0
+  speed: 0.01
+--- !u!114 &1342520565372044897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7275628811368967140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a47728f1e7609b4492839ebad6c154a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statusdata: {fileID: 11400000, guid: 1421b35012e2ffc4ab1ebec7eb15ffeb, type: 2}
+  EnemyMove: 1
+  _bulletGoat: {fileID: 5666226846566551098, guid: 115a5d6bd1acc7442958f55f4556dab3, type: 3}

@@ -32,6 +32,8 @@ public class ATK : MonoBehaviour
             //_audioSource.PlayOneShot(Sound);
             col.gameObject.GetComponent<IsDamaged>().Damage(statusdata.ATK);
             col.gameObject.GetComponent<IsDamaged>().KnockBack(statusdata.KnockBack, false);
+
+            Debug.Log("ATK!!!");
         }
     }
 }
