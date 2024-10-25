@@ -17,6 +17,8 @@ public class EnemyGeneratePattern : MonoBehaviour
     // 敵プレハブ
     [Header("敵プレハブ")]
     [SerializeField] private GameObject _Enemy1;
+    [Header("敵プレハブ")]
+    [SerializeField] private GameObject _Enemy2;
     [Header("敵ボスプレハブ")]
     [SerializeField] private GameObject _BossEnemy;
 
@@ -114,19 +116,19 @@ public class EnemyGeneratePattern : MonoBehaviour
         // 9
         if (_wave1Flag[8] == false && _wave1Time[8] < currentTime)
         {
-            _up.EnemyGenerate(_Enemy1);
+            _up.EnemyGenerate(_Enemy2);
             _wave1Flag[8] = true;
         }
         // 10
         if (_wave1Flag[9] == false && _wave1Time[9] < currentTime)
         {
-            _down.EnemyGenerate(_Enemy1);
+            _down.EnemyGenerate(_Enemy2);
             _wave1Flag[9] = true;
         }
         // 11
         if (_wave1Flag[10] == false && _wave1Time[10] < currentTime)
         {
-            _left.EnemyGenerate(_Enemy1);
+            _left.EnemyGenerate(_Enemy2);
             _wave1Flag[10] = true;
         }
         // 12

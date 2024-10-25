@@ -69,12 +69,16 @@ public class IsDamaged : MonoBehaviour
     [Header("透明になる速度")]
     private float speed;
 
+    private GameObject _gameManager;
+    private CallUI _callUI;
+
     void Start()
     {
         _player = GameObject.FindGameObjectWithTag("Player");
         _playerPos = _player.transform.position;
         _god = GameObject.FindGameObjectWithTag("God");
         _godPos = _god.transform.position;
+        _gameManager = GameObject.Find("GameManager");
         this.transform.LookAt(_playerPos);
         _currentHP = _statusdata.MAXHP;
         rb = GetComponent<Rigidbody2D>();//Rigidbody2Dの取得
@@ -83,6 +87,7 @@ public class IsDamaged : MonoBehaviour
         _animator.SetInteger("Action", 0);
         _audioSource = GetComponent<AudioSource>();
         _sr = GetComponent<SpriteRenderer>();
+        _callUI = _gameManager.GetComponent<CallUI>();
 
         _deadTimer = 0f;
 
@@ -227,6 +232,7 @@ public class IsDamaged : MonoBehaviour
         {
             cla = _sr.color.a;
             StartCoroutine(Display());
+            _callUI.IsClear = true;
 
             SwitchClear();
         }

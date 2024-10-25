@@ -31,6 +31,9 @@ public class CallUI : MonoBehaviour
     public int _callCount;
     public bool _oneMoreSkill;
 
+    // クリアしたかどうか
+    public bool IsClear;
+
 
     private void Start()
     {
@@ -54,7 +57,7 @@ public class CallUI : MonoBehaviour
 
     public void PauseGame()
     {
-        if (_calledSkill != true)
+        if (_calledSkill != true && IsClear != true)
         {
             if (Input.GetKeyDown(KeyCode.Escape) && _pauseFlg == false || Input.GetKeyDown(KeyCode.Joystick1Button7) && _pauseFlg == false)
             {
@@ -104,7 +107,7 @@ public class CallUI : MonoBehaviour
 
     public void LVUP()
     {
-        if (_calledPause != true)
+        if (_calledPause != true && IsClear != true)
         {
             _calledSkill = true;
             // 呼び出される回数をカウント

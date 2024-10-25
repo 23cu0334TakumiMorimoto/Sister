@@ -30,11 +30,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5525166602781789653, guid: f862a90ba47c9ff48ab5956cd7a0a67e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.76
+      value: 6.11
       objectReference: {fileID: 0}
     - target: {fileID: 5525166602781789653, guid: f862a90ba47c9ff48ab5956cd7a0a67e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 3.79
       objectReference: {fileID: 0}
     - target: {fileID: 5525166602781789653, guid: f862a90ba47c9ff48ab5956cd7a0a67e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -131,7 +131,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -163,7 +163,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &4704321248524340548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,8 +181,8 @@ MonoBehaviour:
   Enemy: {fileID: 7275628811368967140}
   CircleAx: 3
   CircleAy: 3
-  CircleBx: 1
-  CircleBy: 1
+  CircleBx: 0.5
+  CircleBy: 0.5
 --- !u!114 &9088188699474033188
 MonoBehaviour:
   m_ObjectHideFlags: 0
