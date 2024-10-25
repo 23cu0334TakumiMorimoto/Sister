@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class EnemyBullet : MonoBehaviour
 {
@@ -32,12 +34,11 @@ public class EnemyBullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 vec = _playerPos - transform.position;
-        _rb.velocity = vec;
-
+        transform.LookAt(_player.transform);
+        _rb.velocity = this.transform.position, _playerPos;
         _timer += Time.deltaTime;
 
-        if(_timer > 3 && IsDestroy != true)
+        if(_timer > 1 && IsDestroy)
         {
             Destroy(gameObject);
         }
