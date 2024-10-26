@@ -16,11 +16,17 @@ public class EnemyBullet : MonoBehaviour
     private GameObject _player;
     private Vector3 _playerPos;
 
+    // 発射角度
+    private float angle;
+
     private float _timer;
 
     [SerializeField]
     [Header("破壊されるかどうか")]
     private bool IsDestroy;
+
+    private float rotateX, rotateY, rotateZ;
+    private float _rotateSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -29,18 +35,45 @@ public class EnemyBullet : MonoBehaviour
 
         _player = GameObject.FindGameObjectWithTag("Player");
         _playerPos = _player.transform.position;
+
+        ////  発射角度を求める
+        //float angle = GetAngle(gameObject.transform.position, _playerPos);
+
+        _rb.AddForce(_playerPos - transform.position * _speed,ForceMode2D.Impulse);
+        ////メーターのZ軸の数値をボールのX軸の角度へ。-1かけると丁度良い具合になる
+        //transform.rotation = Quaternion.Euler(angle * -1, 0, 0);
+
+        rotateX = 0;
+        rotateY = 0;
+        rotateZ = 30;
+        _rotateSpeed = 10;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(_player.transform);
-        _rb.velocity = this.transform.position, _playerPos;
         _timer += Time.deltaTime;
 
-        if(_timer > 1 && IsDestroy)
+        if(_timer > 5 && IsDestroy != true)
         {
             Destroy(gameObject);
         }
     }
+    private void FixedUpdate()
+    {
+        ////メーターのZ軸の数値をボールのX軸の角度へ。-1かけると丁度良い具合になる
+        //transform.rotation = Quaternion.Euler(angle * -1, 0, 0);
+
+        // 回転し続ける。
+        gameObject.transform.Rotate(new Vector3(rotateX, rotateY, rotateZ) * Time.deltaTime * _rotateSpeed);
+    }
+
+    //    float GetAngle(Vector2 start, Vector2 target)
+    //{
+    //    Vector2 dt = target - start;
+    //    float rad = Mathf.Atan2(dt.y, dt.x);
+    //    float degree = rad * Mathf.Rad2Deg;
+
+    //    return degree;
+    //}
 }
