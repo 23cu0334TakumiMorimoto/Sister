@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3c0c433e2e73a6247b98671f4b1a8070
+guid: 634c58472383df64482cd78ced863726
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 120
+  spritePixelsToUnits: 250
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,9 +70,9 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Goat Devil_move_atlas_0
+      name: Boss_walk_atlas_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 512
-        width: 512
-        height: 512
+        y: 1024
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,41 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a8044caa52751f4383e90766cfdf842
-      internalID: -2098177605
+      spriteID: 3b40e1ef4ed4a974d89f62d7fd071ad4
+      internalID: -1459808819
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goat Devil_move_atlas_1
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 512
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 06e74ff68f1f5d844ad24431eabd387a
-      internalID: 431582530
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Goat Devil_move_atlas_2
+      name: Boss_walk_atlas_1
       rect:
         serializedVersion: 2
         x: 1024
-        y: 512
-        width: 512
-        height: 512
+        y: 1024
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,20 +132,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bce9ceac13e40e84cb784fd3184619f0
-      internalID: -39876845
+      spriteID: 852db771e7ddd17428b3c01bce8a6cba
+      internalID: -1835020368
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goat Devil_move_atlas_3
+      name: Boss_walk_atlas_2
       rect:
         serializedVersion: 2
-        x: 1536
-        y: 512
-        width: 512
-        height: 512
+        x: 2048
+        y: 1024
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,20 +153,83 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00027a9c4d18e2644a0b0c134d96eda9
-      internalID: 1337359412
+      spriteID: 8f52a9ec4e97dc3449d5613ddeff00c0
+      internalID: -232959979
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goat Devil_move_atlas_4
+      name: Boss_walk_atlas_3
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 1024
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7257e9fa008a1ea48b604fac6e687aed
+      internalID: 16132413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_walk_atlas_4
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 1024
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea5d4751354760f41bee4b13abb730da
+      internalID: -198540918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_walk_atlas_5
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 1024
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1945386d10f37c6409997defe9ae1ccb
+      internalID: -673872366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_walk_atlas_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 512
-        height: 512
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,41 +237,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9a19df3316b1e64384dd654e1f944da
-      internalID: 793404206
+      spriteID: c6e3824c153a84348a285b46ddc9ae9a
+      internalID: 857147312
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goat Devil_move_atlas_5
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 0
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d52fbfb92ebe6c94a912674fe2d81c08
-      internalID: -771765777
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Goat Devil_move_atlas_6
+      name: Boss_walk_atlas_7
       rect:
         serializedVersion: 2
         x: 1024
         y: 0
-        width: 512
-        height: 512
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,20 +258,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cfa3dbf598f2690489515722b816570c
-      internalID: -2059815474
+      spriteID: 55a11d378dd3bc14cabb88f15c2c5697
+      internalID: 676979392
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Goat Devil_move_atlas_7
+      name: Boss_walk_atlas_8
       rect:
         serializedVersion: 2
-        x: 1536
+        x: 2048
         y: 0
-        width: 512
-        height: 512
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,8 +279,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 476b438327c1b6b42b58dff5b8e19fb7
-      internalID: -880822601
+      spriteID: 0e7291b18941cf74f986d5dccd5be8d5
+      internalID: -552853241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_walk_atlas_9
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da2073880f08f734ba28a832d2a3e43f
+      internalID: 434115803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_walk_atlas_10
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c988d53c0ecf4684390514613691c2c8
+      internalID: 148522784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_walk_atlas_11
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6994caeb7eef4c44d8fbedc25a07d010
+      internalID: 782460845
       vertices: []
       indices: 
       edges: []
@@ -275,14 +359,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Goat Devil_move_atlas_0: -2098177605
-      Goat Devil_move_atlas_1: 431582530
-      Goat Devil_move_atlas_2: -39876845
-      Goat Devil_move_atlas_3: 1337359412
-      Goat Devil_move_atlas_4: 793404206
-      Goat Devil_move_atlas_5: -771765777
-      Goat Devil_move_atlas_6: -2059815474
-      Goat Devil_move_atlas_7: -880822601
+      Boss_walk_atlas_0: -1459808819
+      Boss_walk_atlas_1: -1835020368
+      Boss_walk_atlas_10: 148522784
+      Boss_walk_atlas_11: 782460845
+      Boss_walk_atlas_2: -232959979
+      Boss_walk_atlas_3: 16132413
+      Boss_walk_atlas_4: -198540918
+      Boss_walk_atlas_5: -673872366
+      Boss_walk_atlas_6: 857147312
+      Boss_walk_atlas_7: 676979392
+      Boss_walk_atlas_8: -552853241
+      Boss_walk_atlas_9: 434115803
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

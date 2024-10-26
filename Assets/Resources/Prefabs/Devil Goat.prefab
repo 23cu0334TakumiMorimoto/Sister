@@ -222,4 +222,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statusdata: {fileID: 11400000, guid: 1421b35012e2ffc4ab1ebec7eb15ffeb, type: 2}
   EnemyMove: 1
-  _bulletGoat: {fileID: 5666226846566551098, guid: 115a5d6bd1acc7442958f55f4556dab3, type: 3}
+  Enemy: {fileID: 7275628811368967140}
+  _bulletGoat: {fileID: 2836157162839506192, guid: 4c36ff75e78a0a04cb2822240e3af14b, type: 3}

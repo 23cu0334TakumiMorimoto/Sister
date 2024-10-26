@@ -19,7 +19,7 @@ MonoBehaviour:
   NockBack: 3
   MUTEKI_SPAN: 0.2
   Attack_STIFFNESS: 0
-  DEAD_TIME: 30
+  DEAD_TIME: 1000
   EXP: 100
   CircleX: 0
   CircleY: 0

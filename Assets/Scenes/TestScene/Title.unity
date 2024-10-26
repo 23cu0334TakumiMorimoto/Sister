@@ -738,7 +738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47a8a39d328085c46b020293320d285a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadScene: HowToPlay
+  loadScene: StageSelect
   fadeColor: {r: 0, g: 0, b: 0, a: 1}
   fadeSpeedMultiplier: 1
 --- !u!1 &1532850540
