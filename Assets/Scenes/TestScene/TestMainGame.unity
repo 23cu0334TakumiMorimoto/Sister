@@ -6436,6 +6436,7 @@ MonoBehaviour:
   - 110
   - 110
   - 110
+  NowWave: 0
 --- !u!114 &2053994213
 MonoBehaviour:
   m_ObjectHideFlags: 0
