@@ -24,7 +24,6 @@ public class EnemyMovement : MonoBehaviour
     private Vector3 _diff;
     private Vector3 _vector;
 
-    public GameObject Enemy;
     IsDamaged Dead;
 
     Rigidbody2D rb;
@@ -39,7 +38,7 @@ public class EnemyMovement : MonoBehaviour
         _godPos = _god.transform.position;
         this.transform.LookAt(_godPos);
         rb = GetComponent<Rigidbody2D>();
-        Dead = Enemy.GetComponent<IsDamaged>();
+        Dead = gameObject.GetComponent<IsDamaged>();
     }
 
     private void Update()
