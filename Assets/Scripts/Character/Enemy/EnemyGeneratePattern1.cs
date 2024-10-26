@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyGeneratePattern : MonoBehaviour
+public class EnemyGeneratePattern1 : MonoBehaviour
 {
     // ジェネレーターを取得
     [SerializeField] private GameObject _upGene;
@@ -32,6 +32,8 @@ public class EnemyGeneratePattern : MonoBehaviour
 
     private float currentTime = 0f;
 
+    public int NowWave;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,13 +50,17 @@ public class EnemyGeneratePattern : MonoBehaviour
             _wave1Flag.Add(false);
         }
 
+        NowWave = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
         currentTime += Time.deltaTime;
-        Wave1();
+        if(NowWave == 1)
+        {
+            Wave1();
+        }
     }
 
     void Wave1()

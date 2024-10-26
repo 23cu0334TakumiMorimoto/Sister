@@ -5,16 +5,22 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 
-public class DisplayStageNum : MonoBehaviour
+public class DisplayWaveNum : MonoBehaviour
 {
     //TextMeshProUGUIを格納するための変数
     private TextMeshProUGUI _testtext;
+
+    private GameObject _gameManager;
+    private EnemyGeneratePattern1 _stage1;
+    private EnemyGeneratePattern1 _stage2;
+    private EnemyGeneratePattern1 _stage3;
 
     private int _spriteNumber;
 
     // Start is called before the first frame update
     void Start()
     {
+        _gameManager = GameObject.Find("GameManager");
         _testtext = gameObject.GetComponent<TextMeshProUGUI>();
     }
 
@@ -23,18 +29,21 @@ public class DisplayStageNum : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "Stage1" || SceneManager.GetActiveScene().name == "TestMainGame")
         {
-            _spriteNumber = 1;
+            _stage1 = _gameManager.GetComponent<EnemyGeneratePattern1>();
+            _spriteNumber = _stage1.NowWave;
             _testtext.text = FormatNumber(_spriteNumber);
         }
         else if (SceneManager.GetActiveScene().name == "Stage2")
         {
-            _spriteNumber = 2;
-            _testtext.text = FormatNumber(_spriteNumber);
+            //_stage2 = _gameManager.GetComponent<EnemyGeneratePattern2>();
+            //_spriteNumber = _stage2.NowWave;
+            //_testtext.text = FormatNumber(_spriteNumber);
         }
         else if (SceneManager.GetActiveScene().name == "Stage3")
         {
-            _spriteNumber = 3;
-            _testtext.text = FormatNumber(_spriteNumber);
+            //_stage3 = _gameManager.GetComponent<EnemyGeneratePattern3>();
+            //_spriteNumber = _stage3.NowWave;
+            //_testtext.text = FormatNumber(_spriteNumber);
         }
         else
         {
@@ -42,6 +51,7 @@ public class DisplayStageNum : MonoBehaviour
         }
     }
 
+    //数値を文字列に変換し、スプライトとして表示する関数
     private string FormatNumber(int number)
     {
         // 数値を文字列に変換
