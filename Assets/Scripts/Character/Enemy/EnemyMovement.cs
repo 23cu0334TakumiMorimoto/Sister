@@ -180,9 +180,13 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.gameObject.tag == "Wall" || col.gameObject.tag == "God")
+        if(col.gameObject.tag == "Wall")
         {
             _rb.velocity = Vector2.zero;
+            _animator.SetInteger("Action", 0);
+        }
+        else if (col.gameObject.tag == "God")
+        {
             _animator.SetInteger("Action", 0);
         }
 

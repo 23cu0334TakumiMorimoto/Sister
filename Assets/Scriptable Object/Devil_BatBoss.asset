@@ -16,7 +16,7 @@ MonoBehaviour:
   ATK: 10
   DEF: 0
   SPEED: 0.5
-  NockBack: 3
+  Weight: 2
   MUTEKI_SPAN: 0.2
   Attack_STIFFNESS: 0
   DEAD_TIME: 1000

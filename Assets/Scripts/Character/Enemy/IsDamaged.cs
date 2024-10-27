@@ -132,13 +132,6 @@ public class IsDamaged : MonoBehaviour
             // オブジェクトを破棄する
             //Destroy(this.gameObject);
         }
-        else
-        {
-            if (IsDead == false)
-            {
-
-            }
-        }
 
         // 仮死状態なら
         if (IsDead == true)
@@ -187,6 +180,12 @@ public class IsDamaged : MonoBehaviour
         // 仮死状態ではないなら処理
         if (IsDead == false)
         {
+            float nb = nockback - _statusdata.Weight;
+            //if(nb <= 0)
+            //{
+            //    nb = 0.5f;
+            //}
+
             Vector2 thisPos = transform.position;
 
             if (IsGod == true)
@@ -194,7 +193,7 @@ public class IsDamaged : MonoBehaviour
                 //攻撃を受けた時点での敵キャラと神像との位置関係
                 float distinationX = thisPos.x - _godPos.x;
                 float distinationY = thisPos.y - _godPos.y;
-                rb.velocity = new Vector2(distinationX * nockback, distinationY * nockback);//殴った方向に飛んでいく
+                rb.velocity = new Vector2(distinationX * nb, distinationY * nb);//殴った方向に飛んでいく
             }
 
             else
@@ -205,7 +204,7 @@ public class IsDamaged : MonoBehaviour
                     //攻撃を受けた時点での敵キャラとプレイヤーとの位置関係
                     float distinationX = thisPos.x - _playerPos.x;
                     float distinationY = thisPos.y - _playerPos.y;
-                    rb.velocity = new Vector2(distinationX * nockback, distinationY * nockback);//殴った方向に飛んでいく
+                    rb.velocity = new Vector2(distinationX * nb, distinationY * nb);//殴った方向に飛んでいく
                 }
             }
             MUTEKI = true;//無敵状態にする

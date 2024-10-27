@@ -14,7 +14,7 @@ public class StatusData : ScriptableObject
     public float ATK; //攻撃力　
     public float DEF; //防御力
     public float SPEED; //移動速度
-    public float NockBack; //ノックバック値
+    public float Weight; //重さ
     public float MUTEKI_SPAN; //無敵時間
     public float Attack_STIFFNESS; // 攻撃の硬直
     public float DEAD_TIME; // 仮死状態の時間
