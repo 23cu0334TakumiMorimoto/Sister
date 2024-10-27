@@ -41,6 +41,9 @@ public class ATKGenerator : MonoBehaviour
     private PlayerInputs _gameInputs;
     private Vector2 _moveInputValue;
 
+    public AudioClip AttackSound;
+    private AudioSource _audioSource;
+
     private void Start()
     {
         gameManagerObj = GameObject.Find("GameManager");
@@ -57,7 +60,7 @@ public class ATKGenerator : MonoBehaviour
         // 有効化する必要がある
         _gameInputs.Enable();
 
-
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void OnDestroy()
@@ -97,6 +100,7 @@ public class ATKGenerator : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Joystick1Button3))
                 {
                     ATKflg = true;
+                    _audioSource.PlayOneShot(AttackSound);
                 }
 
                 if (ATKflg == true)
@@ -107,13 +111,11 @@ public class ATKGenerator : MonoBehaviour
                     if (timer >= statusdata.Attack_SPAN)
                     {
                         FireAtk();
-
                         _animator.SetInteger("Action", 5);
                         // 指定された時間プレイヤー操作を無効にする
                         IAttacked.CallInoperable(statusdata.Attack_STIFFNESS, 0);
                         // 速度を０にする
                         rb.velocity = new Vector2(0, 0);
-
                         // タイマーをリセット
                         timer = 0;
                         // フラグを元に戻す

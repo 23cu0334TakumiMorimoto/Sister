@@ -23,6 +23,9 @@ public class PlayerChange : MonoBehaviour
 
     private Animator _animator;
 
+    public AudioClip ChangeSound;
+    private AudioSource _audioSource;
+
     void Start()
     {
         // SpriteRendererを取得
@@ -37,6 +40,7 @@ public class PlayerChange : MonoBehaviour
         statusdata.PLAYER_PERSON = 1;
 
         _animator = GetComponent<Animator>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -69,6 +73,7 @@ public class PlayerChange : MonoBehaviour
             Debug.Log("チェンジシスター");
             image.sprite = SisterSprite;
             _animator.SetInteger("Action", 7);
+            _audioSource.PlayOneShot(ChangeSound);
             // 指定された時間プレイヤー操作を無効にする
             IsChanged.CallInoperable(statusdata.CHANGE_TRANSITION_TIME, 1);
             // 速度を０にする
@@ -88,6 +93,7 @@ public class PlayerChange : MonoBehaviour
             Debug.Log("チェンジデビル");
             image.sprite = DevilSprite;
             _animator.SetInteger("Action", 6);
+            _audioSource.PlayOneShot(ChangeSound);
             // 指定された時間プレイヤー操作を無効にする
             IsChanged.CallInoperable(statusdata.CHANGE_TRANSITION_TIME, 1);
             // 速度を０にする

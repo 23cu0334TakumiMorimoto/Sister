@@ -15,6 +15,8 @@ public class TestMover : MonoBehaviour
 
     private Animator _animator;
 
+   
+
 
     private void Awake()
     {
@@ -36,6 +38,8 @@ public class TestMover : MonoBehaviour
         // Input Actionを機能させるためには、
         // 有効化する必要がある
         _gameInputs.Enable();
+
+        
     }
 
     private void OnDestroy()
