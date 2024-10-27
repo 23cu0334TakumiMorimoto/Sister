@@ -4145,6 +4145,79 @@ Transform:
   - {fileID: 1696932031}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1113668744
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6033597182007213470, guid: 8f60d6b9046b2ae4f9bf1a27a07c35ab, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6033597182007213470, guid: 8f60d6b9046b2ae4f9bf1a27a07c35ab, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6033597182007213470, guid: 8f60d6b9046b2ae4f9bf1a27a07c35ab, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6033597182007213470, guid: 8f60d6b9046b2ae4f9bf1a27a07c35ab, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.2928295
+      objectReference: {fileID: 0}
+    - target: {fileID: 6033597182007213470, guid: 8f60d6b9046b2ae4f9bf1a27a07c35ab, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.6161876
+      objectReference: {fileID: 0}
+    - target: {fileID: 6033597182007213470, guid: 8f60d6b9046b2ae4f9bf1a27a07c35ab, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6033597182007213470, guid: 8f60d6b9046b2ae4f9bf1a27a07c35ab, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6033597182007213470, guid: 8f60d6b9046b2ae4f9bf1a27a07c35ab, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6033597182007213470, guid: 8f60d6b9046b2ae4f9bf1a27a07c35ab, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6033597182007213470, guid: 8f60d6b9046b2ae4f9bf1a27a07c35ab, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6033597182007213470, guid: 8f60d6b9046b2ae4f9bf1a27a07c35ab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6033597182007213470, guid: 8f60d6b9046b2ae4f9bf1a27a07c35ab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6033597182007213470, guid: 8f60d6b9046b2ae4f9bf1a27a07c35ab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7047688762680968568, guid: 8f60d6b9046b2ae4f9bf1a27a07c35ab, type: 3}
+      propertyPath: m_Name
+      value: Devil_Bat_Boss Variant (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7047688762680968568, guid: 8f60d6b9046b2ae4f9bf1a27a07c35ab, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8f60d6b9046b2ae4f9bf1a27a07c35ab, type: 3}
 --- !u!1 &1132875285
 GameObject:
   m_ObjectHideFlags: 0
@@ -6289,11 +6362,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 845e72f9428f97943a433f790825e963, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -7514,6 +7587,8 @@ MonoBehaviour:
   _Enemy1: {fileID: 8450583645931266645, guid: 0701650c5831df74ebbe25b27d1eca47, type: 3}
   _Enemy2: {fileID: 5405055596513639129, guid: 534f942c278fbf843bd22767de581d9b, type: 3}
   _BossEnemy: {fileID: 7047688762680968568, guid: 8f60d6b9046b2ae4f9bf1a27a07c35ab, type: 3}
+  _EnemyGoat: {fileID: 7275628811368967140, guid: 7852ae79c28438240ae8c0b17ecc179b, type: 3}
+  _EnemyCow: {fileID: 4314911276174559242, guid: e6406a97ce6df3d45a8512bf56740543, type: 3}
   _wave1Time:
   - 5
   - 15
@@ -7527,9 +7602,19 @@ MonoBehaviour:
   - 95
   - 100
   - 110
-  - 110
-  - 110
-  - 110
+  - 115
+  - 120
+  - 125
+  - 135
+  - 140
+  - 150
+  - 155
+  - 160
+  - 165
+  - 170
+  - 175
+  - 180
+  - 200
   NowWave: 0
 --- !u!114 &2053994213
 MonoBehaviour:
@@ -8303,3 +8388,4 @@ SceneRoots:
   - {fileID: 397498434}
   - {fileID: 349003275}
   - {fileID: 1864770028}
+  - {fileID: 1113668744}

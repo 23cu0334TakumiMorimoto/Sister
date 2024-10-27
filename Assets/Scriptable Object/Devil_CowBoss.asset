@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 218bb36d2ef506343a2370d9ab6bd3bd, type: 3}
   m_Name: Devil_CowBoss
   m_EditorClassIdentifier: 
-  MAXHP: 10
+  MAXHP: 40
   ATK: 10
   DEF: 0
   SPEED: 0.5

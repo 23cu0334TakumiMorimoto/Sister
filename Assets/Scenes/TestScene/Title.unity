@@ -739,7 +739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47a8a39d328085c46b020293320d285a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadScene: StageSelect
+  loadScene: Stage1
   fadeColor: {r: 0, g: 0, b: 0, a: 1}
   fadeSpeedMultiplier: 1
   SE: {fileID: 8300000, guid: 41f7afa8315191b4c99a9341c6167538, type: 3}
@@ -755,7 +755,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 49b22558d3a006f42ade5dd6abc155dd, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0

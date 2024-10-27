@@ -13,7 +13,7 @@ public class IsDamaged : MonoBehaviour
 
     // ステータスデータを読み込む
     [SerializeField]
-    private StatusData _statusdata;
+    public StatusData _statusdata;
     [SerializeField]
     private PlayerData _playerdata;
     [SerializeField]
@@ -55,6 +55,10 @@ public class IsDamaged : MonoBehaviour
     [Header("ボスであるかどうか")]
     private bool IsBoss;
 
+    [SerializeField]
+    [Header("弾であるかどうか")]
+    private bool IsBullet;
+
     //[SerializeField]
     //private GameObject manager;
     //private GameManager _GM;
@@ -82,70 +86,80 @@ public class IsDamaged : MonoBehaviour
 
     void Start()
     {
-        _player = GameObject.FindGameObjectWithTag("Player");
-        _playerPos = _player.transform.position;
-        _god = GameObject.FindGameObjectWithTag("God");
-        _godPos = _god.transform.position;
-        _gameManager = GameObject.Find("GameManager");
-        this.transform.LookAt(_playerPos);
-        _currentHP = _statusdata.MAXHP;
-        rb = GetComponent<Rigidbody2D>();//Rigidbody2Dの取得
-        IsGetKeyUp = false;
-        _animator = GetComponent<Animator>();
-        _animator.SetInteger("Action", 0);
-        _audioSource = GetComponent<AudioSource>();
-        _sr = GetComponent<SpriteRenderer>();
-        _callUI = _gameManager.GetComponent<CallUI>();
+        if (IsBullet == false)
+        {
 
-        _deadTimer = 0f;
 
-        //_GM = manager.GetComponent<GameManager>();
-        spriteColor = _sr.color;
+            _player = GameObject.FindGameObjectWithTag("Player");
+            _playerPos = _player.transform.position;
+            _god = GameObject.FindGameObjectWithTag("God");
+            _godPos = _god.transform.position;
+            _gameManager = GameObject.Find("GameManager");
+            this.transform.LookAt(_playerPos);
+            _currentHP = _statusdata.MAXHP;
+            rb = GetComponent<Rigidbody2D>();//Rigidbody2Dの取得
+            IsGetKeyUp = false;
+            _animator = GetComponent<Animator>();
+            _animator.SetInteger("Action", 0);
+            _audioSource = GetComponent<AudioSource>();
+            _sr = GetComponent<SpriteRenderer>();
+            _callUI = _gameManager.GetComponent<CallUI>();
+
+            _deadTimer = 0f;
+
+            //_GM = manager.GetComponent<GameManager>();
+            spriteColor = _sr.color;
+        }
 
     }
     void Update()
     {
-        if (MUTEKI) //攻撃を受けてから0.2秒後にする処理
+        if (IsBullet == false)
         {
-            currentTime += Time.deltaTime;
-            if (currentTime > _statusdata.MUTEKI_SPAN)
+
+
+            if (MUTEKI) //攻撃を受けてから0.2秒後にする処理
             {
-                currentTime = 0f;
-                MUTEKI = false;//無敵状態終わらせる
-                rb.velocity = new Vector2(0, 0);//ノックバックをとめる
-                //Hitmark.GetComponent<SpriteRenderer>().enabled = false;
+                currentTime += Time.deltaTime;
+                if (currentTime > _statusdata.MUTEKI_SPAN)
+                {
+                    currentTime = 0f;
+                    MUTEKI = false;//無敵状態終わらせる
+                    rb.velocity = new Vector2(0, 0);//ノックバックをとめる
+                                                    //Hitmark.GetComponent<SpriteRenderer>().enabled = false;
+                }
+
             }
 
+            if (_currentHP <= 0)
+            {
+                Hitpos = this.transform.position;
+                Hitpos.z = -2f;
+                //Hitmark.transform.position = Hitpos;
+                //Hitmark.GetComponent<SpriteRenderer>().enabled = true;
+
+
+
+                //HPが0以下になったら仮死状態にする
+                IsDead = true;
+                // オブジェクトを破棄する
+                //Destroy(this.gameObject);
+            }
+
+            // 仮死状態なら
+            if (IsDead == true)
+            {
+                Asphyxia();
+            }
+
+            KeyState();
         }
-
-        if (_currentHP <= 0)
-        {
-            Hitpos = this.transform.position;
-            Hitpos.z = -2f;
-            //Hitmark.transform.position = Hitpos;
-            //Hitmark.GetComponent<SpriteRenderer>().enabled = true;
-
-
-
-            //HPが0以下になったら仮死状態にする
-            IsDead = true;
-            // オブジェクトを破棄する
-            //Destroy(this.gameObject);
-        }
-
-        // 仮死状態なら
-        if (IsDead == true)
-        {
-            Asphyxia();
-        }
-
-        KeyState();
     }
 
     public void Damage(float damage)
     {
         // 仮死状態ではないなら処理
-        if (IsDead == false)
+        if (IsDead == false && IsBullet == false)
         {
             if (!MUTEKI)
             {//無敵状態じゃないときに攻撃を受ける
@@ -166,7 +180,7 @@ public class IsDamaged : MonoBehaviour
     public void Dead()
     {
         // 仮死状態なら処理
-        if (IsDead == true)
+        if (IsDead == true && IsBullet == false)
         {
             // オブジェクトを破棄する
             Destroy(this.gameObject);
@@ -178,7 +192,7 @@ public class IsDamaged : MonoBehaviour
     public void KnockBack(float nockback, bool IsGod)
     {
         // 仮死状態ではないなら処理
-        if (IsDead == false)
+        if (IsDead == false && IsBullet == false)
         {
             float nb = nockback - _statusdata.Weight;
             //if(nb <= 0)
@@ -261,9 +275,14 @@ public class IsDamaged : MonoBehaviour
     // 祈りの範囲内にいる間処理
     private void OnTriggerStay2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Pray" && IsDead == true)
+        if (col.gameObject.tag == "Pray" && IsDead == true && IsBullet == false)
         {
             _sr.color = Color.Lerp(startColor, endColor, Mathf.PingPong(Time.time / duration, 1.0f));
+        }
+
+        if (col.gameObject.tag == "Attck" && IsBullet == true)
+        {
+            Destroy(gameObject);
         }
 
         //if(col.gameObject.tag == "Attack")
@@ -278,7 +297,7 @@ public class IsDamaged : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Pray" && IsDead == true && IsGetKeyUp == true)
+        if (col.gameObject.tag == "Pray" && IsDead == true && IsGetKeyUp == true && IsBullet == false)
         {
             Debug.Log("祈りに衝突");
             SendSoul();

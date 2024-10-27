@@ -100,7 +100,6 @@ public class ATKGenerator : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Joystick1Button3))
                 {
                     ATKflg = true;
-                    _audioSource.PlayOneShot(AttackSound);
                 }
 
                 if (ATKflg == true)
@@ -120,6 +119,7 @@ public class ATKGenerator : MonoBehaviour
                         timer = 0;
                         // ƒtƒ‰ƒO‚ðŒ³‚É–ß‚·
                         ATKflg = false;
+                        _audioSource.PlayOneShot(AttackSound);
                     }
                 }
             }

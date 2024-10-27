@@ -36,4 +36,32 @@ MonoBehaviour:
   - level: 11
     exp: 450
   - level: 12
-    exp: 1000
+    exp: 520
+  - level: 13
+    exp: 600
+  - level: 14
+    exp: 666
+  - level: 15
+    exp: 777
+  - level: 15
+    exp: 850
+  - level: 16
+    exp: 940
+  - level: 17
+    exp: 940
+  - level: 18
+    exp: 1040
+  - level: 19
+    exp: 1150
+  - level: 20
+    exp: 1300
+  - level: 21
+    exp: 1500
+  - level: 22
+    exp: 1700
+  - level: 23
+    exp: 2000
+  - level: 24
+    exp: 2100
+  - level: 25
+    exp: 10000

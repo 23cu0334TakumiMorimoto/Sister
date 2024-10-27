@@ -12,7 +12,8 @@ public class StageSelectUI : Selectable, IPointerClickHandler
     {
         Stage1,
         Stage2,
-        Stage3
+        Stage3,
+        None
     }
     [SerializeField] _select StageSelect;　　　　//プルダウン化
 
@@ -94,6 +95,10 @@ public class StageSelectUI : Selectable, IPointerClickHandler
             else if (StageSelect == _select.Stage3)
             {
                 SceneManager.LoadScene("Stage3");
+            }
+            else if (StageSelect == _select.None)
+            {
+
             }
         }
     }

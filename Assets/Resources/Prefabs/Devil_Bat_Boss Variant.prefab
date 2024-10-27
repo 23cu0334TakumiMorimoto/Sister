@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 369338075978099648, guid: 0701650c5831df74ebbe25b27d1eca47, type: 3}
       propertyPath: IsBoss
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 369338075978099648, guid: 0701650c5831df74ebbe25b27d1eca47, type: 3}
       propertyPath: loadClear
@@ -38,7 +38,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5021581551955380473, guid: 0701650c5831df74ebbe25b27d1eca47, type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5130530368641800883, guid: 0701650c5831df74ebbe25b27d1eca47, type: 3}
       propertyPath: m_LocalScale.x

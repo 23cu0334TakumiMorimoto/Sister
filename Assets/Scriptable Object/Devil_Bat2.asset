@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 218bb36d2ef506343a2370d9ab6bd3bd, type: 3}
   m_Name: Devil_Bat2
   m_EditorClassIdentifier: 
-  MAXHP: 5
+  MAXHP: 10
   ATK: 3
   DEF: 0
   SPEED: 0.8

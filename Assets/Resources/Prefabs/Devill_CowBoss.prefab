@@ -196,7 +196,7 @@ MonoBehaviour:
   _currentHP: 0
   IsGetKeyUp: 0
   Sound: {fileID: 0}
-  IsBoss: 0
+  IsBoss: 1
   loadClear: 
   clearColor: {r: 1, g: 1, b: 1, a: 1}
   fadeSpeedMultiplier: 3

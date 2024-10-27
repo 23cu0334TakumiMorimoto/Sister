@@ -52,7 +52,7 @@ public class God : MonoBehaviour
         if (col.gameObject.tag == "Enemy") 
         {
             col.gameObject.GetComponent<IsDamaged>().KnockBack(_knockBack, true);
-            _damage = col.gameObject.GetComponent<EnemyMovement>().statusdata.ATK;
+            _damage = col.gameObject.GetComponent<IsDamaged>()._statusdata.ATK;
             //ƒ_ƒ[ƒW‚ğó‚¯‚é
             UpdateHp();
             IsDead();
