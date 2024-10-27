@@ -129,25 +129,25 @@ public class ATKGenerator : MonoBehaviour
         // ã•ûŒü‚ğ‘ã“ü
         if (_atkDirection == 1)
         {
-            _atkPoint = new Vector2(_atkCoordinate.position.x, _atkCoordinate.position.y + 1f);
+            _atkPoint = new Vector2(_atkCoordinate.position.x, _atkCoordinate.position.y + 0.5f);
             _atkRot = Quaternion.Euler(0, 0, 0);
         }
         // ‰º•ûŒü‚ğ‘ã“ü
         else if (_atkDirection == 2)
         {
-            _atkPoint = new Vector2(_atkCoordinate.position.x, _atkCoordinate.position.y - 1f);
+            _atkPoint = new Vector2(_atkCoordinate.position.x, _atkCoordinate.position.y - 0.9f);
             _atkRot = Quaternion.Euler(0, 0, 180);
         }
         // ¶•ûŒü‚ğ‘ã“ü
         else if (_atkDirection == 3)
         {
-            _atkPoint = new Vector2(_atkCoordinate.position.x - 1f, _atkCoordinate.position.y);
+            _atkPoint = new Vector2(_atkCoordinate.position.x - 0.5f, _atkCoordinate.position.y);
             _atkRot = Quaternion.Euler(0, 0, 270);
         }
         // ‰E•ûŒü‚ğ‘ã“ü
         else if (_atkDirection == 4)
         {
-            _atkPoint = new Vector2(_atkCoordinate.position.x + 1f, _atkCoordinate.position.y);
+            _atkPoint = new Vector2(_atkCoordinate.position.x + 0.5f, _atkCoordinate.position.y);
             _atkRot = Quaternion.Euler(0, 0, 90);
         }
 

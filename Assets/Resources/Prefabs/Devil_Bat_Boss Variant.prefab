@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 369338075978099648, guid: 0701650c5831df74ebbe25b27d1eca47, type: 3}
       propertyPath: loadClear
-      value: TestClear
+      value: Clear
       objectReference: {fileID: 0}
     - target: {fileID: 369338075978099648, guid: 0701650c5831df74ebbe25b27d1eca47, type: 3}
       propertyPath: _statusdata
