@@ -142,13 +142,13 @@ public class ATKGenerator : MonoBehaviour
         else if (_atkDirection == 3)
         {
             _atkPoint = new Vector2(_atkCoordinate.position.x - 0.5f, _atkCoordinate.position.y);
-            _atkRot = Quaternion.Euler(0, 0, 270);
+            _atkRot = Quaternion.Euler(0, 0, 90);
         }
         // ‰E•ûŒü‚ğ‘ã“ü
         else if (_atkDirection == 4)
         {
             _atkPoint = new Vector2(_atkCoordinate.position.x + 0.5f, _atkCoordinate.position.y);
-            _atkRot = Quaternion.Euler(0, 0, 90);
+            _atkRot = Quaternion.Euler(0, 0, 270);
         }
 
         // ’e‚Ì¶¬
