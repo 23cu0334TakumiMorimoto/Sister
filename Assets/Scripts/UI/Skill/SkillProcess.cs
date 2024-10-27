@@ -47,29 +47,33 @@ public class SkillProcess : MonoBehaviour
         }
         else if (SkillNum == 7)
         {
-            PowerUp_Devil();
+            LowPowerUp_Devil();
         }
         else if (SkillNum == 8)
         {
-            HighPowerUp_Devil();
+            PowerUp_Devil();
         }
         else if (SkillNum == 9)
         {
-            LowLimitOverPray_Sister();
+            HighPowerUp_Devil();
         }
         else if (SkillNum == 10)
         {
-            HighLimitOverPray_Sister();
+            LowLimitOverPray_Sister();
         }
         else if (SkillNum == 11)
         {
-            LowExpandOverPray_Sister();
+            HighLimitOverPray_Sister();
         }
         else if (SkillNum == 12)
         {
-            HighExpandOverPray_Sister();
+            LowExpandOverPray_Sister();
         }
         else if (SkillNum == 13)
+        {
+            HighExpandOverPray_Sister();
+        }
+        else if (SkillNum == 14)
         {
             KnockBackOver_Devil();
         }
@@ -112,42 +116,48 @@ public class SkillProcess : MonoBehaviour
         Debug.Log("デビルハイスピード");
     }
     // 7
+    private void LowPowerUp_Devil()
+    {
+        _playerdata.ATK += 0.3f;
+        Debug.Log("デビルローアタック");
+    }
+    // 8
     private void PowerUp_Devil()
     {
         _playerdata.ATK += 0.5f;
         Debug.Log("デビルアタック");
     }
-    // 8
+    // 9
     private void HighPowerUp_Devil()
     {
-        _playerdata.ATK++;
+        _playerdata.ATK ++;
         Debug.Log("デビルハイアタック");
     }
-    // 9
+    // 10
     private void LowLimitOverPray_Sister()
     {
         _playerdata.LIMIT_PRAY += 0.2f;
         Debug.Log("シスタープレイローリミット");
     }
-    // 10
+    // 11
     private void HighLimitOverPray_Sister()
     {
         _playerdata.LIMIT_PRAY += 0.5f;
         Debug.Log("シスタープレイハイリミット");
     }
-    // 11
+    // 12
     private void LowExpandOverPray_Sister()
     {
         _playerdata.EXPAND_PRAY += 0.02f;
         Debug.Log("シスタープレイローエクスパンド");
     }
-    // 12
+    // 13
     private void HighExpandOverPray_Sister()
     {
         _playerdata.EXPAND_PRAY += 0.05f;
         Debug.Log("シスタープレイハイエクスパンド");
     }
-    // 13
+    // 14
     private void KnockBackOver_Devil()
     {
         _playerdata.KnockBack += 0.5f;
