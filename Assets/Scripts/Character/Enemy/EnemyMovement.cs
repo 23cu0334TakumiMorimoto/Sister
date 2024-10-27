@@ -15,7 +15,9 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] _movement EnemyMove;　　　　//プルダウン化
 
     private GameObject _god;
+    private GameObject _player;
     private Vector3 _godPos;
+    private Vector3 _playerPos;
 
     // ステータスデータを読み込む
     [SerializeField]
@@ -26,19 +28,29 @@ public class EnemyMovement : MonoBehaviour
 
     IsDamaged Dead;
 
-    Rigidbody2D rb;
+    private Rigidbody2D _rb;
     Animator _animator;
 
     // タイマー
     float t;
+    private float _bossTimer;
+
+    // フラグ
+    private bool _bossAttack;
+
+    private float _speed = 3.5f;
+
 
     private void Start()
     {
+        _player = GameObject.FindGameObjectWithTag("Player");
         _god = GameObject.FindGameObjectWithTag("God");
         _godPos = _god.transform.position;
         this.transform.LookAt(_godPos);
-        rb = GetComponent<Rigidbody2D>();
+        _rb = GetComponent<Rigidbody2D>();
         Dead = gameObject.GetComponent<IsDamaged>();
+
+        _animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -121,12 +133,18 @@ public class EnemyMovement : MonoBehaviour
         // 仮死状態ではないなら処理
         if (Dead.IsDead == false)
         {
-            //神の現在位置を取得
-            _godPos = _god.transform.position;
-            //現在位置から神の位置に向けて移動
-            transform.position = Vector2.MoveTowards(transform.position, _godPos, statusdata.SPEED * Time.deltaTime);
-            //神と敵キャラのX軸の位置関係を取得する
-            _diff.x = _godPos.x - this.transform.position.x;
+            _bossTimer += Time.deltaTime;
+            //プレイヤーの現在位置を取得
+            _playerPos = _player.transform.position;
+
+            if (_bossAttack != true)
+            {
+                //現在位置からプレイヤーの位置に向けて移動
+                transform.position = Vector2.MoveTowards(transform.position, _playerPos, statusdata.SPEED * Time.deltaTime);
+                //神と敵キャラのX軸の位置関係を取得する
+                _diff.x = _godPos.x - this.transform.position.x;
+
+            }
 
             if (_diff.x > 0)
             {
@@ -140,6 +158,33 @@ public class EnemyMovement : MonoBehaviour
                 _vector = new Vector3(0, 0, 0);
                 this.transform.eulerAngles = _vector;
             }
+
+            // 突進攻撃
+            if (_bossTimer >= 10)
+            {
+                _bossAttack = true;
+                _animator.SetInteger("Action", 2);
+            }
+
+            if (_bossTimer >= 15 && _bossAttack == true)
+            {
+                Debug.Log("攻撃");
+                _bossTimer = 0;
+                _bossAttack = false;
+                _rb.velocity = (_playerPos - transform.position).normalized * _speed;
+                //_rb.AddForce(_playerPos.normalized - transform.position.normalized * _speed, ForceMode2D.Impulse);
+
+            }
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if(col.gameObject.tag == "Wall" || col.gameObject.tag == "God")
+        {
+            _rb.velocity = Vector2.zero;
+            _animator.SetInteger("Action", 0);
+        }
+
     }
 }

@@ -39,7 +39,7 @@ public class EnemyBullet : MonoBehaviour
         ////  発射角度を求める
         //float angle = GetAngle(gameObject.transform.position, _playerPos);
 
-        _rb.AddForce(_playerPos - transform.position * _speed,ForceMode2D.Impulse);
+        _rb.AddForce(_playerPos.normalized - transform.position.normalized * _speed,ForceMode2D.Impulse);
         ////メーターのZ軸の数値をボールのX軸の角度へ。-1かけると丁度良い具合になる
         //transform.rotation = Quaternion.Euler(angle * -1, 0, 0);
 

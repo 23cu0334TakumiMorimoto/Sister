@@ -19,7 +19,7 @@ MonoBehaviour:
   DEVIL_DEF: 0
   SISTER_SPEED: 3
   DEVIL_SPEED: 1.5
-  KnockBack: 0
+  KnockBack: 3
   MUTEKI_SPAN: 0
   Attack_SPAN: 0.3
   Attack_STIFFNESS: 0.5

@@ -20,7 +20,7 @@ public class IsDamaged : MonoBehaviour
     private NewGodData _goddata;
 
     // 攻撃を受けたときに出す画像
-   // [SerializeField]
+    // [SerializeField]
     //private GameObject Hitmark;
     private Vector3 Hitpos;
 
@@ -67,10 +67,18 @@ public class IsDamaged : MonoBehaviour
     private float cla;
     [SerializeField]
     [Header("透明になる速度")]
-    private float speed;
+    private float speed = 1;
 
     private GameObject _gameManager;
     private CallUI _callUI;
+
+    // 色変更
+    bool isdamage;    //ダメージを受けたらtureになる
+    Color spriteColor;
+    float duration = 1f;
+
+    Color32 startColor = new Color32(255, 255, 255, 255);
+    Color32 endColor = new Color32(255, 255, 255, 64);
 
     void Start()
     {
@@ -92,7 +100,7 @@ public class IsDamaged : MonoBehaviour
         _deadTimer = 0f;
 
         //_GM = manager.GetComponent<GameManager>();
-
+        spriteColor = _sr.color;
 
     }
     void Update()
@@ -124,6 +132,13 @@ public class IsDamaged : MonoBehaviour
             // オブジェクトを破棄する
             //Destroy(this.gameObject);
         }
+        else
+        {
+            if (IsDead == false)
+            {
+
+            }
+        }
 
         // 仮死状態なら
         if (IsDead == true)
@@ -141,7 +156,7 @@ public class IsDamaged : MonoBehaviour
         {
             if (!MUTEKI)
             {//無敵状態じゃないときに攻撃を受ける
-
+                isdamage = true;
                 Hitpos = this.transform.position;
                 Hitpos.z = -2f;//Z軸を敵キャラよりも手前に設定
                 //Hitmark.transform.position = Hitpos;//ヒットマークの画像位置を移動させる
@@ -186,6 +201,7 @@ public class IsDamaged : MonoBehaviour
             {
                 if (_currentHP > 0)
                 {
+                    StartCoroutine("ColorChange");
                     //攻撃を受けた時点での敵キャラとプレイヤーとの位置関係
                     float distinationX = thisPos.x - _playerPos.x;
                     float distinationY = thisPos.y - _playerPos.y;
@@ -231,7 +247,7 @@ public class IsDamaged : MonoBehaviour
         if (IsBoss == true)
         {
             cla = _sr.color.a;
-            StartCoroutine(Display());
+            StartCoroutine(Display(0));
             _callUI.IsClear = true;
 
             SwitchClear();
@@ -239,8 +255,26 @@ public class IsDamaged : MonoBehaviour
         else
         {
             cla = _sr.color.a;
-            StartCoroutine(Display());
+            StartCoroutine(Display(0));
         }
+    }
+
+    // 祈りの範囲内にいる間処理
+    private void OnTriggerStay2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "Pray" && IsDead == true)
+        {
+            _sr.color = Color.Lerp(startColor, endColor, Mathf.PingPong(Time.time / duration, 1.0f));
+        }
+
+        //if(col.gameObject.tag == "Attack")
+        //{
+        //    KnockBack(_statusdata.NockBack, false);
+        //    if(IsDead != true)
+        //    {
+        //        //_audioSource.PlayOneShot(Sound);
+        //    }
+        //}
     }
 
     private void OnTriggerExit2D(Collider2D col)
@@ -270,15 +304,35 @@ public class IsDamaged : MonoBehaviour
 
     }
 
-    IEnumerator Display()
+    IEnumerator Display(float targetAlpha)
     {
-        while (cla > 0f)
+        while (!Mathf.Approximately(spriteColor.a, targetAlpha))
         {
-            cla -= speed;
-            _sr.color = new Color(_sr.color.r, _sr.color.g, _sr.color.b, cla);
+            float changePerFrame = Time.deltaTime / duration;
+            spriteColor.a = Mathf.MoveTowards(spriteColor.a, targetAlpha, changePerFrame);
+            _sr.color = spriteColor;
             yield return null;
         }
         _goddata.EXP += _statusdata.EXP;
+        Debug.Log("消去");
         Destroy(gameObject);
+    }
+
+    // ダメージを受けた際に色を変更する
+    IEnumerator ColorChange()
+    {
+        if (isdamage == true)
+        {
+            // 色を赤に変更
+            _sr.color = new Color(1.0f, 0.0f, 0.0f, 1.0f);
+
+            yield return new WaitForSeconds(0.1f);
+
+            // 色を元に戻す
+            _sr.color = new Color(255f, 255f, 255f, 255f);
+            // isdamageの値を０に戻す
+            isdamage = false;
+
+        }
     }
 }

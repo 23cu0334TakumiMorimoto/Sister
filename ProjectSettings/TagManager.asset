@@ -9,6 +9,7 @@ TagManager:
   - Soul
   - Pray
   - Attack
+  - Wall
   layers:
   - Default
   - TransparentFX
