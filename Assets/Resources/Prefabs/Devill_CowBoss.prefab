@@ -197,7 +197,8 @@ MonoBehaviour:
   IsGetKeyUp: 0
   Sound: {fileID: 0}
   IsBoss: 1
-  loadClear: 
+  IsBullet: 0
+  loadClear: Clear
   clearColor: {r: 1, g: 1, b: 1, a: 1}
   fadeSpeedMultiplier: 3
   speed: 0.01

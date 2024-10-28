@@ -177,6 +177,10 @@ public class DrawingSkill : LV_UIData
         {
             DrawingRarity();
         }
+        else
+        {
+            _countDrawing = 0;
+        }
     }
 
     void SelectRare()
@@ -213,6 +217,10 @@ public class DrawingSkill : LV_UIData
         {
             DrawingRarity();
         }
+        else
+        {
+            _countDrawing = 0;
+        }
     }
 
     void SelectSuperRare()
@@ -248,6 +256,10 @@ public class DrawingSkill : LV_UIData
         if (_countDrawing < 4)
         {
             DrawingRarity();
+        }
+        else
+        {
+            _countDrawing = 0;
         }
     }
 }

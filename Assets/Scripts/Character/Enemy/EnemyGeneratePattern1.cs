@@ -265,7 +265,7 @@ public class EnemyGeneratePattern1 : MonoBehaviour
             NowWave = 25;
         }
         // é©ìÆèoåªÇ≥ÇπÇÈ
-        if (_wave1Flag[25] == true)
+        if (_wave1Flag[24] == true)
         {
             _up.IsSpawn = true;
             _right.IsSpawn = true;
