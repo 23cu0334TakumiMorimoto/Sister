@@ -5,6 +5,16 @@ using UnityEngine.InputSystem.LowLevel;
 
 public class IsDamaged : MonoBehaviour
 {
+
+    private IsDamaged[] _enemyCol;       //メニューなどのボタンを格納するための配列変数
+
+    private enum _collider
+    {
+      box,
+      circle
+    }
+    [SerializeField] _collider EnemyCol;　　　　//プルダウン化
+
     // 他オブジェクトの位置を取得
     private GameObject _player;
     private Vector2 _playerPos;
@@ -84,12 +94,15 @@ public class IsDamaged : MonoBehaviour
     Color32 startColor = new Color32(255, 255, 255, 255);
     Color32 endColor = new Color32(255, 255, 255, 64);
 
+    private BoxCollider2D _box;
+    private CircleCollider2D _circle;
+
     void Start()
     {
         if (IsBullet == false)
         {
-
-
+            _box = GetComponent<BoxCollider2D>();
+            _circle = GetComponent<CircleCollider2D>();
             _player = GameObject.FindGameObjectWithTag("Player");
             _playerPos = _player.transform.position;
             _god = GameObject.FindGameObjectWithTag("God");
@@ -259,6 +272,16 @@ public class IsDamaged : MonoBehaviour
 
         if (IsBoss == true)
         {
+            // コライダー無効化
+            if(EnemyCol == _collider.box)
+            {
+                _box.enabled = false;
+            }
+            else if (EnemyCol == _collider.circle)
+            {
+                _circle.enabled = false;
+            }
+
             cla = _sr.color.a;
             StartCoroutine(Display(0));
             _callUI.IsClear = true;
@@ -267,6 +290,16 @@ public class IsDamaged : MonoBehaviour
         }
         else
         {
+            // コライダー無効化
+            if (EnemyCol == _collider.box)
+            {
+                _box.enabled = false;
+            }
+            else if (EnemyCol == _collider.circle)
+            {
+                _circle.enabled = false;
+            }
+
             cla = _sr.color.a;
             StartCoroutine(Display(0));
         }

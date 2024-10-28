@@ -102,8 +102,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5427bb8b76ce5c4d8abb9f862428fac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyMove: 0
   statusdata: {fileID: 11400000, guid: e6f600985e4c1894c99cd47d3fb954c7, type: 2}
-  Enemy: {fileID: 8450583645931266645}
 --- !u!58 &-7047216060506130748
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -178,10 +178,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a171f03e48d0a942a62e64ed1934abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyCol: 1
   _statusdata: {fileID: 11400000, guid: e6f600985e4c1894c99cd47d3fb954c7, type: 2}
   _playerdata: {fileID: 11400000, guid: 5a9840cb11c374646a320ac7a30231f6, type: 2}
   _goddata: {fileID: 11400000, guid: 673d823451323f5479e3e61f47695c32, type: 2}
-  Hitmark: {fileID: 1679186590682017070, guid: 151d96a3813b4784a9a0b9a1b1e80ef0, type: 3}
   _expPrefab: {fileID: 4852027576173093877, guid: 31d9a80b7bdd1964c9ecf22d0c811042, type: 3}
   IsDead: 0
   _deadTimer: 0
@@ -189,6 +189,7 @@ MonoBehaviour:
   IsGetKeyUp: 0
   Sound: {fileID: 8300000, guid: 23a9410a2472d37498292c02fd5f3ff4, type: 3}
   IsBoss: 0
+  IsBullet: 0
   loadClear: 
   clearColor: {r: 1, g: 1, b: 1, a: 1}
   fadeSpeedMultiplier: 3

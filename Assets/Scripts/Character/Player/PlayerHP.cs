@@ -46,4 +46,12 @@ public class PlayerHP : MonoBehaviour
             
         }
     }
+
+    private void OnTriggrEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "Enemy")
+        {
+           
+        }
+    }
 }
