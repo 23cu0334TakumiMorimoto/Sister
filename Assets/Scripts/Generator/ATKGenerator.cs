@@ -99,7 +99,10 @@ public class ATKGenerator : MonoBehaviour
                 // JキーかZキーで攻撃
                 if (Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Joystick1Button3))
                 {
-                    ATKflg = true;
+                    if (Time.timeScale != 0)
+                    {
+                        ATKflg = true;
+                    }
                 }
 
                 if (ATKflg == true)

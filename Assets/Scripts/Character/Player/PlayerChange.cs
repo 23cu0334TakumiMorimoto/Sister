@@ -70,18 +70,21 @@ public class PlayerChange : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.Joystick1Button5) || Input.GetKeyDown(KeyCode.Joystick1Button4))
         {
-            Debug.Log("チェンジシスター");
-            image.sprite = SisterSprite;
-            _animator.SetInteger("Action", 7);
-            _audioSource.PlayOneShot(ChangeSound);
-            // 指定された時間プレイヤー操作を無効にする
-            IsChanged.CallInoperable(statusdata.CHANGE_TRANSITION_TIME, 1);
-            // 速度を０にする
-            rb.velocity = new Vector2(0, 0);
-            // 人格を切り替えてステータスを切り替える
-            statusdata.PLAYER_PERSON = 0;
-            // タイマーを初期化
-            ChangeCoolTimer = 0;
+            if (Time.timeScale != 0)
+            {
+                Debug.Log("チェンジシスター");
+                image.sprite = SisterSprite;
+                _animator.SetInteger("Action", 7);
+                _audioSource.PlayOneShot(ChangeSound);
+                // 指定された時間プレイヤー操作を無効にする
+                IsChanged.CallInoperable(statusdata.CHANGE_TRANSITION_TIME, 1);
+                // 速度を０にする
+                rb.velocity = new Vector2(0, 0);
+                // 人格を切り替えてステータスを切り替える
+                statusdata.PLAYER_PERSON = 0;
+                // タイマーを初期化
+                ChangeCoolTimer = 0;
+            }
 
         }
     }
@@ -90,18 +93,21 @@ public class PlayerChange : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.Joystick1Button5) || Input.GetKeyDown(KeyCode.Joystick1Button4))
         {
-            Debug.Log("チェンジデビル");
-            image.sprite = DevilSprite;
-            _animator.SetInteger("Action", 6);
-            _audioSource.PlayOneShot(ChangeSound);
-            // 指定された時間プレイヤー操作を無効にする
-            IsChanged.CallInoperable(statusdata.CHANGE_TRANSITION_TIME, 1);
-            // 速度を０にする
-            rb.velocity = new Vector2(0, 0);
-            // 人格を切り替えてステータスを切り替える
-            statusdata.PLAYER_PERSON = 1;
-            // タイマーを初期化
-            ChangeCoolTimer = 0;
+            if (Time.timeScale != 0)
+            {
+                Debug.Log("チェンジデビル");
+                image.sprite = DevilSprite;
+                _animator.SetInteger("Action", 6);
+                _audioSource.PlayOneShot(ChangeSound);
+                // 指定された時間プレイヤー操作を無効にする
+                IsChanged.CallInoperable(statusdata.CHANGE_TRANSITION_TIME, 1);
+                // 速度を０にする
+                rb.velocity = new Vector2(0, 0);
+                // 人格を切り替えてステータスを切り替える
+                statusdata.PLAYER_PERSON = 1;
+                // タイマーを初期化
+                ChangeCoolTimer = 0;
+            }
         }
     }
 }

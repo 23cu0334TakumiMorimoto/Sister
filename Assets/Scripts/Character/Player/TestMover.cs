@@ -165,18 +165,25 @@ public class TestMover : MonoBehaviour
         // Aキーもしくは左キーが押されているかどうか
         if (aKey.isPressed || leftArrowKey.isPressed) //|| x < 0)
         {
-            if (_sr.flipX == true)
+            if(Time.timeScale != 0)
             {
-                _sr.flipX = false;
+                if (_sr.flipX == true)
+                {
+                    _sr.flipX = false;
+                }
             }
+        
         }
 
         // Dキーもしくは右キーが押されているかどうか
         if (dKey.isPressed || rightArrowKey.isPressed) //|| x > 0)
         {
-            if (_sr.flipX == false)
+            if (Time.timeScale != 0)
             {
-                _sr.flipX = true;
+                if (_sr.flipX == false)
+                {
+                    _sr.flipX = true;
+                }
             }
         }
     }
