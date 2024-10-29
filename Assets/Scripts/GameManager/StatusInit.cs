@@ -14,8 +14,8 @@ public class StatusInit : MonoBehaviour
         _playerdata.PLAYER_PERSON = 1;
         _playerdata.MAXHP = 100;
         _playerdata.ATK = 1;
-        _playerdata.SISTER_SPEED = 3;
-        _playerdata.DEVIL_SPEED = 1.5f;
+        _playerdata.SISTER_SPEED = 2;
+        _playerdata.DEVIL_SPEED = 1f;
         _playerdata.KnockBack = 3;
         _playerdata.Attack_SPAN = 0.3f;
         _playerdata.Attack_STIFFNESS = 0.5f;
@@ -23,7 +23,7 @@ public class StatusInit : MonoBehaviour
         _playerdata.CHANGE_COOL_TIME = 1;
         _playerdata.EXP = 0;
         _playerdata.DESTROY_PRAY = 0.1f;
-        _playerdata.EXPAND_PRAY = 0.05f;
+        _playerdata.EXPAND_PRAY = 0.01f;
         _playerdata.LIMIT_PRAY = 3;
     }
 

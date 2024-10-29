@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
     {
         if (_godScript._currentHealth < 0)
         {
-            Time.timeScale = 0.5f;
+            Time.timeScale = 0.3f;
             StartCoroutine("CameraShake");
             Initiate.Fade(loadClear, clearColor, fadeSpeedMultiplier);
         }
@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
     {
         if (_godScript._currentHealth < 0)
         {
-            Time.timeScale = 0.5f;
+            Time.timeScale = 0.3f;
             StartCoroutine("CameraShake");
             Initiate.Fade(loadGameOver, fadeColor, fadeSpeedMultiplier);
         }

@@ -100,19 +100,19 @@ public class SkillProcess : MonoBehaviour
     // 4
     private void LowSpeedUp_Devil()
     {
-        _playerdata.DEVIL_SPEED += 0.3f;
+        _playerdata.DEVIL_SPEED += 0.2f;
         Debug.Log("デビルロースピード");
     }
     // 5
     private void SpeedUp_Devil()
     {
-        _playerdata.DEVIL_SPEED+= 0.5f;
+        _playerdata.DEVIL_SPEED+= 0.4f;
         Debug.Log("デビルスピード");
     }
     // 6
     private void HighSpeedUp_Devil()
     {
-        _playerdata.DEVIL_SPEED++;
+        _playerdata.DEVIL_SPEED += 0.8f;
         Debug.Log("デビルハイスピード");
     }
     // 7
@@ -148,19 +148,19 @@ public class SkillProcess : MonoBehaviour
     // 12
     private void LowExpandOverPray_Sister()
     {
-        _playerdata.EXPAND_PRAY += 0.02f;
+        _playerdata.EXPAND_PRAY += 0.005f;
         Debug.Log("シスタープレイローエクスパンド");
     }
     // 13
     private void HighExpandOverPray_Sister()
     {
-        _playerdata.EXPAND_PRAY += 0.05f;
+        _playerdata.EXPAND_PRAY += 0.01f;
         Debug.Log("シスタープレイハイエクスパンド");
     }
     // 14
     private void KnockBackOver_Devil()
     {
-        _playerdata.KnockBack += 0.5f;
+        _playerdata.KnockBack ++;
         Debug.Log("デビルノックバック");
     }
 

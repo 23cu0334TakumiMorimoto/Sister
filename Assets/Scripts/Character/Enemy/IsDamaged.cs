@@ -349,7 +349,7 @@ public class IsDamaged : MonoBehaviour
     public void SwitchClear()
     {
 
-        Time.timeScale = 0.5f;
+        Time.timeScale = 0.1f;
         StartCoroutine("CameraShake");
         Initiate.Fade(loadClear, clearColor, fadeSpeedMultiplier);
 

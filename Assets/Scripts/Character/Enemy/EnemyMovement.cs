@@ -40,6 +40,12 @@ public class EnemyMovement : MonoBehaviour
 
     private float _speed = 3.5f;
 
+    //public AudioClip Sound;
+    //private bool sound;
+    //public AudioClip Sound2;
+    //private bool sound2;
+    //private AudioSource _audioSource;
+
 
     private void Start()
     {
@@ -51,6 +57,7 @@ public class EnemyMovement : MonoBehaviour
         Dead = gameObject.GetComponent<IsDamaged>();
 
         _animator = GetComponent<Animator>();
+        //_audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -166,6 +173,12 @@ public class EnemyMovement : MonoBehaviour
             {
                 _bossAttack = true;
                 _animator.SetInteger("Action", 2);
+
+                //if(sound == false)
+                //{
+                //    //_audioSource.PlayOneShot(Sound);
+                //    sound = true;
+                //}
             }
 
             if (_bossTimer >= 15 && _bossAttack == true)
@@ -175,6 +188,13 @@ public class EnemyMovement : MonoBehaviour
                 _bossAttack = false;
                 _rb.velocity = (_playerPos - transform.position).normalized * _speed;
                 //_rb.AddForce(_playerPos.normalized - transform.position.normalized * _speed, ForceMode2D.Impulse);
+                
+                //if(sound2 == false)
+                //{
+                //    //_audioSource.PlayOneShot(Sound2);
+                //    sound2 = true;
+
+                //}
 
             }
         }

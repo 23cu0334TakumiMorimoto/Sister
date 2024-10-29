@@ -2808,7 +2808,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &765160755
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3483,6 +3483,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 884935414}
   m_CullTransparentMesh: 1
+--- !u!1001 &950918231
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4314911276174559242, guid: e6406a97ce6df3d45a8512bf56740543, type: 3}
+      propertyPath: m_Name
+      value: Devill_CowBoss (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4314911276174559242, guid: e6406a97ce6df3d45a8512bf56740543, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051999615926409856, guid: e6406a97ce6df3d45a8512bf56740543, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051999615926409856, guid: e6406a97ce6df3d45a8512bf56740543, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051999615926409856, guid: e6406a97ce6df3d45a8512bf56740543, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051999615926409856, guid: e6406a97ce6df3d45a8512bf56740543, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051999615926409856, guid: e6406a97ce6df3d45a8512bf56740543, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051999615926409856, guid: e6406a97ce6df3d45a8512bf56740543, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051999615926409856, guid: e6406a97ce6df3d45a8512bf56740543, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051999615926409856, guid: e6406a97ce6df3d45a8512bf56740543, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051999615926409856, guid: e6406a97ce6df3d45a8512bf56740543, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051999615926409856, guid: e6406a97ce6df3d45a8512bf56740543, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e6406a97ce6df3d45a8512bf56740543, type: 3}
 --- !u!1 &966796042
 GameObject:
   m_ObjectHideFlags: 0
@@ -3930,67 +3991,6 @@ Transform:
   - {fileID: 188602437}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1046299661
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4314911276174559242, guid: e6406a97ce6df3d45a8512bf56740543, type: 3}
-      propertyPath: m_Name
-      value: Devill_CowBoss
-      objectReference: {fileID: 0}
-    - target: {fileID: 4314911276174559242, guid: e6406a97ce6df3d45a8512bf56740543, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7051999615926409856, guid: e6406a97ce6df3d45a8512bf56740543, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -3.88
-      objectReference: {fileID: 0}
-    - target: {fileID: 7051999615926409856, guid: e6406a97ce6df3d45a8512bf56740543, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 7051999615926409856, guid: e6406a97ce6df3d45a8512bf56740543, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7051999615926409856, guid: e6406a97ce6df3d45a8512bf56740543, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7051999615926409856, guid: e6406a97ce6df3d45a8512bf56740543, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7051999615926409856, guid: e6406a97ce6df3d45a8512bf56740543, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7051999615926409856, guid: e6406a97ce6df3d45a8512bf56740543, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7051999615926409856, guid: e6406a97ce6df3d45a8512bf56740543, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7051999615926409856, guid: e6406a97ce6df3d45a8512bf56740543, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7051999615926409856, guid: e6406a97ce6df3d45a8512bf56740543, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e6406a97ce6df3d45a8512bf56740543, type: 3}
 --- !u!1 &1080896073
 GameObject:
   m_ObjectHideFlags: 0
@@ -7461,9 +7461,9 @@ MonoBehaviour:
     SkillGrade: 2
     AppearPhase: 0
     SkillSprite: {fileID: 21300000, guid: 676d56a43b9416041b6931c65f2cefd8, type: 3}
-  _normalProbability: 70
+  _normalProbability: 75
   _rareProbability: 20
-  _superRareProbability: 10
+  _superRareProbability: 5
   _skill1: {fileID: 738942757}
   _skill2: {fileID: 57545520}
   _skill3: {fileID: 998907004}
@@ -7624,7 +7624,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7275628811368967140, guid: 7852ae79c28438240ae8c0b17ecc179b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9169925188500295364, guid: 7852ae79c28438240ae8c0b17ecc179b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7803,14 +7803,15 @@ MonoBehaviour:
   - 135
   - 140
   - 150
-  - 155
   - 160
-  - 165
   - 170
   - 175
   - 180
-  - 200
+  - 185
+  - 190
+  - 210
   NowWave: 0
+  mainBGM: {fileID: 519420028}
 --- !u!114 &2053994213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7834,11 +7835,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_audioClip: {fileID: 8300000, guid: b673d05e08de1cf40bab77331219583e, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.402
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -8713,6 +8714,6 @@ SceneRoots:
   - {fileID: 349003275}
   - {fileID: 1864770028}
   - {fileID: 1113668744}
-  - {fileID: 1046299661}
+  - {fileID: 950918231}
   - {fileID: 2049597728}
   - {fileID: 1295186979}

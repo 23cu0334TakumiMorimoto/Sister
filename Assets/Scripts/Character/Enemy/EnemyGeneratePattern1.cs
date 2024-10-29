@@ -38,6 +38,11 @@ public class EnemyGeneratePattern1 : MonoBehaviour
 
     public int NowWave;
 
+    private AudioSource _audioSource;
+
+    [SerializeField]
+    private GameObject mainBGM;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +51,7 @@ public class EnemyGeneratePattern1 : MonoBehaviour
         _down = _downGene.GetComponent<EnemyGenerator>();
         _left = _leftGene.GetComponent<EnemyGenerator>();
         _right = _rightGene.GetComponent<EnemyGenerator>();
+        _audioSource = GetComponent<AudioSource>();
 
         // リストの要素数を取得
         _wave1Count = _wave1Time.Count;
@@ -263,6 +269,8 @@ public class EnemyGeneratePattern1 : MonoBehaviour
             _down.EnemyGenerate(_EnemyCow);
             _wave1Flag[24] = true;
             NowWave = 25;
+            _audioSource.Play();
+            mainBGM.GetComponent<AudioSource>().Stop();
         }
         // 自動出現させる
         if (_wave1Flag[24] == true)
