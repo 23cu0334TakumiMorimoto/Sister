@@ -97,6 +97,8 @@ public class IsDamaged : MonoBehaviour
     private BoxCollider2D _box;
     private CircleCollider2D _circle;
 
+    private int _soulCount;
+
     void Start()
     {
         if (IsBullet == false)
@@ -333,6 +335,7 @@ public class IsDamaged : MonoBehaviour
         if (col.gameObject.tag == "Pray" && IsDead == true && IsGetKeyUp == true && IsBullet == false)
         {
             Debug.Log("祈りに衝突");
+            _soulCount++;
             SendSoul();
         }
 
@@ -365,7 +368,11 @@ public class IsDamaged : MonoBehaviour
             yield return null;
         }
         yield return new WaitForSeconds(1f);
+
+        // 経験値獲得
         _goddata.EXP += _statusdata.EXP;
+        // 経験値ボーナス
+        _gameManager.GetComponent<GameManager>().AddEXPBonus();
         Debug.Log("消去");
         Destroy(gameObject);
     }

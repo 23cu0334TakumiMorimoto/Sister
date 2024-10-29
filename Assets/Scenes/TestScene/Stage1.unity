@@ -7740,6 +7740,8 @@ MonoBehaviour:
   clearColor: {r: 1, g: 1, b: 1, a: 1}
   fadeSpeedMultiplier: 1
   mainCamera: {fileID: 519420028}
+  _goddata: {fileID: 11400000, guid: 673d823451323f5479e3e61f47695c32, type: 2}
+  SoulCount: 0
 --- !u!114 &2053994211
 MonoBehaviour:
   m_ObjectHideFlags: 0

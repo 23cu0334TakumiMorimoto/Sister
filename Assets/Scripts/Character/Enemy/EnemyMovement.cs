@@ -202,7 +202,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.gameObject.tag == "Wall")
+        if(col.gameObject.tag == "Wall" || col.gameObject.tag == "Player")
         {
             _rb.velocity = Vector2.zero;
             _animator.SetInteger("Action", 0);

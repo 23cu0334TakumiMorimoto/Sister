@@ -19,6 +19,11 @@ public class GameManager : MonoBehaviour
     public GameObject mainCamera;
     private float moveX;
 
+    [SerializeField]
+    private NewGodData _goddata;
+    // ボーナスカウント
+    public int SoulCount;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -31,6 +36,11 @@ public class GameManager : MonoBehaviour
     {
         DebugCommand();
         SwitchGameOver();
+
+        if(Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.X))
+        {
+            SoulCount = 0;
+        }
     }
 
     void DebugCommand()
@@ -71,5 +81,12 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
 
+    }
+
+    public void AddEXPBonus()
+    {
+        SoulCount++;
+        // 経験値ボーナス
+        _goddata.EXP += SoulCount * 5;
     }
 }
