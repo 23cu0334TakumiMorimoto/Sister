@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CallUI : MonoBehaviour
@@ -34,6 +35,10 @@ public class CallUI : MonoBehaviour
     // クリアしたかどうか
     public bool IsClear;
 
+    public AudioClip Sound;
+    private AudioSource _audioSource;
+    private bool _audio;
+
 
     private void Start()
     {
@@ -48,6 +53,8 @@ public class CallUI : MonoBehaviour
         _pauseSelect = _initPause.GetComponent<PauseSelectUI>();
         _skillSelect = _initLV.GetComponent<SkillSelectUI>();
         _drawingSkill = _skillManager.GetComponent<DrawingSkill>();
+
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -109,12 +116,14 @@ public class CallUI : MonoBehaviour
     {
         if (_calledPause != true && IsClear != true)
         {
+
             _calledSkill = true;
             // 呼び出される回数をカウント
             _callCount++;
 
             if(_callCount == 1 || _oneMoreSkill == true)
             {
+                _audioSource.PlayOneShot(Sound);
                 _lvUpUI.SetActive(true);
                 _lvArrow.SetActive(true);
                 Time.timeScale = 0;

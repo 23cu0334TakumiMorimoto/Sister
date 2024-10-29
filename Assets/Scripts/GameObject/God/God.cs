@@ -36,6 +36,9 @@ public class God : MonoBehaviour
     [Header("Õ“Ë‚µ‚Ä‚«‚½“G‚ğ”j‰ó‚·‚é‚©‚Ç‚¤‚©")]
     private bool IsDestroyed;
 
+    public AudioClip Sound;
+    private AudioSource _audioSource;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -44,6 +47,7 @@ public class God : MonoBehaviour
         //Å‘åHP‚ğİ’è
         _currentHealth = maxHealth;
         health_Bar.setmaxHealth(maxHealth);
+        _audioSource = GetComponent<AudioSource>();
     }
 
         // Update is called once per frame
@@ -56,6 +60,7 @@ public class God : MonoBehaviour
             //ƒ_ƒ[ƒW‚ğó‚¯‚é
             UpdateHp();
             IsDead();
+            _audioSource.PlayOneShot(Sound);
 
             if (IsDestroyed == true)
             {

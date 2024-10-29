@@ -121,7 +121,7 @@ public class PauseSelectUI : Selectable, IPointerClickHandler
             Debug.Log("リトライ処理");
             // シーンをリロード
             _pause.PressPause();
-            SceneManager.LoadScene("TestMainGame");
+            SceneManager.LoadScene("Stage1");
         }
         else if (_UI == UIList.Back && IsSelected == true)
         {
