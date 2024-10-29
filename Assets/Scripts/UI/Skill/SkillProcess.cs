@@ -136,13 +136,13 @@ public class SkillProcess : MonoBehaviour
     // 10
     private void LowLimitOverPray_Sister()
     {
-        _playerdata.LIMIT_PRAY += 0.2f;
+        _playerdata.LIMIT_PRAY += 0.5f;
         Debug.Log("シスタープレイローリミット");
     }
     // 11
     private void HighLimitOverPray_Sister()
     {
-        _playerdata.LIMIT_PRAY += 0.5f;
+        _playerdata.LIMIT_PRAY ++;
         Debug.Log("シスタープレイハイリミット");
     }
     // 12

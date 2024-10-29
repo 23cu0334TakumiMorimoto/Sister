@@ -68,9 +68,9 @@ public class EnemyBullet : MonoBehaviour
         gameObject.transform.Rotate(new Vector3(rotateX, rotateY, rotateZ) * Time.deltaTime * _rotateSpeed);
     }
 
-    private void OnTriggrEnter2D(Collider2D col)
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "God")
+        if (col.gameObject.tag == "Player")
         {
             Destroy(gameObject);
         }

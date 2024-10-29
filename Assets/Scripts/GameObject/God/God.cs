@@ -53,7 +53,7 @@ public class God : MonoBehaviour
         // Update is called once per frame
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Enemy") 
+        if (col.gameObject.tag == "Enemy" || col.gameObject.tag == "Bullet") 
         {
             col.gameObject.GetComponent<IsDamaged>().KnockBack(_knockBack, true);
             _damage = col.gameObject.GetComponent<IsDamaged>()._statusdata.ATK;
@@ -62,7 +62,7 @@ public class God : MonoBehaviour
             IsDead();
             _audioSource.PlayOneShot(Sound);
 
-            if (IsDestroyed == true)
+            if (IsDestroyed == true || col.gameObject.tag == "Bullet")
             {
                 Destroy(col.gameObject);
             }

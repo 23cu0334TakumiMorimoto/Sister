@@ -10,6 +10,7 @@ TagManager:
   - Pray
   - Attack
   - Wall
+  - Bullet
   layers:
   - Default
   - TransparentFX

@@ -364,6 +364,7 @@ public class IsDamaged : MonoBehaviour
             _sr.color = spriteColor;
             yield return null;
         }
+        yield return new WaitForSeconds(1f);
         _goddata.EXP += _statusdata.EXP;
         Debug.Log("消去");
         Destroy(gameObject);

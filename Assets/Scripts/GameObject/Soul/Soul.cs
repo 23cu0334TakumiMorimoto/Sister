@@ -86,7 +86,7 @@ public class Soul : MonoBehaviour
         m_speed = Mathf.Lerp(speedMin, speedMax, Random.value);
 
         // 8 秒後にアイテムを削除する
-        Destroy(gameObject, 8);
+        Destroy(gameObject, 2);
     }
 
     // 他のオブジェクトと衝突した時に呼び出される関数

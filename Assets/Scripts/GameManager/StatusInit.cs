@@ -24,7 +24,7 @@ public class StatusInit : MonoBehaviour
         _playerdata.EXP = 0;
         _playerdata.DESTROY_PRAY = 0.1f;
         _playerdata.EXPAND_PRAY = 0.05f;
-        _playerdata.LIMIT_PRAY = 5;
+        _playerdata.LIMIT_PRAY = 3;
     }
 
     // Update is called once per frame

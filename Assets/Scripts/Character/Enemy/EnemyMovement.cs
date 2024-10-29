@@ -101,31 +101,33 @@ public class EnemyMovement : MonoBehaviour
 
     private void DevilGoat()
     {
-        // 仮死状態ではないなら処理
-        if (Dead.IsDead == false)
-        {
-            //神の現在位置を取得
-            _godPos = _god.transform.position;
-            t += Time.deltaTime;
-            float x = statusdata.CircleX * Mathf.Cos(t * statusdata.SPEED);
-            float y = statusdata.CircleY * Mathf.Sin(t * statusdata.SPEED);
-            transform.position
-                = new Vector3(_godPos.x + x, _godPos.y + y, 0.0f);
-            transform.rotation = Quaternion.identity;
 
-            if (_diff.x > 0)
+            // 仮死状態ではないなら処理
+            if (Dead.IsDead == false)
             {
-                // Godが敵キャラの右側にいる時右側を向く
-                _vector = new Vector3(0, -180, 0);
-                this.transform.eulerAngles = _vector;
+                _animator.SetInteger("Action", 0);
+                //神の現在位置を取得
+                _godPos = _god.transform.position;
+                t += Time.deltaTime;
+                float x = statusdata.CircleX * Mathf.Cos(t * statusdata.SPEED);
+                float y = statusdata.CircleY * Mathf.Sin(t * statusdata.SPEED);
+                transform.position
+                    = new Vector3(_godPos.x + x, _godPos.y + y, 0.0f);
+                transform.rotation = Quaternion.identity;
+
+                if (_diff.x > 0)
+                {
+                    // Godが敵キャラの右側にいる時右側を向く
+                    _vector = new Vector3(0, -180, 0);
+                    this.transform.eulerAngles = _vector;
+                }
+                if (_diff.x < 0)
+                {
+                    // Godが敵キャラの左側にいる時左側を向く
+                    _vector = new Vector3(0, 0, 0);
+                    this.transform.eulerAngles = _vector;
+                }
             }
-            if (_diff.x < 0)
-            {
-                // Godが敵キャラの左側にいる時左側を向く
-                _vector = new Vector3(0, 0, 0);
-                this.transform.eulerAngles = _vector;
-            }
-        }
     }
 
     private void DevilCow()

@@ -86,9 +86,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6275610245064567029, guid: f862a90ba47c9ff48ab5956cd7a0a67e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 881308824334359073}
-    - targetCorrespondingSourceObject: {fileID: 6275610245064567029, guid: f862a90ba47c9ff48ab5956cd7a0a67e, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 8733454192259991675}
     - targetCorrespondingSourceObject: {fileID: 6275610245064567029, guid: f862a90ba47c9ff48ab5956cd7a0a67e, type: 3}
       insertIndex: -1
@@ -99,47 +96,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6275610245064567029, guid: f862a90ba47c9ff48ab5956cd7a0a67e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1342520565372044897}
+    - targetCorrespondingSourceObject: {fileID: 6275610245064567029, guid: f862a90ba47c9ff48ab5956cd7a0a67e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -3555636971816749807}
   m_SourcePrefab: {fileID: 100100000, guid: f862a90ba47c9ff48ab5956cd7a0a67e, type: 3}
 --- !u!1 &7275628811368967140 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6275610245064567029, guid: f862a90ba47c9ff48ab5956cd7a0a67e, type: 3}
   m_PrefabInstance: {fileID: 3742292964037002001}
   m_PrefabAsset: {fileID: 0}
---- !u!70 &881308824334359073
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7275628811368967140}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.4, y: 2.9}
-  m_Direction: 0
 --- !u!50 &8733454192259991675
 Rigidbody2D:
   serializedVersion: 4
@@ -181,7 +146,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyMove: 1
   statusdata: {fileID: 11400000, guid: 1421b35012e2ffc4ab1ebec7eb15ffeb, type: 2}
-  Enemy: {fileID: 7275628811368967140}
 --- !u!114 &9088188699474033188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,6 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a171f03e48d0a942a62e64ed1934abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyCol: 0
   _statusdata: {fileID: 11400000, guid: 1421b35012e2ffc4ab1ebec7eb15ffeb, type: 2}
   _playerdata: {fileID: 11400000, guid: 5a9840cb11c374646a320ac7a30231f6, type: 2}
   _goddata: {fileID: 11400000, guid: 673d823451323f5479e3e61f47695c32, type: 2}
@@ -204,6 +169,7 @@ MonoBehaviour:
   IsGetKeyUp: 0
   Sound: {fileID: 0}
   IsBoss: 0
+  IsBullet: 0
   loadClear: 
   clearColor: {r: 1, g: 1, b: 1, a: 1}
   fadeSpeedMultiplier: 3
@@ -224,3 +190,48 @@ MonoBehaviour:
   EnemyMove: 1
   Enemy: {fileID: 7275628811368967140}
   _bulletGoat: {fileID: 2836157162839506192, guid: 4c36ff75e78a0a04cb2822240e3af14b, type: 3}
+--- !u!61 &-3555636971816749807
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7275628811368967140}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.266667, y: 4.266667}
+    newSize: {x: 5.12, y: 5.12}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.266667, y: 4.266667}
+  m_EdgeRadius: 0
