@@ -7395,72 +7395,72 @@ MonoBehaviour:
     SkillName: "\u30B7\u30B9\u30BF\u30FC\u79FB\u52D5\u901F\u5EA6\u4E0A\u6607\u5C0F"
     SkillGrade: 0
     AppearPhase: 0
-    SkillSprite: {fileID: 21300000, guid: 62e9e2095a722de4698e52a74e2adf80, type: 3}
+    SkillSprite: {fileID: 21300000, guid: 2ea56ab223c593145b31cc447d87a9ce, type: 3}
   - SkillNumber: 2
     SkillName: "\u30B7\u30B9\u30BF\u30FC\u79FB\u52D5\u901F\u5EA6\u4E0A\u6607\u4E2D"
     SkillGrade: 0
     AppearPhase: 0
-    SkillSprite: {fileID: 21300000, guid: 74734ca8d0840894ea3b1fe15ae4308b, type: 3}
+    SkillSprite: {fileID: 21300000, guid: f6aeb58bd2a5d7c4fa792b93447c0822, type: 3}
   - SkillNumber: 3
     SkillName: "\u30B7\u30B9\u30BF\u30FC\u79FB\u52D5\u901F\u5EA6\u4E0A\u6607\u5927"
     SkillGrade: 1
     AppearPhase: 0
-    SkillSprite: {fileID: 21300000, guid: cbd48c2cd92f2c7438c1372f544435a3, type: 3}
+    SkillSprite: {fileID: 21300000, guid: c60062ff098617a478b70791a6549735, type: 3}
   - SkillNumber: 4
     SkillName: "\u30C7\u30D3\u30EB\u79FB\u52D5\u901F\u5EA6\u4E0A\u6607\u5C0F"
     SkillGrade: 0
     AppearPhase: 0
-    SkillSprite: {fileID: 21300000, guid: 6dfecf0aa10596c48b547b85369067d8, type: 3}
+    SkillSprite: {fileID: 21300000, guid: 621146a0c3de26943b663614e365f9a0, type: 3}
   - SkillNumber: 5
     SkillName: "\u30C7\u30D3\u30EB\u79FB\u52D5\u901F\u5EA6\u4E0A\u6607\u4E2D"
     SkillGrade: 0
     AppearPhase: 0
-    SkillSprite: {fileID: 21300000, guid: 1685efa1f462f2b46ab480776082356a, type: 3}
+    SkillSprite: {fileID: 21300000, guid: 1e9b34d1b0e1e27458c2ed623c3c86b7, type: 3}
   - SkillNumber: 6
     SkillName: "\u30C7\u30D3\u30EB\u79FB\u52D5\u901F\u5EA6\u4E0A\u6607\u5927"
     SkillGrade: 1
     AppearPhase: 0
-    SkillSprite: {fileID: 21300000, guid: c437d0a11d2a4c540933ccbd488356c3, type: 3}
+    SkillSprite: {fileID: 21300000, guid: 66842b0097a16a747813c1f400a1d73d, type: 3}
   - SkillNumber: 7
     SkillName: "\u653B\u6483\u529B\u4E0A\u6607\u5C0F"
     SkillGrade: 0
     AppearPhase: 0
-    SkillSprite: {fileID: 21300000, guid: dcbd59facf90d474597762682e5a014f, type: 3}
+    SkillSprite: {fileID: 21300000, guid: 7606b724f59e56843b2e50d90ba4fe60, type: 3}
   - SkillNumber: 8
     SkillName: "\u653B\u6483\u529B\u4E0A\u6607\u4E2D"
     SkillGrade: 1
     AppearPhase: 0
-    SkillSprite: {fileID: 21300000, guid: 0768fb1d1c36d674a834a48723f48951, type: 3}
+    SkillSprite: {fileID: 21300000, guid: fd6e5cf1e4b8dbe4397ed3c37cffbdb0, type: 3}
   - SkillNumber: 9
     SkillName: "\u653B\u6483\u529B\u4E0A\u6607\u5927"
     SkillGrade: 2
     AppearPhase: 0
-    SkillSprite: {fileID: 21300000, guid: 45c8a5c924ee6be4c9aca80a64a248c9, type: 3}
+    SkillSprite: {fileID: 21300000, guid: 6b6867e7f62f0144fae6a1471b05fb7f, type: 3}
   - SkillNumber: 10
     SkillName: "\u7948\u308A\u7BC4\u56F2\u62E1\u5927\u5C0F"
     SkillGrade: 0
     AppearPhase: 0
-    SkillSprite: {fileID: 21300000, guid: 1046adc35b3d48a42965da98a2c9d9c6, type: 3}
+    SkillSprite: {fileID: 21300000, guid: ab21998a244dce94cbc2db4fd1c089b6, type: 3}
   - SkillNumber: 11
     SkillName: "\u7948\u308A\u7BC4\u56F2\u62E1\u5927\u5927"
     SkillGrade: 1
     AppearPhase: 0
-    SkillSprite: {fileID: 21300000, guid: b903e2e1f5bc7c244bcf983f25d3662e, type: 3}
+    SkillSprite: {fileID: 21300000, guid: 6e68c5e990f2f0b4cad4fa2dfbbd6a29, type: 3}
   - SkillNumber: 12
     SkillName: "\u7948\u308A\u901F\u5EA6\u4E0A\u6607\u5C0F"
     SkillGrade: 0
     AppearPhase: 0
-    SkillSprite: {fileID: 21300000, guid: cd3e26b8b90418e448ca7a6501b58326, type: 3}
+    SkillSprite: {fileID: 21300000, guid: 7859da2035326b64c8869cf55c0a9b49, type: 3}
   - SkillNumber: 13
     SkillName: "\u7948\u308A\u901F\u5EA6\u4E0A\u6607\u5927"
     SkillGrade: 1
     AppearPhase: 0
-    SkillSprite: {fileID: 21300000, guid: 5ec1ac5e089e0174cbd94fc7453a45d6, type: 3}
+    SkillSprite: {fileID: 21300000, guid: 9e27f92265c8c874cb9e65dc32a6a941, type: 3}
   - SkillNumber: 14
     SkillName: "\u30CE\u30C3\u30AF\u30D0\u30C3\u30AF\u5F37\u5316"
     SkillGrade: 2
     AppearPhase: 0
-    SkillSprite: {fileID: 21300000, guid: 676d56a43b9416041b6931c65f2cefd8, type: 3}
+    SkillSprite: {fileID: 21300000, guid: 590e98d9d3dd86a4e980355e039bead5, type: 3}
   _normalProbability: 75
   _rareProbability: 20
   _superRareProbability: 5
@@ -7827,6 +7827,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerdata: {fileID: 11400000, guid: 5a9840cb11c374646a320ac7a30231f6, type: 2}
+  IsTutorial: 0
 --- !u!82 &2053994214
 AudioSource:
   m_ObjectHideFlags: 0

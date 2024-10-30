@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestScene/Stage3.unity
     guid: 83b97a460481cea458af572d5dd283d4
+  - enabled: 1
+    path: Assets/Scenes/TestScene/Tutorial.unity
+    guid: 870d2d7b8c5a4184bb33d777e633b57b
   m_configObjects: {}

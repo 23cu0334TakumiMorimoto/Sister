@@ -39,6 +39,8 @@ public class God : MonoBehaviour
     public AudioClip Sound;
     private AudioSource _audioSource;
 
+    public bool IsTutorial;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -72,10 +74,13 @@ public class God : MonoBehaviour
 
     private void UpdateHp()
     {
-        _currentHealth-= _damage;
+        if (IsTutorial != true)
+        {
+            _currentHealth -= _damage;
 
-        //Œ»İ‚Ì‘Ì—Í‚ğ”½‰f‚³‚¹‚é
-        health_Bar.setHealth(_currentHealth);
+            //Œ»İ‚Ì‘Ì—Í‚ğ”½‰f‚³‚¹‚é
+            health_Bar.setHealth(_currentHealth);
+        }
     }
 
     private void IsDead()
